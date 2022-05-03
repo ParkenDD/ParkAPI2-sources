@@ -1,6 +1,6 @@
 import unittest
 from copy import deepcopy
-from typing import Optional
+from typing import Optional, Tuple, List
 
 from util.validate import validate_snapshot
 
@@ -73,73 +73,83 @@ SNAPSHOTS = {
 class TestValidation(unittest.TestCase):
     maxDiff = None
 
+    @classmethod
+    def split_errors_warnings(cls, validation: dict) -> Tuple[List[dict], List[dict]]:
+        validations = validation["validations"]
+        return (
+            list(filter(lambda v: v["priority"] == 0, validations)),
+            list(filter(lambda v: v["priority"] != 0, validations))
+        )
+
     def test_validation_errors(self):
         self.assertEqual(
-            [{"message": "'pool' is a required property", "path": ""}],
-            validate_snapshot({})["errors"]
+            [{"message": "'pool' is a required property: {}", "path": "", "priority": 0}],
+            self.split_errors_warnings(validate_snapshot({}))[0]
         )
 
         self.assertEqual(
-            [{"message": "[] is not of type 'object'", "path": "pool"}],
-            validate_snapshot({
+            [{"message": "[] is not of type 'object': []", "path": "pool", "priority": 0}],
+            self.split_errors_warnings(validate_snapshot({
                 "pool": [],
                 "lots": [],
-            })["errors"]
+            }))[0]
         )
 
         self.assertEqual(
-            [{"message": "'id' is a required property", "path": "pool"}],
-            validate_snapshot({
+            [{"message": "'id' is a required property: {}", "path": "pool", "priority": 0}],
+            self.split_errors_warnings(validate_snapshot({
                 "pool": {},
                 "lots": [],
-            })["errors"]
+            }))[0]
         )
 
         self.assertEqual(
             [],
-            validate_snapshot(SNAPSHOTS["valid"])["errors"]
+            self.split_errors_warnings(validate_snapshot(SNAPSHOTS["valid"]))[0]
         )
 
         snapshot = deepcopy(SNAPSHOTS["valid"])
-        snapshot["pool"]["id"] = "x" * 65
+        bad_pool_id = "x" * 65
+        snapshot["pool"]["id"] = bad_pool_id
+
         self.assertEqual(
-            [{"message": "'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' is too long", "path": "pool.id"}],
-            validate_snapshot(snapshot)["errors"]
+            [{"message": f"'{bad_pool_id}' is too long: {bad_pool_id}", "path": "pool.id", "priority": 0}],
+            self.split_errors_warnings(validate_snapshot(snapshot))[0]
         )
 
         snapshot = deepcopy(SNAPSHOTS["valid"])
         snapshot["lots"][0]["source_url"] = 23
         self.assertEqual(
-            [{"message": "23 is not of type 'string'", "path": "lots.0.source_url"}],
-            validate_snapshot(snapshot)["errors"]
+            [{"message": "23 is not of type 'string': 23", "path": "lots.0.source_url", "priority": 0}],
+            self.split_errors_warnings(validate_snapshot(snapshot))[0]
         )
 
         snapshot = deepcopy(SNAPSHOTS["valid"])
         snapshot["pool"]["source_url"] = "www.example.com"
         self.assertEqual(
-            [{"message": "'www.example.com' does not match '[a-z]+://.+'", "path": "pool.source_url"}],
-            validate_snapshot(snapshot)["errors"]
+            [{"message": "'www.example.com' does not match '^[a-z]+://.+': www.example.com", "path": "pool.source_url", "priority": 0}],
+            self.split_errors_warnings(validate_snapshot(snapshot))[0]
         )
 
     def test_validation_warnings(self):
         self.assertEqual(
             [],
-            validate_snapshot(SNAPSHOTS["valid"])["warnings"]
+            self.split_errors_warnings(validate_snapshot(SNAPSHOTS["valid"]))[1]
         )
 
         self.assertEqual(
             [
-                {"message": "Pool 'pool-2' should have 'attribution_license'", "path": "pool.attribution_license"},
-                {"message": "Pool 'pool-2' should have 'attribution_contributor'", "path": "pool.attribution_contributor"},
-                {"message": "Pool 'pool-2' should have 'attribution_url'", "path": "pool.attribution_url"},
-                {"message": "Lot 'pool-2-lot-1' should have a type other than 'unknown'", "path": "lots.0.type"},
-                {"message": "Lot 'pool-2-lot-1' should have 'latitude'", "path": "lots.0.latitude"},
-                {"message": "Lot 'pool-2-lot-1' should have 'longitude'", "path": "lots.0.longitude"},
-                {"message": "Lot 'pool-2-lot-1' should have 'address'", "path": "lots.0.address"},
-                {"message": "Lot 'pool-2-lot-1' should have 'capacity'", "path": "lots.0.capacity"},
-                {"message": "Lot 'pool-2-lot-1' should have 'num_free' or 'num_occupied'", "path": "lots.0.num_free"}
+                {"message": "Pool 'pool-2' should have 'attribution_license'", "path": "pool.attribution_license", "priority": 3},
+                {"message": "Pool 'pool-2' should have 'attribution_contributor'", "path": "pool.attribution_contributor", "priority": 3},
+                {"message": "Pool 'pool-2' should have 'attribution_url'", "path": "pool.attribution_url", "priority": 3},
+                {"message": "Lot 'pool-2-lot-1' should have a type other than 'unknown'", "path": "lots.0.type", "priority": 2},
+                {"message": "Lot 'pool-2-lot-1' should have 'latitude'", "path": "lots.0.latitude", "priority": 1},
+                #{"message": "Lot 'pool-2-lot-1' should have 'longitude'", "path": "lots.0.longitude", "priority": 1},
+                {"message": "Lot 'pool-2-lot-1' should have 'address'", "path": "lots.0.address", "priority": 1},
+                {"message": "Lot 'pool-2-lot-1' should have 'capacity'", "path": "lots.0.capacity", "priority": 1},
+                {"message": "Lot 'pool-2-lot-1' should have 'num_free' or 'num_occupied'", "path": "lots.0.num_free", "priority": 4}
             ],
-            validate_snapshot(SNAPSHOTS["warnings"])["warnings"]
+            self.split_errors_warnings(validate_snapshot(SNAPSHOTS["warnings"]))[1]
         )
 
         snapshot = deepcopy(SNAPSHOTS["valid"])
@@ -148,8 +158,8 @@ class TestValidation(unittest.TestCase):
 
         self.assertEqual(
             [
-                {"message": "Lot 'pool-1-lot-1' should have 'capacity'", "path": "lots.0.capacity"},
-                {"message": "Lot 'pool-1-lot-1' should have 'capacity' when defining 'num_occupied'", "path": "lots.0.capacity"}
+                {"message": "Lot 'pool-1-lot-1' should have 'capacity'", "path": "lots.0.capacity", "priority": 1},
+                {"message": "Lot 'pool-1-lot-1' should have 'capacity' when defining 'num_occupied'", "path": "lots.0.capacity", "priority": 2}
             ],
-            validate_snapshot(snapshot)["warnings"]
+            self.split_errors_warnings(validate_snapshot(snapshot))[1]
         )

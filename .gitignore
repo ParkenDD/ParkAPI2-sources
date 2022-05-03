@@ -1,0 +1,12 @@
+env/
+venv/
+.env*
+
+cache/
+*credentials*
+
+.idea/
+*.iml
+
+__pycache__/
+*.pyc

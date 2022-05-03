@@ -54,9 +54,13 @@ important fields like `latitude`, `longitude`, `address` and `capacity`.
 Please feel free to ask questions by opening a 
 [new issue](https://github.com/ParkenDD/ParkAPI2-sources/issues).
 
-A data sources needs to define a `PoolInfo` object and 
+A data source needs to define a `PoolInfo` object and 
 for each parking lot a `LotInfo` and a `LotData` object
-(defined in [util/structs.py](util/structs.py)).
+(defined in [util/structs.py](util/structs.py)). 
+The python file that defines the source can be placed at 
+the project root or in a sub-directory and is automatically
+detected by `scraper.py` as long as the `util.ScraperBase`
+class is sub-classed.
 
 An example for scraping an html-based website:
 
@@ -101,7 +105,7 @@ class MyCity(ScraperBase):
 The `PoolInfo` is a static attribute of the scraper class and
 the `get_lot_data` method must return a list of `LotData` objects. 
 It's really basic and does not contain any further information about the 
-parking lot, only the status, free spaces and total capacity.
+parking lot, only the ID, status, free spaces and total capacity.
 
 
 ### Meta information
@@ -109,13 +113,14 @@ parking lot, only the status, free spaces and total capacity.
 Additional lot information is either taken from a 
 [geojson](https://geojson.org/) file or the `get_lot_infos` method
 of the scraper class. The `scraper.py` will merge the `LotInfo` and
-the `LotData` together to create the final output.
+the `LotData` together to create the final output which must
+comply with the [json schema](schema.json).
 
 The geojson file should have the same name as the scraper file, 
 e.g. `example.geojson`. **If the file exists**, it will be used and 
-it's `properties` must fit the `util/structs/LotInfo` object.
+it's `properties` must fit the `util.structs.LotInfo` object.
 **If it's not existing**, the method `get_lot_infos` on the scraper 
-will be called an should return a list of `LotInfo` objects. 
+class will be called an should return a list of `LotInfo` objects. 
 
 *Some* websites do provide most of the required information and it might 
 be easier to scrape it from the web pages instead of writing the geojson 

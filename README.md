@@ -1,5 +1,7 @@
 # Data sources for [ParkAPI2](https://github.com/ParkenDD/ParkAPI2)
 
+[![test](https://github.com/ParkenDD/ParkAPI2-sources/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/ParkenDD/ParkAPI2-sources/actions/workflows/tests.yml)
+
 This repository hosts the data sources (downloader, scraper) for the
 [parkendd.de](https://parkendd.de/) service which lists the 
 number of free spaces of parking lots across Germany and abroad.

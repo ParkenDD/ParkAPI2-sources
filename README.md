@@ -6,6 +6,9 @@ This repository hosts the data sources (downloader, scraper) for the
 [parkendd.de](https://parkendd.de/) service which lists the 
 number of free spaces of parking lots across Germany and abroad.
 
+The repository for the database and API is [ParkAPI2](https://github.com/ParkenDD/ParkAPI2)
+
+
 ## Usage
 
 The [scraper.py](scraper.py) file is a command-line tool for 

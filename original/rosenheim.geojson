@@ -1,0 +1,445 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp10stadtcenter",
+        "name": "P10 Stadtcenter",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p10-stadtcenter",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Brixstraße 1",
+        "capacity": 55,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.127699,
+          47.853346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp11beilhackgiessereistrasse",
+        "name": "P11 Beilhack-Gießereistraße",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p11-beilhack-giessereistrasse",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Gießereistraße 6",
+        "capacity": 170,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.126676,
+          47.849744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp12bahnhofnord",
+        "name": "P12 Bahnhof Nord",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p12-bahnhof-nord",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Eduard-Rüber-Straße 5",
+        "capacity": 241,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.114008,
+          47.852342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp13papinstrasse",
+        "name": "P13 Papinstraße",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p13-papinstrasse",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Papinstraße",
+        "capacity": 50,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.120291,
+          47.852556
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp14posthoefe",
+        "name": "P14 Posthöfe",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p14-posthoefe",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Anton-Kathrein-Straße 4",
+        "capacity": 40,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.121413,
+          47.850933
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp15luitpoldhaus",
+        "name": "P15 Luitpoldhaus",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p15-luitpoldhaus",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Luitpoldstraße 5",
+        "capacity": 35,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.119647,
+          47.851211
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp16ruedorfferpassage",
+        "name": "P16 Ruedorffer Passage",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p16-ruedorffer-passage",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Ruedorfferstraße",
+        "capacity": 40,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.127767,
+          47.857127
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp18eisstadion",
+        "name": "P18 Eisstadion",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p18-eisstadion",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Brianconstraße 12A",
+        "capacity": 17,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.13138,
+          47.850842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp19klinikum",
+        "name": "P19 Klinikum",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p19-klinikum-kaiserbad",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Rechenauerstraße 2",
+        "capacity": 65,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.127549,
+          47.861526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp1zentrum",
+        "name": "P1 Zentrum",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p1-zentrum",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Hammerweg 1",
+        "capacity": 264,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.127195,
+          47.852389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp20inderschmucken",
+        "name": "P20 In der Schmucken",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p20-in-der-schmucken",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "In d. Schmucken 12",
+        "capacity": 57,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.131835,
+          47.858744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp21luitpoldhalle",
+        "name": "P21 Luitpoldhalle",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p21-luitpoldhalle",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Unnamed Road",
+        "capacity": 60,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.119421,
+          47.857758
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp22prinzregentenstrasse",
+        "name": "P22 Prinzregentenstraße",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p22-prinzregentenstrasse",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Prinzregentenstraße 14",
+        "capacity": 30,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.124614,
+          47.856073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp2kuko",
+        "name": "P2 KU'KO",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p2-kuko",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Kufsteiner Str. 4",
+        "capacity": 138,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.125822,
+          47.853065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp3rathaus",
+        "name": "P3 Rathaus",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p3-rathaus",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Königstraße 24",
+        "capacity": 30,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.129304,
+          47.853206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp4mitte",
+        "name": "P4 Mitte",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p4-mitte",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Frühlingstraße",
+        "capacity": 245,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.124722,
+          47.856453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp5loretowiese",
+        "name": "P5 Loretowiese",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p5-loretowiese",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Kapuzinerweg 1",
+        "capacity": 700,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.125289,
+          47.859583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp6salinplatz",
+        "name": "P6 Salinplatz",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p6-salinplatz",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Salinstraße",
+        "capacity": 222,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.12278,
+          47.852644
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp7altstadtost",
+        "name": "P7 Altstadt-Ost",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p7-altstadt-ost",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "In d. Schmucken",
+        "capacity": 82,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.131288,
+          47.857475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp8beilhackkinopolis",
+        "name": "P8 Beilhack-Kinopolis",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p8-beilhack-kinopolis",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Kufsteiner Str.",
+        "capacity": 160,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.12616,
+          47.850594
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimp9amklinikum",
+        "name": "P9 Am Klinikum",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p9-am-klinikum",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "In d. Schmucken",
+        "capacity": 396,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.13279,
+          47.858313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "rosenheimprklepperstrasse",
+        "name": "P+R Klepperstraße",
+        "type": "garage",
+        "public_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken/p-r-klepperstrasse",
+        "source_url": "https://www.rosenheim.de/buergerservice/mobilitaet/parken",
+        "address": "Klepperstraße 17",
+        "capacity": 395,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.119682,
+          47.84782
+        ]
+      }
+    }
+  ]
+}

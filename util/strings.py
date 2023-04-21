@@ -20,6 +20,8 @@ def guess_lot_type(name: str) -> Optional[str]:
         "parklevel": LotInfo.Types.level,
         "garage": LotInfo.Types.garage,
         "straßenrand": LotInfo.Types.street,
+        "ph ": LotInfo.Types.garage,
+        "tg ": LotInfo.Types.underground,
     }
 
     name = name.lower()

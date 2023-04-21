@@ -132,6 +132,13 @@
         "address": "Badenerstrasse 420",
         "capacity": 520,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.50685,
+          47.38115
+        ]
       }
     },
     {
@@ -243,8 +250,15 @@
         "public_url": "https://www.pls-zh.ch/parkhaus/helvetia.jsp?pid=helvetia",
         "source_url": null,
         "address": "Molkenstrasse 5/9",
-        "capacity": null,
+        "capacity": 11,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.52734,
+          47.37621
+        ]
       }
     },
     {
@@ -398,6 +412,13 @@
         "address": "Schillerstrasse 5",
         "capacity": 299,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54647,
+          47.36558
+        ]
       }
     },
     {
@@ -682,8 +703,15 @@
         "public_url": "https://www.pls-zh.ch/parkhaus/puls5.jsp?pid=puls5",
         "source_url": null,
         "address": "Giessereistrasse 18",
-        "capacity": null,
+        "capacity": 62,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.51795,
+          47.39076
+        ]
       }
     }
   ]

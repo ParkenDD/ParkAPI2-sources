@@ -12,8 +12,8 @@ class Hanau(ScraperBase):
     POOL = PoolInfo(
         id="hanau",
         name="Hanau",
-        public_url="https://erleben.hanau.de/reise/parken/index.html",
-        source_url="https://erleben.hanau.de/reise/parken/072752/index.html",
+        public_url="https://parken-hanau.de/",
+        source_url="https://parken-hanau.de/",
         timezone="Europe/Berlin",
         attribution_contributor="Stadt Hanau",
         attribution_license=None,
@@ -46,7 +46,7 @@ class Hanau(ScraperBase):
 
         parking_data = soup.find('div', class_='container-fluid')
         last_updated = self.to_utc_datetime(parking_data.find('h5').text, 'Letzte Aktualisierung: %d.%m.%Y %H:%M:%S')
-
+        
         for one_parking_lot in parking_data.find_all('div', class_='well'):
             parking_name = self.normalize_lot_name(one_parking_lot.find('b').text.strip())
 

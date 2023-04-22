@@ -7,11 +7,11 @@
         "id": "heilbronnambollwerksturm",
         "name": "Am Bollwerksturm",
         "type": "garage",
-        "public_url": "https://www.stadtwerke-heilbronn.de/swh/parkhaeuser/cityparkhaus-am-bollwerksturm.php",
+        "public_url": "https://www.stadtwerke-heilbronn.de/swh/parkhaeuser/cityparkhaus-am-bollwerksturm-preise-oeffnungszeiten-anfahrt.php",
         "source_url": null,
         "address": "Mannheimer Str. 25",
-        "capacity": 304,
-        "has_live_capacity": false
+        "capacity": 390,
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -24,14 +24,54 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "heilbronnbildungscampusmitte",
+        "name": "heilbronnbildungscampusmitte",
+        "type": "garage",
+        "public_url": "https://bildungscampus.hn/anfahrt/parkhaus-mitte",
+        "source_url": null,
+        "address": "Weipertstraße 51",
+        "capacity": 520,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.214619,
+          49.14886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heilbronnbildungscampusost",
+        "name": "heilbronnbildungscampusost",
+        "type": "garage",
+        "public_url": "https://bildungscampus.hn/anfahrt/parkflaeche-ost",
+        "source_url": null,
+        "address": "Dammstraße 1",
+        "capacity": 332,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.21793,
+          49.14827
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "heilbronncityparkhausexperimenta",
         "name": "City-Parkhaus Experimenta",
         "type": "garage",
-        "public_url": null,
+        "public_url": "https://bildungscampus.hn/anfahrt/parkhaus-experimenta",
         "source_url": null,
         "address": "Bahnhofstraße 6",
         "capacity": 500,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -47,11 +87,11 @@
         "id": "heilbronnharmonie",
         "name": "Harmonie",
         "type": "underground",
-        "public_url": "http://www.bb-parkhaus.de/parken/heilbronn/parkhaus/heilbronn-harmonie/?cHash=2c479f5e651ee8b217593e412c4fe612",
+        "public_url": "https://www.bb-parkhaus.de/parken/heilbronn/parkhaus/heilbronn-harmonie/",
         "source_url": null,
         "address": "Allee 28",
         "capacity": 435,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +111,7 @@
         "source_url": null,
         "address": "Gerberstraße",
         "capacity": 67,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -91,7 +131,7 @@
         "source_url": null,
         "address": "Kiliansstr. 11",
         "capacity": 230,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -104,14 +144,34 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "heilbronnparkplatzbahnhof",
+        "name": "heilbronnparkplatzbahnhof",
+        "type": "level",
+        "public_url": null,
+        "source_url": null,
+        "address": null,
+        "capacity": null,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.21127,
+          49.14379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "heilbronnstadtgalerie",
         "name": "Stadtgalerie",
         "type": "garage",
-        "public_url": "http://www.stadtgalerie-heilbronn.de/das-center/anfahrt-parken/",
+        "public_url": "https://www.stadtgalerie-heilbronn.de/center/anfahrt-parken/parken/",
         "source_url": null,
         "address": "Allerheiligenstraße",
         "capacity": 660,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -127,11 +187,11 @@
         "id": "heilbronntheaterforumk3",
         "name": "Theaterforum K3",
         "type": "underground",
-        "public_url": "https://www.apcoa.de/parken/heilbronn/theaterforum-k3/",
+        "public_url": "https://www.bb-parkhaus.de/parken/heilbronn/parkhaus/heilbronn-k3-theater/",
         "source_url": null,
         "address": "Berliner Platz 12",
         "capacity": 460,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -147,11 +207,11 @@
         "id": "heilbronnwollhaus",
         "name": "Wollhaus",
         "type": "garage",
-        "public_url": "http://www.bb-parkhaus.de/parken/heilbronn/parkhaus/heilbronn-wollhaus/",
+        "public_url": "https://www.bb-parkhaus.de/parken/heilbronn/parkhaus/heilbronn-wollhaus",
         "source_url": null,
         "address": "Am Wollhaus",
         "capacity": 450,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",

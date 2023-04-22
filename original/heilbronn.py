@@ -27,7 +27,7 @@ class Heilbronn(ScraperBase):
 
         last_updated = self.to_utc_datetime(
             soup.find('div', class_='col-sm-12').text,
-            'Datum: %d.%m.%Y - Uhrzeit: %H:%M'
+            'Datum: %d.%m.%Y - Uhrzeit: %H:%M:%S'
         )
 
         parking_lots = soup.find_all( 'div', class_='row carparkContent')
@@ -38,6 +38,11 @@ class Heilbronn(ScraperBase):
                 parking_name = park_temp2.text.strip()
             else:
                 parking_name = park_temp1.text.strip()
+
+            if not parking_name or 'nicht fertiggestellt' in parking_name:
+                # source lists one unnamed parking with zero available spaces, 
+                # and an unfinished parking, just skip these
+                continue
 
             parking_free = None
             parking_state = LotData.Status.nodata
@@ -79,7 +84,7 @@ class Heilbronn(ScraperBase):
                 parking_name = park_temp2.text.strip()
             else:
                 parking_name = park_temp1.text.strip()
-
+            
             kwargs = vars(lot_map[parking_name])
             kwargs["public_url"] = park_temp2["href"] if park_temp2 else None
 

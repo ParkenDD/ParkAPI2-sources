@@ -27,10 +27,10 @@
         "id": "hanauparkhauscitycenter",
         "name": "Parkhaus City Center",
         "type": "garage",
-        "public_url": "https://www.google.de/maps/place/APCOA+Parkhaus+City+Center/@50.1308625,8.921564,18z/data=!4m11!1m8!2m7!1sparkhaus+city+center+hanau!3m5!1sparkhaus+city+center+hanau!2s50.131,+8.9222!4m2!1d8.9221673!2d50.1309612!3m1!1s0x0000000000000000:0x08eb2e7c2b3120a1?hl=de",
+        "public_url": "https://www.apcoa.de/parken/hanau/city-center/",
         "source_url": null,
         "address": "Kurt-Blaum-Platz 8",
-        "capacity": 246,
+        "capacity": 526,
         "has_live_capacity": true
       },
       "geometry": {

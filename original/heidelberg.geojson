@@ -30,7 +30,7 @@
         "public_url": "http://www.heidelberger-stadtwerke.de/cms/Garagen/Parkhaus_Friedrich-Ebert-Platz/Parkhaus_Friedrich-Ebert-Platz.html",
         "source_url": null,
         "address": "Friedrich-Ebert-Platz\n69117 Heidelberg",
-        "capacity": 171,
+        "capacity": 122,
         "has_live_capacity": true
       },
       "geometry": {
@@ -50,7 +50,7 @@
         "public_url": "http://www.apcoa.de/",
         "source_url": null,
         "address": "Graben-/Sandgasse\n69117 Heidelberg",
-        "capacity": 155,
+        "capacity": 100,
         "has_live_capacity": true
       },
       "geometry": {
@@ -70,7 +70,7 @@
         "public_url": "http://www.swhd.de/cms/Garagen/Parkhaus_Kornmarkt_Schloss/Parkhaus_Kornmarkt_Schloss.html",
         "source_url": null,
         "address": "Neue Schlossstraße\n69117 Heidelberg",
-        "capacity": 180,
+        "capacity": 150,
         "has_live_capacity": true
       },
       "geometry": {
@@ -130,7 +130,7 @@
         "public_url": "http://www.pbw.de/",
         "source_url": null,
         "address": "Thibautstr. 1A\n69115 Heidelberg",
-        "capacity": 166,
+        "capacity": 175,
         "has_live_capacity": true
       },
       "geometry": {
@@ -147,10 +147,10 @@
         "id": "heidelbergp16nordbrueckenkopf",
         "name": "P16 Nordbrückenkopf",
         "type": "garage",
-        "public_url": "http://www.swhd.de/cms/Garagen/Parkhaus_Nordbrueckenkopf/Parkhaus_Nordbrueckenkopf.html",
+        "public_url": "https://www.swhd.de/de/Hauptnavigation/Parkhaeuser/Nordbrueckenkopf-P16/",
         "source_url": null,
         "address": "Uferstraße\n69120 Heidelberg",
-        "capacity": 113,
+        "capacity": 120,
         "has_live_capacity": true
       },
       "geometry": {
@@ -230,7 +230,7 @@
         "public_url": null,
         "source_url": null,
         "address": "Berliner Straße 41-49\n69120 Heidelberg",
-        "capacity": 167,
+        "capacity": 177,
         "has_live_capacity": true
       },
       "geometry": {
@@ -239,6 +239,19 @@
           8.675042,
           49.418319
         ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "heidelbergp26kirchheim",
+        "name": "P26 Kirchheim",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": null,
+        "capacity": 55,
+        "has_live_capacity": true
       }
     },
     {
@@ -270,7 +283,7 @@
         "public_url": "http://www.apcoa.de/",
         "source_url": null,
         "address": "Sofienstraße\n69117 Heidelberg",
-        "capacity": 400,
+        "capacity": 440,
         "has_live_capacity": true
       },
       "geometry": {
@@ -290,7 +303,7 @@
         "public_url": "http://www.europaeischerhof.com",
         "source_url": null,
         "address": "Friedrich-Ebert-Anlage 1\n69117 Heidelberg",
-        "capacity": 76,
+        "capacity": 129,
         "has_live_capacity": true
       },
       "geometry": {
@@ -310,7 +323,7 @@
         "public_url": "http://www.swhd.de/cms/Garagen/Parkhaus_Kraus/Parkhaus_Kraus.html",
         "source_url": null,
         "address": "Untere Neckarstraße 2\n69117 Heidelberg",
-        "capacity": 187,
+        "capacity": 141,
         "has_live_capacity": true
       },
       "geometry": {
@@ -330,7 +343,7 @@
         "public_url": null,
         "source_url": null,
         "address": "Plöck 31 - 41\n69117 Heidelberg",
-        "capacity": 471,
+        "capacity": 486,
         "has_live_capacity": true
       },
       "geometry": {
@@ -370,7 +383,7 @@
         "public_url": "http://www.apcoa.de/",
         "source_url": null,
         "address": "Friedrich-Ebert-Anlage 51c\n69117 Heidelberg",
-        "capacity": 360,
+        "capacity": 160,
         "has_live_capacity": true
       },
       "geometry": {

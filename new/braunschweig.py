@@ -22,8 +22,10 @@ class Braunschweig(ScraperBase):
     }
 
     def get_lot_data(self) -> List[LotData]:
+        timestamp = self.now()
         lots = []
-        for feature in self.geojson_response["features"]:
+        geojson = self.request_json(self.POOL.source_url)
+        for feature in geojson["features"]:
             props = feature["properties"]
 
             status = self.STATUS_MAPPING.get(props["openingState"]) or LotData.Status.unknown
@@ -33,7 +35,7 @@ class Braunschweig(ScraperBase):
             lots.append(
                 LotData(
                     id=name_to_id("braunschweig", props["name"]),
-                    timestamp=self.timestamp,
+                    timestamp=timestamp,
                     lot_timestamp=self.to_utc_datetime(props["timestamp"]) if props.get("timestamp") else None,
                     status=status,
                     num_free=props.get("free"),
@@ -44,13 +46,9 @@ class Braunschweig(ScraperBase):
         return lots
 
     def get_lot_infos(self) -> List[LotInfo]:
-        # we'll store the response in the class instance
-        #   and use it in get_lot_data() afterwards
-        self.timestamp = self.now()
-        self.geojson_response = self.request_json(self.POOL.source_url)
-
         lots = []
-        for feature in self.geojson_response["features"]:
+        geojson = self.request_json(self.POOL.source_url)
+        for feature in geojson["features"]:
             props = feature["properties"]
 
             soup = bs4.BeautifulSoup(props["description"], features="html.parser")

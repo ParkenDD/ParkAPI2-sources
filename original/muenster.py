@@ -13,7 +13,7 @@ class Muenster(ScraperBase):
         id="muenster",
         name="Münster",
         public_url="https://www.stadt-muenster.de/tiefbauamt/parkleitsystem",
-        source_url=None,
+        source_url="https://api.dashboard.smartcity.ms/parking",
         timezone="Europe/Berlin",
         attribution_contributor="Amt für Mobilität und Tiefbau Münster",
         attribution_license=None,
@@ -28,45 +28,50 @@ class Muenster(ScraperBase):
 
     def get_lot_data(self) -> List[LotData]:
         timestamp = self.now()
-        soup = self.request_soup(self.POOL.public_url)
-
         lots = []
-
-        lot_table_trs = soup.select("div#parkingList table")[0].find_all("tr")
-        date_field = soup.find(id="lastRefresh").text.strip()
-        last_updated = self.to_utc_datetime(date_field, "%d.%m.%Y %H:%M Uhr")
-
-        for tr in lot_table_trs[1:-1]:
-            tds = tr.find_all("td")
-            type_and_name = self.process_name(tds[0].text.strip())
-            parking_name = tds[0].text.strip()
-
+        
+        fc = self.request_json(self.POOL.source_url)
+        for feature in fc.get('features'):
+            props = feature['properties']
+            (lot_type, parking_name, parking_legacy_name) = self.process_name(props.get('NAME'))
+            
             lots.append(
                 LotData(
                     timestamp=timestamp,
-                    lot_timestamp=last_updated,
-                    id=name_to_legacy_id("muenster", parking_name),
-                    status=self.STATE_MAP.get(tds[2].text, LotData.Status.unknown),
-                    num_free=int_or_none(tds[1].text),
+                    #lot_timestamp=timestamp,
+                    id=parking_legacy_name,
+                    status=self.STATE_MAP.get(props.get('NAME'), LotData.Status.unknown),
+                    num_free=int_or_none(props.get('parkingFree')),
+                    capacity=int_or_none(props.get('parkingTotal')),
                 )
             )
 
         return lots
 
     @classmethod
-    def process_name(cls, name):
-        split_name = name.split()
-        lot_type = split_name[0]
+    def process_name(self, name):
+        fixed_name = name.replace('Parkplatz Busparkplatz', 'Busparkplatz')
+        split_name = fixed_name.split()
+
+        lot_type_text = split_name[0]
         lot_name = (split_name[0] if len(split_name) == 1 else " ".join(split_name[1:])).strip()
 
         type_mapping = {
-            "PP": LotInfo.Types.lot,
-            "PH": LotInfo.Types.garage,
+            "Parkplatz": LotInfo.Types.lot,
+            "Parkhaus": LotInfo.Types.garage,
             "Busparkplatz": LotInfo.Types.bus,
         }
-        lot_type = type_mapping.get(lot_type, LotInfo.Types.unknown)
+        lot_type = type_mapping.get(lot_type_text, LotInfo.Types.unknown)
 
-        return lot_type, lot_name
+        type_abbrevation_mapping = {
+            LotInfo.Types.lot: 'pp',
+            LotInfo.Types.garage: 'ph',
+            LotInfo.Types.bus: '' 
+        }
+        type_abbrevation = type_abbrevation_mapping.get(lot_type, '')
+        lot_legacy_name = name_to_legacy_id(self.POOL.id, type_abbrevation + lot_name)
+
+        return lot_type, lot_name, lot_legacy_name
 
     def get_lot_infos(self) -> List[LotInfo]:
         lot_map = {
@@ -74,23 +79,26 @@ class Muenster(ScraperBase):
             for lot in self.get_v1_lot_infos_from_geojson("Muenster")
         }
 
-        soup = self.request_soup(self.POOL.public_url)
-
         lots = []
-
-        lot_table_trs = soup.select("div#parkingList table")[0].find_all("tr")
-
-        for tr in lot_table_trs[1:-1]:
-            tds = tr.find_all("td")
-            type_and_name = self.process_name(tds[0].text.strip())
-            parking_name = tds[0].text.strip()
-
-            kwargs = vars(lot_map[parking_name])
+        
+        fc = self.request_json(self.POOL.source_url)
+        for feature in fc.get('features'):
+            props = feature['properties']
+            coord = feature['geometry']['coordinates']
+            (lot_type, parking_name, parking_legacy_name) = self.process_name(props.get('NAME'))
+            
+            kwargs = vars(lot_map[parking_name]) if parking_name in lot_map else {}
             kwargs.update(dict(
-                public_url=urllib.parse.urljoin(self.POOL.public_url, tr.find("a")["href"]),
-                type=type_and_name[0],
+                id=parking_legacy_name,
+                name=parking_name,
+                public_url=props.get('URL'),
+                capacity=int_or_none(props.get('parkingTotal')),
+                type=lot_type,
+                has_live_capacity=True,
+                longitude=str(round(coord[0],6)),
+                latitude=round(coord[1],6),
             ))
-
+         
             lots.append(LotInfo(**kwargs))
 
         return lots

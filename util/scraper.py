@@ -382,3 +382,16 @@ class ScraperBase:
                 lots.append(LotInfo(**kwargs))
 
         return lots
+
+    def name_to_legacy_id(self, lot_name):
+        """
+        Helper to convert the current lot name to the backwards compatible ID.
+        This is intended to maintain timeseries information for the whole history
+        of a parking_lot, independent of probably happending renamings.
+
+        Subclasses should try to map renamed parkings to their historical parking ID.
+
+        :param lot_name: str, name of the lot  
+        :return: str, legacy_id, the lot's normalized name, 
+        """
+        return name_to_legacy_id(self.POOL.id, lot_name)

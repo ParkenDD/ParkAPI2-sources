@@ -2,7 +2,7 @@
 Original code and data by Quint
 """
 import re
-import urllib.parse
+from urllib.parse import urljoin
 from typing import List, Tuple, Generator, Optional
 
 import bs4
@@ -23,46 +23,78 @@ class Karlsruhe(ScraperBase):
         attribution_url=None,
     )
 
-    RE_LOT_SPACES = re.compile(r".* (\d+) freie Plätze von (\d+)")
+    """
+    Maps current parking lot names to their former name to provide
+    backward compatibility.
+    """
+    LOT_LEGACY_NAME_MAPPINGS = {
+        "Mendelssohnplatz": "Mendelssohnplatz Scheckin",
+        "Kreuzstraße": "Kreuzstraße (C&A)",
+        "IHK": "Industrie und Handelskammer",
+        "Staatstheater": "Am Staatstheater",
+    }
+
+    RE_CAPACITY = re.compile(r"Insgesamt (\d+) Parkplätze")
 
     def get_lot_data(self) -> List[LotData]:
+        """
+        Expects parking lot data in the format:
+
+        <div class="parkhaus">
+            <br />
+            <div class="fuellstand p-style">
+                044
+                <br />
+                <span class="">
+                    frei
+                    <br />
+                </span>
+            </div>
+            <a href="detail.php?id=S01" class='link-style website-link' title='Parkhaus Landesbibliothek'>
+                Landesbibliothek
+            </a>
+            <br />
+            <img src="pix-leer.gif" width="30" height="30" title="Parkhaus mit freien Plätzen" align="left" vspace="2"/>
+            Insgesamt 86 Parkplätze.
+        </div>
+        """
+
+        soup = self.request_soup(self.POOL.public_url)
+
         lots = []
-        for lot_name, page_url in self.iter_lot_page_urls():
+        timestamp = self.now()
 
-            timestamp = self.now()
-            soup = self.request_soup(page_url)
-
-            div = soup.find("div", class_="parkhausschild")
-
-            status_german = div.parent.find("h3").text.lower()
-            if "geöffnet" in status_german:
-                status = LotData.Status.open
-            elif "geschlossen" in status_german:
-                status = LotData.Status.closed
-            else:
+        lots_elems = soup.find_all( 'div', class_='parkhaus')
+        for parking_lot in lots_elems :
+            lot_name = parking_lot.find('a').text
+            
+            status = LotData.Status.open
+            num_free = 0
+            parking_fuellstand = parking_lot.find( 'div', class_='fuellstand')
+            try :
+                if ( parking_fuellstand == None ) :
+                    status = LotData.Status.nodata
+                else :
+                    temp = parking_fuellstand.text.split()
+                    num_free = int(temp[0])
+            except :
                 status = LotData.Status.unknown
 
-            match = self.RE_LOT_SPACES.match(div.text.replace("\n", " "))
-            if match:
-                num_free, num_total = (int(m) for m in match.groups())
+            num_total = 0
+            
+            match_num_total = self.RE_CAPACITY.search(parking_lot.text)
+            if match_num_total:
+                num_total = int_or_none(match_num_total.groups(1))
                 if num_total == 0:
                     status = LotData.Status.nodata
             else:
                 num_free, num_total = None, None
-
-            timestamp_text = div.parent.find("h3").next_sibling.next_sibling.text.strip()
-            try:
-                lot_timestamp = self.to_utc_datetime(
-                    timestamp_text, "Der letzte Stand ist von %d.%m.%Y - %H:%M Uhr"
-                )
-            except ValueError:
-                lot_timestamp = None
-
+        
             lots.append(
                 LotData(
                     timestamp=timestamp,
-                    lot_timestamp=lot_timestamp,
-                    id=name_to_legacy_id("karlsruhe", lot_name),
+                    #lot_timestamp=lot_timestamp,
+                    id=self.name_to_legacy_id(lot_name),
                     status=status,
                     num_free=num_free,
                     capacity=num_total,
@@ -71,41 +103,63 @@ class Karlsruhe(ScraperBase):
         return lots
 
     def get_lot_infos(self) -> List[LotInfo]:
-        lot_map = {
-            lot.name: lot
+        """
+        Generates current lot information from v1 data, updated by 
+        data parsed from current public_url and detail pages linked there.
+        Only currently existing parking lots are returned, though their IDs 
+        might have been mapped to their v1 names for backward compatibility.
+        """
+        v1_lot_map = {
+            lot.id: lot
             for lot in self.get_v1_lot_infos_from_geojson("Karlsruhe")
         }
 
         lots = []
-        for lot_name, page_url in self.iter_lot_page_urls():
-            soup = self.request_soup(page_url)
-
-            div = soup.find("div", class_="parkhausschild")
-            match = self.RE_LOT_SPACES.match(div.text.replace("\n", " "))
-            if match:
-                num_free, num_total = (int(m) for m in match.groups())
-            else:
-                num_free, num_total = None, None
-
-            h4 = [e for e in soup.find_all("h4") if e.text == "Adresse Parkhaus"][0]
-            address = get_soup_text(h4.find_next_sibling("p"))
-
-            kwargs = vars(lot_map[lot_name])
-            kwargs.update(dict(
-                has_live_capacity=True,
-                address=address,
-                capacity=num_total or kwargs["capacity"],
-                public_url=page_url,
-            ))
+        soup = self.request_soup(self.POOL.public_url)
+        lots_elems = soup.find_all( 'div', class_='parkhaus')
+        for parking_lot in lots_elems:
+            lot_name = parking_lot.find('a').text
+            lot_id = self.name_to_legacy_id(lot_name)
+            public_url = urljoin(self.POOL.public_url, parking_lot.find('a')['href'])
+            details = self._get_lot_details(public_url)
+            
+            v1_lot = v1_lot_map.get(lot_id)
+            v1_lot_props = vars(v1_lot) if v1_lot else {}
+            
+            # kwargs is the merge of multiple data sources, defaults are 
+            # overridden by v1 info, which are overridden by parsed data
+            kwargs = {"type": "garage"} | v1_lot_props | dict(
+                    id=lot_id,
+                    name=lot_name,
+                    has_live_capacity=True,
+                    capacity=v1_lot_props.get("total"),
+                    public_url=public_url,
+                ) | details
             lots.append(LotInfo(**kwargs))
 
         return lots
 
-    def iter_lot_page_urls(self, soup: Optional[bs4.BeautifulSoup] = None) -> Generator[Tuple[str, str], None, None]:
-        if soup is None:
-            soup = self.request_soup(self.POOL.public_url)
+    def name_to_legacy_id(self, lot_name) -> str:
+        legacy_name = self.LOT_LEGACY_NAME_MAPPINGS.get(lot_name, lot_name)
+        return super().name_to_legacy_id(legacy_name)
+   
+    def _get_lot_details(self, url) -> dict:
+        """
+        Retrieves information from lot details page, i.e. capacity and address
+        :param url, url of the details page
+        :return 
+        """
+        details_soup = self.request_soup(url)
+        td_mappings = {"Adresse": "address", "Kurzparker-Stellplätze": "capacity"}
+        trs = details_soup.find_all("tr")
 
-        for div in soup.find_all("div", class_="parkhaus"):
-            a = div.find("a")
-            yield a.text.strip(), urllib.parse.urljoin(self.POOL.public_url, a["href"])
+        details = {}
+        for tr in trs:
+            key = td_mappings.get(tr.td.text)
+            if key == "capacity":
+                details[key] = int_or_none(tr.td.find_next_sibling("td").text)
+            elif key == "address":
+                details[key] = "\n".join(tr.td.find_next_sibling("td").strings)
+
+        return details
 

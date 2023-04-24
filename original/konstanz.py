@@ -20,6 +20,14 @@ class Konstanz(ScraperBase):
         attribution_url=None,
     )
 
+    """
+    Maps current parking lot names to their former name to provide
+    backward compatibility.
+    """
+    LOT_LEGACY_NAME_MAPPINGS = {
+        "Augustiner": "Augustiner/Karstadt",
+    }
+
     def get_lot_data(self) -> List[LotData]:
         lots = []
         for lot_name, url in self.iter_lot_page_urls():
@@ -49,7 +57,7 @@ class Konstanz(ScraperBase):
             lots.append(
                 LotData(
                     timestamp=timestamp,
-                    id=name_to_legacy_id("konstanz", lot_name),
+                    id=self.name_to_legacy_id(lot_name),
                     status=status,
                     num_free=num_free,
                     capacity=capacity,
@@ -60,7 +68,7 @@ class Konstanz(ScraperBase):
 
     def get_lot_infos(self) -> List[LotInfo]:
         lot_map = {
-            lot.name: lot
+            lot.id: lot
             for lot in self.get_v1_lot_infos_from_geojson("Konstanz")
         }
 
@@ -77,8 +85,15 @@ class Konstanz(ScraperBase):
             except ValueError:
                 address = None
 
-            kwargs = vars(lot_map[lot_name])
-            kwargs["has_live_capacity"] = True
+            lot_id = self.name_to_legacy_id(lot_name)
+            kwargs = vars(lot_map[lot_id]) if lot_id in lot_map else {}
+
+            kwargs = kwargs | {
+                "id": lot_id,
+                "name": lot_name,
+                "has_live_capacity": True
+            }
+
             if address:
                 kwargs["address"] = address
 
@@ -96,3 +111,8 @@ class Konstanz(ScraperBase):
                     continue
 
                 yield a.text.strip(), url
+
+    def name_to_legacy_id(self, lot_name) -> str:
+        legacy_name = self.LOT_LEGACY_NAME_MAPPINGS.get(lot_name, lot_name)
+        return name_to_legacy_id(self.POOL.id, legacy_name)
+

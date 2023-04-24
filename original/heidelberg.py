@@ -68,7 +68,7 @@ class Heidelberg(ScraperBase):
 
     def get_lot_infos(self) -> List[LotInfo]:
         lot_map = {
-            lot.name.strip(): lot
+            lot.id: lot
             for lot in self.get_v1_lot_infos_from_geojson("Heidelberg")
         }
 
@@ -79,18 +79,19 @@ class Heidelberg(ScraperBase):
         for parking_lot in dataJSON['data']['parkinglocations'] :
             # please keep the name in the geojson-file in the same form as delivered here (including spaces)
             parking_name = ('P'+str(parking_lot['uid'])+' '+parking_lot['name']).strip()
+            lot_id = name_to_legacy_id(self.POOL.id, parking_name)
 
             try:
                 parking_capacity = int(parking_lot['parkingupdate']['total'])
             except:
                 parking_capacity = None
 
-            original_lot = vars(lot_map.get(parking_name) or dict())
+            original_lot = vars(lot_map.get(lot_id)) if lot_id in lot_map else {}
 
             lots.append(
                 LotInfo(
-                    id=name_to_legacy_id("heidelberg", parking_name),
-                    type=original_lot.get("type"),
+                    id=name_to_legacy_id(self.POOL.id, parking_name),
+                    type=original_lot.get("type") or 'garage',
                     name=parking_name,
                     capacity=parking_capacity,
                     public_url=parking_lot.get("website"),

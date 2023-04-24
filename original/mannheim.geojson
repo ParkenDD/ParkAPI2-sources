@@ -11,7 +11,7 @@
         "source_url": null,
         "address": "C1,13-15",
         "capacity": 211,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -31,7 +31,7 @@
         "source_url": null,
         "address": "Cahn-Garnier-Ufer",
         "capacity": 213,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -51,7 +51,7 @@
         "source_url": null,
         "address": "Collini-Str. 1",
         "capacity": 650,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -71,7 +71,7 @@
         "source_url": null,
         "address": "D3, 5",
         "capacity": 378,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -91,7 +91,7 @@
         "source_url": null,
         "address": "Freistuhl 5",
         "capacity": 365,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -111,7 +111,7 @@
         "source_url": null,
         "address": "D5",
         "capacity": 337,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -131,7 +131,7 @@
         "source_url": null,
         "address": "H6 (Swanseaplatz)",
         "capacity": 271,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -151,7 +151,7 @@
         "source_url": null,
         "address": "Willy-Brandt-Platz 5",
         "capacity": 327,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -171,7 +171,7 @@
         "source_url": null,
         "address": "Heinrich-von-Stephan-Str. 6",
         "capacity": 326,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -185,13 +185,13 @@
       "type": "Feature",
       "properties": {
         "id": "mannheimhauptbahnhofp3p4parkhaus",
-        "name": "Hauptbahnhof P3/P4, Parkhaus",
+        "name": "Hauptbahnhof P3, Parkhaus",
         "type": "garage",
         "public_url": "https://www.parken-mannheim.de/p/HBFP3",
         "source_url": null,
         "address": "Kepler-Str. 21-25",
         "capacity": 264,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -211,7 +211,7 @@
         "source_url": null,
         "address": "Kolpingstraße 2",
         "capacity": 584,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -231,7 +231,7 @@
         "source_url": null,
         "address": "Theodor-Kutzer-Ufer",
         "capacity": 313,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -251,7 +251,7 @@
         "source_url": null,
         "address": "Theodor-Kutzer-Ufer",
         "capacity": 509,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -271,7 +271,7 @@
         "source_url": null,
         "address": "Friedrichsplatz 5a",
         "capacity": 406,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -291,7 +291,7 @@
         "source_url": null,
         "address": "M4a",
         "capacity": 68,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -311,7 +311,7 @@
         "source_url": null,
         "address": "N1,3",
         "capacity": 441,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -331,7 +331,7 @@
         "source_url": null,
         "address": "N6, 3",
         "capacity": 201,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -351,33 +351,13 @@
         "source_url": null,
         "address": "N6, 3",
         "capacity": 298,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           8.469266,
           49.484904
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "mannheimnationaltheater",
-        "name": "Nationaltheater",
-        "type": "lot",
-        "public_url": "https://www.parken-mannheim.de/p/9dfdcf84-3e67-4747-905f-b4b6c7c97c93",
-        "source_url": null,
-        "address": "Hebelstraße",
-        "capacity": 160,
-        "has_live_capacity": false
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.479093,
-          49.488723
         ]
       }
     },
@@ -391,7 +371,7 @@
         "source_url": null,
         "address": "Xaver-Fuhr-Straße 152",
         "capacity": 348,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -411,7 +391,7 @@
         "source_url": null,
         "address": "Xaver-Fuhr-Straße 152",
         "capacity": 815,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -431,7 +411,7 @@
         "source_url": null,
         "address": "Xaver-Fuhr-Straße 152",
         "capacity": 850,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -451,7 +431,7 @@
         "source_url": null,
         "address": "Xaver-Fuhr-Straße 152",
         "capacity": 1520,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
@@ -471,7 +451,7 @@
         "source_url": null,
         "address": "U2 (Herschelplatz)",
         "capacity": 190,
-        "has_live_capacity": false
+        "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",

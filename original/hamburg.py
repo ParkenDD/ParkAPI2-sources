@@ -3,12 +3,14 @@ Original code and data by Kliemann
 """
 from typing import List
 
+import datetime 
 import utm
+
 
 from util import *
 
 
-class Dortmund(ScraperBase):
+class Hamburg(ScraperBase):
 
     POOL = PoolInfo(
         id="hamburg",
@@ -23,32 +25,43 @@ class Dortmund(ScraperBase):
 
     def get_lot_data(self) -> List[LotData]:
         lots = []
-        last_updated = self.to_utc_datetime(self.soup.find('wfs:featurecollection')["timestamp"])
 
-        for member in self.soup.find('wfs:featurecollection').find_all('gml:featuremember'):
+        soup = self.request_soup(self.POOL.source_url)
+        last_updated = self.to_utc_datetime(soup.find('wfs:featurecollection')["timestamp"])
+
+        for member in soup.find('wfs:featurecollection').find_all('gml:featuremember'):
             count = None
             try:
-                count = int(member.find('app:stellplaetze_gesamt').string)
+                count = int(member.find('de.hh.up:stellplaetze_gesamt').string)
             except AttributeError:
                 pass
 
             free = None
             state = "nodata"
-            situation = member.find('app:situation')
+            situation = member.find('de.hh.up:situation')
             if situation and situation.string != "keine Auslastungsdaten":
-                free = int(member.find('app:frei').string)
-                status = member.find('app:status').string
+                free = int(member.find('de.hh.up:frei').string)
+                status = member.find('de.hh.up:status').string
                 if status == "frei" or status == "besetzt":
                     state = "open"
+                elif status == "störung":
+                    state = "error"
                 else:
                     state = "closed"
 
-            lot_id = member.find('app:id').string
+            lot_id = member.find('de.hh.up:id').string
+
+            received = member.find('de.hh.up:received')
+            if received:
+                timestamp_string = received.string
+                lot_timestamp = datetime.datetime.strptime(timestamp_string, "%d.%m.%Y, %H:%M")
+            else:
+                lot_timestamp = None
 
             lots.append(
                 LotData(
-                    timestamp=self.request_timestamp,
-                    lot_timestamp=last_updated,
+                    timestamp=last_updated,
+                    lot_timestamp=lot_timestamp,
                     # TODO: Note that original id is just 'lot_id' without the prefix
                     #   but that's not a good idea.
                     id=name_to_id("hamburg", lot_id),
@@ -62,32 +75,31 @@ class Dortmund(ScraperBase):
 
     def get_lot_infos(self) -> List[LotInfo]:
         self.request_timestamp = self.now()
-        self.soup = self.request_soup(self.POOL.source_url)
+        soup = self.request_soup(self.POOL.source_url)
 
         lots = []
 
-        for member in self.soup.find('wfs:featurecollection').find_all('gml:featuremember'):
-            name = member.find('app:name').string
+        for member in soup.find('wfs:featurecollection').find_all('gml:featuremember'):
+            name = member.find('de.hh.up:name').string
             count = None
             try:
-                count = int(member.find('app:stellplaetze_gesamt').string)
+                count = int(member.find('de.hh.up:stellplaetze_gesamt').string)
             except AttributeError:
                 pass
 
-            lot_type = member.find('app:art').string
-            if lot_type == "Straßenrand":
-                lot_type = "Parkplatz"
+            lot_type = member.find('de.hh.up:art').string
             lot_type = guess_lot_type(lot_type)
-
-            lot_id = member.find('app:id').string
+            # In case of status=Störung, temporarilly no situtation is delivered
+            has_live_capacity = not member.find('de.hh.up:situation') or member.find('de.hh.up:situation').string != "keine Auslastungsdaten"
+            lot_id = member.find('de.hh.up:id').string
             address = ""
             try:
-                address = member.find('app:einfahrt').string
+                address = member.find('de.hh.up:einfahrt').string
             except AttributeError:
                 try:
-                    address = member.find('app:strasse').string
+                    address = member.find('de.hh.up:strasse').string
                     try:
-                        address += " " + member.find('app:hausnr').string
+                        address += " " + member.find('de.hh.up:hausnr').string
                     except (AttributeError, TypeError):
                         pass
                 except AttributeError:
@@ -112,7 +124,7 @@ class Dortmund(ScraperBase):
                     type=lot_type,
                     address=address or None,
                     capacity=count,
-                    has_live_capacity=True,
+                    has_live_capacity=has_live_capacity,
                     latitude=coords["lat"] if coords else None,
                     longitude=coords["lng"] if coords else None,
                 )

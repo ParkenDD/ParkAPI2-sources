@@ -1,0 +1,2498 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10001",
+        "name": "Alsterhaus",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Poststraße",
+        "capacity": 87,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.991765368130983,
+          53.55266863496544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10002",
+        "name": "Am Hauptbahnhof",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Borgesch 1",
+        "capacity": 547,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.009583215995507,
+          53.554722838488225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10003",
+        "name": "Bavaria Office",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Zirkusweg 4",
+        "capacity": 58,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.966681013020908,
+          53.547888102053136
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10004",
+        "name": "Berliner Tor",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Berliner Tor 3a",
+        "capacity": 328,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.021679349894358,
+          53.556676813609236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10005",
+        "name": "Billstedt Center Hamburg",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "a) P-Nord: Reclamstraße 2|P-Süd: Am alten Zoll 1",
+        "capacity": 1320,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.103887134947586,
+          53.54034153393774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10006",
+        "name": "Parkhaus Stadthöfe (Bleichenhof)",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Große Bleichen 35",
+        "capacity": 590,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.98664806689258,
+          53.55194593500663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10007",
+        "name": "Radison Blu",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Marseiller Straße 1",
+        "capacity": 700,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.987726812751315,
+          53.56113522750232
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10010",
+        "name": "Deichtorhallen",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Oberbaumbrücke",
+        "capacity": 37,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.004968591063431,
+          53.546896363340785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10011",
+        "name": "Deutsch Japanisches Zentrum",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Stadthausbrücke 1",
+        "capacity": 304,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.985204032539448,
+          53.55121608622555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10012",
+        "name": "Elbphilharmonie",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Platz der Deutschen Einheit 1",
+        "capacity": 297,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.984820182730566,
+          53.54130630521144
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10013",
+        "name": "Europa-Passage",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hermannstraße 09 - 11",
+        "capacity": 700,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.996677118099571,
+          53.55194755269642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10014",
+        "name": "Fleethof",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Stadthausbrücke 3",
+        "capacity": 63,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.98566120631773,
+          53.55028115930866
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10015",
+        "name": "City-Parkhaus",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "a) Raboisen |b) Rosenstraße",
+        "capacity": 1110,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.00079198030274,
+          53.552931553508365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10016",
+        "name": "Große Reichenstraße",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Große Reichenstraße 14",
+        "capacity": 965,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.99629659899941,
+          53.54832019416279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10017",
+        "name": "Gänsemarkt",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Welckerstraße",
+        "capacity": 550,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.986815010561951,
+          53.55753206277427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10018",
+        "name": "Hafentor",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Johannisbollwerk",
+        "capacity": 253,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.973081438959888,
+          53.54510816546219
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10019",
+        "name": "Hanse-Viertel",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hohe Bleichen 22",
+        "capacity": 440,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.987477155994998,
+          53.55364512954279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10020",
+        "name": "Hanseatic Trade Center",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Am Sandtorkai 74-77",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.983116513660034,
+          53.54247608361356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10021",
+        "name": "Holzdamm / Ibis",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Holzdamm 4-12",
+        "capacity": 250,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.004742529315987,
+          53.55646497577975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10022",
+        "name": "Hühnerposten",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hühnerposten 1",
+        "capacity": 427,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.007784322710304,
+          53.54921196759773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10024",
+        "name": "Kaufhof (Galeria Kaufhof)",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Bugenhagenstraße 1",
+        "capacity": 328,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.004655274388105,
+          53.55065418788849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10025",
+        "name": "Saturn",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Lange Mühren 12",
+        "capacity": 300,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.005368212274258,
+          53.550581237706275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10026",
+        "name": "Kunsthalle",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Ferdinandstor 1",
+        "capacity": 111,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.00159822928621,
+          53.55601583099195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10027",
+        "name": "Madison",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Herrengraben",
+        "capacity": 190,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.981579723885263,
+          53.54640491453065
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10028",
+        "name": "Marriott",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Neue ABC-Straße",
+        "capacity": 129,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.986674510391465,
+          53.554872754115884
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10029",
+        "name": "Messe-Mitte",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Lagerstraße 1",
+        "capacity": 850,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.973745028106958,
+          53.560927283678986
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10030",
+        "name": "Messe-Ost",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "bei Halle B5",
+        "capacity": 819,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.980077544823104,
+          53.55976688169459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10031",
+        "name": "Michel-Garage",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "a) Schaarsteinweg|b) Neustädter Neuer Weg",
+        "capacity": 297,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.978062986736925,
+          53.54651605769851
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10032",
+        "name": "Millerntor",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Kleine Seilerstraße",
+        "capacity": 555,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9678113084842,
+          53.550518123009475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10034",
+        "name": "Neues Steintor",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "a) Hammerbrookstraße; b) Beim Strohhause",
+        "capacity": 590,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.019774160825547,
+          53.551997727989
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10035",
+        "name": "Nomis Quartier",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Simon-von-Utrecht-Straße 63",
+        "capacity": 271,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.965600309823884,
+          53.55114230962858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10037",
+        "name": "Reeperbahn-Garagen (Spielbudenplatz)",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Spielbudenplatz",
+        "capacity": 200,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.966902484877856,
+          53.549729284898206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10038",
+        "name": "Rödingsmarkt",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Herrlichkeit",
+        "capacity": 872,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.985252563893866,
+          53.54679681711099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10039",
+        "name": "Speicherstadt",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Am Sandtorkai 6",
+        "capacity": 450,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.994344158768369,
+          53.54354424629015
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10040",
+        "name": "Überseequartier Nord",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Überseeallee 3",
+        "capacity": 335,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.99739692905376,
+          53.54157691995443
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10045",
+        "name": "Bahnhof Altona",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "a) Scheel-Plessen-Straße|b) Präsident-Krahn-Straße",
+        "capacity": 409,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.934095252093464,
+          53.55300881636325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10046",
+        "name": "Blankenese P1",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Sülldorfer Kirchenweg 2b",
+        "capacity": 170,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.81396072841334,
+          53.5644062939911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10047",
+        "name": "Elbe Einkaufszentrum (EEZ)",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Osdorfer Landstraße 131",
+        "capacity": 2200,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.858773115020059,
+          53.57081953959789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10048",
+        "name": "Hahnenkamp",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hahnenkamp 1",
+        "capacity": 70,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.933301512316286,
+          53.55318304322494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10050",
+        "name": "Holzhafen",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Große Elbstraße 61",
+        "capacity": 445,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.942748304416403,
+          53.5441944886667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10051",
+        "name": "Neue Flora",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Stresemannstraße 161",
+        "capacity": 351,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.949652509977735,
+          53.56291029678138
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10052",
+        "name": "Neues Forum",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Lawaetzweg 4",
+        "capacity": 75,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.941704801001514,
+          53.551272397973676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10053",
+        "name": "Othmarschen Park",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Jürgen-Töpfer-Straße 1",
+        "capacity": 800,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.901260745309063,
+          53.55829801154734
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10054",
+        "name": "Schillerstraße (CCA)",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Schillerstraße 44",
+        "capacity": 130,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.938501483255711,
+          53.55072783123033
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10055",
+        "name": "Stadtlagerhaus",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Große Elbstraße 27",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.949833024215286,
+          53.54426367138288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10056",
+        "name": "Parkplatz blau",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "über Parkplatz grau",
+        "capacity": 200,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.900860122080335,
+          53.589486066410075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10057",
+        "name": "Parkplatz braun",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Schnackenburgallee",
+        "capacity": 1100,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.914368512755885,
+          53.582663537306665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10058",
+        "name": "Parkplatz gelb",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Schnackenburgallee/August-Kirch-Straße",
+        "capacity": 350,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.904024689551841,
+          53.5866715138403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10059",
+        "name": "Parkplatz grau",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hellgrundweg",
+        "capacity": 350,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.89949278414751,
+          53.59117308186523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10060",
+        "name": "Parkplatz grün",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Luruper Chaussee",
+        "capacity": 200,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.883304558226003,
+          53.58119829989961
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10062",
+        "name": "Parkplatz rot",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hellgrundweg",
+        "capacity": 1900,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.896728048636746,
+          53.58876004645129
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10063",
+        "name": "Parkplatz weiß",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "über Parkplatz gelb",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.901853809398007,
+          53.58688734211216
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10064",
+        "name": "Hagenbecks Tierpark",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Lokstedter Grenzstraße 9",
+        "capacity": 491,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.942606754306015,
+          53.59527665621189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10065",
+        "name": "Karstadt Eimsbüttel",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Henriettenstraße 52",
+        "capacity": 307,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.952692454463632,
+          53.575086495465364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10066",
+        "name": "Tibarg Center",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Paul-Sorge-Straße",
+        "capacity": 407,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.951528054827016,
+          53.62311875008275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10067",
+        "name": "EKZ Nedderfeld",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Nedderfeld 70",
+        "capacity": 526,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.97554533093461,
+          53.60107971360275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10068",
+        "name": "Facharztklinik",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Martinistraße 72",
+        "capacity": 206,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.973031296801746,
+          53.588134344303846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10069",
+        "name": "Hamburger Meile",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Desenißstraße",
+        "capacity": 159,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.03341644534654,
+          53.5752514182415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10070",
+        "name": "Hamburger Meile",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Humboldtstraße 6",
+        "capacity": 2000,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.028114317164286,
+          53.571873810478046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10071",
+        "name": "Hamburger Meile",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Adolph-Schönfelder-Straße 5",
+        "capacity": 50,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.033859142666584,
+          53.57526367440943
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10072",
+        "name": "Marie-Jonas-Platz",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Kümmellstraße 4",
+        "capacity": 275,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.985121543327093,
+          53.59037652004435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10073",
+        "name": "Mundsburg Center",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Humboldtstraße 3-11",
+        "capacity": 298,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.028111880440942,
+          53.57187545842771
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10074",
+        "name": "Uniklinik Eppendorf",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Martinistraße 52",
+        "capacity": 915,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.97406910725362,
+          53.590262673697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10075",
+        "name": "Winterhuder Markt",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Winterhuder Markt 6-7a",
+        "capacity": 230,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.000426422547218,
+          53.59405228845315
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10076",
+        "name": "Alstertal Einkaufszentrum (AEZ) Ost",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Heegbarg, Saseler Damm",
+        "capacity": 1147,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.09282038657267,
+          53.65544663572423
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10077",
+        "name": "EKZ Tonndorf",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Tonndorfer Hauptstraße 67",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.127023692627246,
+          53.58707768806654
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10078",
+        "name": "Friedrich-Ebert-Damm",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Friedrich-Ebert-Damm 112",
+        "capacity": 257,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.09224100733697,
+          53.586420079874536
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10079",
+        "name": "Heegbarg",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Heegbarg 2-8",
+        "capacity": 600,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.093601112991545,
+          53.6532619762514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10080",
+        "name": "Karstadt Wandsbek Parkhaus 1",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Quarree 8-10",
+        "capacity": 350,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.06557351681539,
+          53.57259680234674
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10081",
+        "name": "Rahlstedt",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Mecklenburger Straße 5",
+        "capacity": 445,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.156481019029242,
+          53.603728717381806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10082",
+        "name": "Smart City",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Friedrich-Ebert-Damm 126",
+        "capacity": 452,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.09724355577409,
+          53.588376466494495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10083",
+        "name": "CCB Einkaufzentrum",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Weidenbaumsweg",
+        "capacity": 410,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.207201251478141,
+          53.488622994381586
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10084",
+        "name": "CCB Fachmarktzentrum",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Stuhlrohrstraße",
+        "capacity": 602,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20603583656333,
+          53.48716754118495
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10085",
+        "name": "Marktkauf-Center Bergedorf",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hein-Möller-Weg",
+        "capacity": 100,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20596836297672,
+          53.491833409287985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10087",
+        "name": "H4 Hotel",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Holzhude 2",
+        "capacity": 150,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.209342521228812,
+          53.486716519743
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10088",
+        "name": "Sachsentor",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Bergedorfer Schloßstraße 10",
+        "capacity": 250,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.21429683935547,
+          53.48809298876207
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10089",
+        "name": "Sander Markt",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Sander Markt",
+        "capacity": 220,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.20802768358411,
+          53.49446837308301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10090",
+        "name": "Frascatiplatz",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Frascatiplatz",
+        "capacity": 450,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.21154236137586,
+          53.48360625920354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10091",
+        "name": "Lohbrügger Marktplatz",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Lohbrügger Markt",
+        "capacity": 180,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.207399900421617,
+          53.49622249870757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10092",
+        "name": "City Galerie",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Harburger Ring 17",
+        "capacity": 68,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.983219651025163,
+          53.45965952000598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10093",
+        "name": "Harburg Arcaden",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Harburger Ring 25",
+        "capacity": 457,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.981047553882206,
+          53.460483905299974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10094",
+        "name": "Harburg Carree",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Wilstorfer Straße 48",
+        "capacity": 900,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.984224375795996,
+          53.456391657854795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10095",
+        "name": "Harburg Center",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Schüttstraße 1",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.985093103128266,
+          53.45859264892837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10096",
+        "name": "Buxtehuder Straße/Karstadt",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Küchgarten 21",
+        "capacity": 592,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.9843271043883,
+          53.462363019892535
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10097",
+        "name": "Krummholzberg",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Krummholzberg 10",
+        "capacity": 208,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.982497248467848,
+          53.45766954588581
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10098",
+        "name": "Marktkauf-Center Harburg",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Goldschmidstraße",
+        "capacity": 799,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.985875717592767,
+          53.459262400254474
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10099",
+        "name": "Phoenix Center",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "a) Hannoversche Straße|b) Wilstorfer Straße",
+        "capacity": 1400,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.987355764960691,
+          53.45539773671155
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10100",
+        "name": "Veritaskai",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Veritaskai 2a",
+        "capacity": 350,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.98765334634482,
+          53.46567323812707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10102",
+        "name": "Parkplatz Cruise Center",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Van-der-Smissen-Strasse 5",
+        "capacity": 312,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.938025261388564,
+          53.54389275359185
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10103",
+        "name": "Marktplatz-Galerie Bramfeld",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Ein- und Ausfahrt über Herthastraße",
+        "capacity": 438,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.076130065158726,
+          53.61193574736285
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10104",
+        "name": "Langenhorner Chaussee 365",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": null,
+        "capacity": null,
+        "has_live_capacity": false
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10105",
+        "name": "Rindermarkthalle",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Neuer Kamp 31",
+        "capacity": 400,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.96782614965382,
+          53.55677518677687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10106",
+        "name": "Ottensen",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Piependreiherweg 2",
+        "capacity": 35,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.928344610813603,
+          53.553206223534985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10107",
+        "name": "Falkenried",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Lehmweg 7",
+        "capacity": 162,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.97641837449245,
+          53.57933340254779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10108",
+        "name": "Elbarkaden",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Honkongstr. 6-10 A",
+        "capacity": 125,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.001305675289679,
+          53.54248537737457
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10109",
+        "name": "W 1",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Brauhausstieg 1",
+        "capacity": 316,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.06042791954746,
+          53.57147007229254
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10110",
+        "name": "Karstadt Wandsbek Parkhaus 2",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Quarree 8-10",
+        "capacity": 571,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.067200408198806,
+          53.57367322467424
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10111",
+        "name": "Tanzende Türme",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Zirkusweg 20",
+        "capacity": 310,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.96811265614523,
+          53.54948551183325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10112",
+        "name": "Hansa- Theater",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Bremer Reihe 16-18",
+        "capacity": 51,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.010607356303085,
+          53.55381963973332
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10113",
+        "name": "Harburg Bahnhof",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hannoversche Str.",
+        "capacity": 53,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.990519222171393,
+          53.45553696918643
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10114",
+        "name": "Rahlstedt",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Boizenburger Weg",
+        "capacity": 65,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.156851926106986,
+          53.60438107245624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10115",
+        "name": "Hühnerposten",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hühnerposten 1-2",
+        "capacity": 16,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.008628664623778,
+          53.54950452503764
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10116",
+        "name": "Alstertal Einkaufszentrum (AEZ) Mitte",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Kritenbarg, Heegbarg,",
+        "capacity": 975,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.092196026926795,
+          53.653489448712385
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10117",
+        "name": "Alstertal Einkaufszentrum (AEZ) West",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Kritenbarg, Heegbarg,",
+        "capacity": 600,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.088691472705078,
+          53.65282760211715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10118",
+        "name": "Alter Wall / BUCERIUS-Passage",
+        "type": "underground",
+        "public_url": null,
+        "source_url": null,
+        "address": "Alter Wall 20-22",
+        "capacity": 150,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.990806413913743,
+          53.55055947879084
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10119",
+        "name": "Courtyard by Marriott Hamburg Airport",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Flughafenstraße 47",
+        "capacity": 234,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.012318697895012,
+          53.63983116481766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1012",
+        "name": "Suerhop",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Drosselweg",
+        "capacity": 20,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.85491032866857,
+          53.31594499030631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10120",
+        "name": "Parkhaus P1, Ebene 0",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Flughafenstraße 1 bis 3",
+        "capacity": 400,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.007195993904423,
+          53.63598599385447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10121",
+        "name": "Parkhaus P1, Ebene 1-5",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Flughafenstraße 1 bis 3",
+        "capacity": 2400,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.007195993904423,
+          53.63598599385447
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10122",
+        "name": "Parkhaus P2",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Flughafenstraße 1 bis 3",
+        "capacity": 2100,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.007381999199714,
+          53.63398700088275
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10123",
+        "name": "Parkhaus P4, Ebene 0",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Flughafenstraße 1 bis 3",
+        "capacity": 1200,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.007625996592777,
+          53.6321629997353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10124",
+        "name": "Parkhaus P4, Ebene 1 + 2",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Flughafenstraße 1 bis 3",
+        "capacity": 2400,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.007625996592777,
+          53.6321629997353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10125",
+        "name": "Parkhaus P5",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Flughafenstraße 1 bis 3",
+        "capacity": 700,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.006602006235223,
+          53.63037999570472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10126",
+        "name": "Parkhaus P8-9",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Weg beim Jäger",
+        "capacity": 2000,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.999524992450883,
+          53.620388996448476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-10127",
+        "name": "Mercado (Einkaufszentrum)",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Hahnenkamp 3",
+        "capacity": 400,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.933274373392502,
+          53.55323046491872
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1018",
+        "name": "Dahlenburg",
+        "type": "street",
+        "public_url": null,
+        "source_url": null,
+        "address": "Bahnhofsweg",
+        "capacity": 6,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.708917159521013,
+          53.16969723701287
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1024",
+        "name": "Ruschwedel",
+        "type": "street",
+        "public_url": null,
+        "source_url": null,
+        "address": "Ruschwedeler Straße",
+        "capacity": 6,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.55936739210492,
+          53.44666277337766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1044",
+        "name": "Echem",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Bahnhofstraße",
+        "capacity": 18,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.536790260087479,
+          53.33713455287564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1077",
+        "name": "Tanneneck",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Buchenweg",
+        "capacity": 32,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.943234297894245,
+          53.75551453100247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1094",
+        "name": "Holstentherme",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Norderstraße",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.945687635060398,
+          53.839173875389086
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1096",
+        "name": "Kaltenkirchen Süd",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Werner-von-Siemens-Straße",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.973234745098118,
+          53.823240484570505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1097",
+        "name": "dodenhof",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Kieler Straße",
+        "capacity": null,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.938193235560579,
+          53.84447388347356
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1106",
+        "name": "Quickborner Straße",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Am Umspannwerk",
+        "capacity": 22,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.989528819942652,
+          53.734309030668896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1107",
+        "name": "Richtweg",
+        "type": "street",
+        "public_url": null,
+        "source_url": null,
+        "address": "Dahlienstieg",
+        "capacity": 20,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.99036219660316,
+          53.695761972528054
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "hamburg-1110",
+        "name": "Haslohfurth",
+        "type": "lot",
+        "public_url": null,
+        "source_url": null,
+        "address": "Schleswiger Hagen",
+        "capacity": 10,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.987101021294375,
+          53.744331230842086
+        ]
+      }
+    }
+  ]
+}

@@ -88,7 +88,7 @@
         "type": {
           "type": "string",
           "maxLength": 32,
-          "pattern": "lot|garage|underground|level|bus|unknown"
+          "pattern": "lot|garage|underground|level|street|bus|unknown"
         },
         "public_url": {
           "type": ["string", "null"],

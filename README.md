@@ -51,7 +51,9 @@ The `validate` command validates the resulting snapshot data against the
 [json schema](schema.json) and prints warnings for fields that *should* be defined.
 Use `-mp 0` or `--max-priority 0` to only print severe errors and 
 `--max-priority 1` to include warnings about missing data in the most
-important fields like `latitude`, `longitude`, `address` and `capacity`. 
+important fields like `latitude`, `longitude`, `address` and `capacity`.
+
+Use `validate-text` to print the data in human-friendly format. 
 
 
 ## Contribution

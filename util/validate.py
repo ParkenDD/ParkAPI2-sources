@@ -70,11 +70,12 @@ def validate_snapshot(
                 })
 
         if lot["num_free"] is None and lot["num_occupied"] is None:
-            ret_data["validations"].append({
-                "path": f"lots.{i}.num_free",
-                "message": f"Lot '{lot['id']}' should have 'num_free' or 'num_occupied'",
-                "priority": 4,
-            })
+            if lot["status"] not in (LotData.Status.nodata, LotData.Status.error):
+                ret_data["validations"].append({
+                    "path": f"lots.{i}.num_free",
+                    "message": f"Lot '{lot['id']}' should have 'num_free' or 'num_occupied'",
+                    "priority": 4,
+                })
 
         if lot["num_free"] is None and lot["capacity"] is None and lot["num_occupied"] is not None:
             ret_data["validations"].append({

@@ -4,10 +4,30 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "ulmambahnhof",
+        "name": "Am Bahnhof",
+        "type": "garage",
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/bahnhof.php",
+        "source_url": null,
+        "address": "Bahnhofsplatz 8",
+        "capacity": 540,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.98379,
+          48.39808
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "ulmamrathaus",
         "name": "Am Rathaus",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/rathaus.php",
         "source_url": null,
         "address": "Neue Str. 113",
         "capacity": 558,
@@ -27,10 +47,10 @@
         "id": "ulmcongresscentrumnordbasteicenter",
         "name": "Congress Centrum Nord / Basteicenter",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/congress_nord.php",
         "source_url": null,
         "address": "Wichernstraße",
-        "capacity": 420,
+        "capacity": 400,
         "has_live_capacity": false
       },
       "geometry": {
@@ -47,10 +67,10 @@
         "id": "ulmcongresscentrumsuedmaritimhotel",
         "name": "Congress Centrum Süd / Maritim Hotel",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/congress_sued.php",
         "source_url": null,
         "address": "Basteistraße 46",
-        "capacity": 235,
+        "capacity": 240,
         "has_live_capacity": false
       },
       "geometry": {
@@ -67,7 +87,7 @@
         "id": "ulmdeutschhaus",
         "name": "Deutschhaus",
         "type": "garage",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/deutschhaus.php",
         "source_url": null,
         "address": "Friedrich-Ebert-Straße 8",
         "capacity": 594,
@@ -87,7 +107,7 @@
         "id": "ulmfischerviertel",
         "name": "Fischerviertel",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/fischerviertel.php",
         "source_url": null,
         "address": "Schwilmengasse",
         "capacity": 395,
@@ -107,7 +127,7 @@
         "id": "ulmfrauenstrasse",
         "name": "Frauenstraße",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/frauenstrasse.php",
         "source_url": null,
         "address": "Rosengasse 19",
         "capacity": 770,
@@ -127,7 +147,7 @@
         "id": "ulmkornhaus",
         "name": "Kornhaus",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/kornhaus.php",
         "source_url": null,
         "address": "Rosengasse 9",
         "capacity": 135,
@@ -147,7 +167,7 @@
         "id": "ulmsalzstadel",
         "name": "Salzstadel",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/salzstadel.php",
         "source_url": null,
         "address": "Salzstadelgasse 14",
         "capacity": 530,
@@ -167,7 +187,7 @@
         "id": "ulmtheater",
         "name": "Theater",
         "type": "underground",
-        "public_url": null,
+        "public_url": "https://www.parken-in-ulm.de/parkhaeuser/theater.php",
         "source_url": null,
         "address": "Olgastraße 63",
         "capacity": 83,

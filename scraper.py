@@ -33,7 +33,7 @@ def parse_args() -> dict:
 
     parser.add_argument(
         "command", type=str,
-        choices=["list", "scrape", "validate", "show-geojson", "write-geojson"],
+        choices=["list", "scrape", "validate", "validate-text", "show-geojson", "write-geojson"],
         help="The command to execute",
     )
     parser.add_argument(
@@ -126,6 +126,36 @@ class JsonPrinter:
         print("\n]")
 
 
+def print_validations(validations: List[dict], file=None):
+    pool_map = {}
+    for validation in validations:
+        if validation["pool_id"] not in pool_map:
+            pool_map[validation["pool_id"]] = {
+                "pool": [],
+                "lots": {},
+            }
+        path = validation["validation"]["path"]
+        if path.startswith("lots."):
+            lot_idx = int(path.split(".")[1])
+            if lot_idx not in pool_map[validation["pool_id"]]["lots"]:
+                pool_map[validation["pool_id"]]["lots"][lot_idx] = []
+            pool_map[validation["pool_id"]]["lots"][lot_idx].append(validation["validation"])
+        else:
+            pool_map[validation["pool_id"]]["pool"].append(validation["validation"])
+
+    def _print_messages(messages: List[dict], indent: str):
+        messages = sorted(messages, key=lambda m: m["path"])
+        messages = sorted(messages, key=lambda m: m["priority"])
+        for message in messages:
+            print(f'{indent}{message["path"]}: {message["message"]}', file=file)
+
+    for pool_id in sorted(pool_map):
+        print(f"\n--- {pool_id} ---", file=file)
+        _print_messages(pool_map[pool_id]["pool"], " " * 2)
+        for lot_idx in sorted(pool_map[pool_id]["lots"]):
+            _print_messages(pool_map[pool_id]["lots"][lot_idx], " " * 4)
+
+
 def main(
         command: str,
         cache: Union[bool, str],
@@ -151,7 +181,7 @@ def main(
 
         JsonPrinter().print(snapshots)
 
-    elif command == "validate":
+    elif command in ("validate", "validate-text"):
 
         validations = []
 
@@ -166,7 +196,10 @@ def main(
                 if message["priority"] <= max_priority:
                     validations.append({"pool_id": pool_id, "validation": message})
 
-        JsonPrinter().print(validations)
+        if command == "validate-text":
+            print_validations(validations)
+        else:
+            JsonPrinter().print(validations)
 
     elif command in ("show-geojson", "write-geojson"):
 

@@ -21,11 +21,22 @@ class Braunschweig(ScraperBase):
         "closed": LotData.Status.closed,
     }
 
+    
+    """
+    geojson_response will be cached as get_lot_info and get_lot_data access it.
+    As long as no braunschweig.geojson is stored, the lot info is extracted dynamically from
+    the json response.
+    """
+    geojson_response = None
+
     def get_lot_data(self) -> List[LotData]:
         timestamp = self.now()
         lots = []
-        geojson = self.request_json(self.POOL.source_url)
-        for feature in geojson["features"]:
+
+        if not self.geojson_response:
+            self.geojson_response = self.request_json(self.POOL.source_url)
+
+        for feature in self.geojson_response["features"]:
             props = feature["properties"]
 
             status = self.STATUS_MAPPING.get(props["openingState"]) or LotData.Status.unknown
@@ -47,8 +58,8 @@ class Braunschweig(ScraperBase):
 
     def get_lot_infos(self) -> List[LotInfo]:
         lots = []
-        geojson = self.request_json(self.POOL.source_url)
-        for feature in geojson["features"]:
+        self.geojson_response = self.request_json(self.POOL.source_url)
+        for feature in self.geojson_response["features"]:
             props = feature["properties"]
 
             soup = bs4.BeautifulSoup(props["description"], features="html.parser")

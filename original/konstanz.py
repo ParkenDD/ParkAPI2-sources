@@ -88,11 +88,11 @@ class Konstanz(ScraperBase):
             lot_id = self.name_to_legacy_id(lot_name)
             kwargs = vars(lot_map[lot_id]) if lot_id in lot_map else {}
 
-            kwargs = kwargs | {
+            kwargs.update({
                 "id": lot_id,
                 "name": lot_name,
                 "has_live_capacity": True
-            }
+            })
 
             if address:
                 kwargs["address"] = address

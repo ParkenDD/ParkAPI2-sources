@@ -40,7 +40,7 @@ class Rosenheim(ScraperBase):
 
         lots = []
         for lot in lot_infos :
-            internal_lot_id = lot["internal_id"]
+            internal_lot_id = lot["external_id"]
             realtime_info = dataJSON.get(str(internal_lot_id))
             
             lots.append(
@@ -59,8 +59,8 @@ class Rosenheim(ScraperBase):
         lot_dicts = self._get_lot_infos_as_dicts()
         lots = []
         for lot in lot_dicts:
-            # For now, remove internal_id, which is not supported by LotInfo yet
-            lot.pop("internal_id")
+            # For now, remove external_id, which is not supported by LotInfo yet
+            lot.pop("external_id")
             lots.append(LotInfo(**lot))
   
         return lots
@@ -82,7 +82,7 @@ class Rosenheim(ScraperBase):
 
             lots.append({
                 "id": lot_id,
-                "internal_id": marker["id"],
+                "external_id": marker["id"],
                 "name": lot_name,
                 "type": "garage",
                 "latitude": lat or None,

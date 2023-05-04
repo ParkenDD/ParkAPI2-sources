@@ -7,10 +7,10 @@
         "id": "aachenparkhausadalbertsteinweg",
         "name": "Adalbertsteinweg",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-adalbertsteinweg",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Adalbertsteinweg\nAdalbertsteinweg 34\n52070\nAachen",
-        "capacity": 460,
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-adalbertsteinweg",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-adalbertsteinweg",
+        "address": "Adalbertsteinweg 34, 52070 Aachen",
+        "capacity": 588,
         "has_live_capacity": false
       },
       "geometry": {
@@ -27,10 +27,10 @@
         "id": "aachenparkhausadalbertstrasse",
         "name": "Adalbertstraße",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-adalbertstra%C3%9Fe",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Adalbertstraße\nBlondelstraße\n52062\nAachen",
-        "capacity": 200,
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-adalbertstrasse",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-adalbertstrasse",
+        "address": "Blondelstraße, 52062 Aachen",
+        "capacity": 186,
         "has_live_capacity": false
       },
       "geometry": {
@@ -47,9 +47,9 @@
         "id": "aachenparkhauscouvenstrasse",
         "name": "Couvenstraße",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-couvenstra%C3%9Fe",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Couvenstraße\nCouvenstraße 4\n52062\nAachen",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-couvenstrasse",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-couvenstrasse",
+        "address": "Couvenstraße 6, 52062 Aachen",
         "capacity": 505,
         "has_live_capacity": false
       },
@@ -67,10 +67,10 @@
         "id": "aachenparkhauseurogress",
         "name": "Eurogress",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-eurogress",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Eurogress\nMonheimsallee 44\n52062\nAachen",
-        "capacity": 600,
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-eurogress",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-eurogress",
+        "address": "Monheimsallee 44, 52062 Aachen",
+        "capacity": 560,
         "has_live_capacity": false
       },
       "geometry": {
@@ -87,9 +87,9 @@
         "id": "aachenparkhausgaleriakaufhofcity",
         "name": "Galeria Kaufhof/City",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-galeria-kaufhofcity",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Galeria Kaufhof/City\nWirichsbongardstr. 47\n52062\nAachen",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-galeria-kaufhofcity",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-galeria-kaufhofcity",
+        "address": "Wirichsbongardstr. 47, 52062 Aachen",
         "capacity": 999,
         "has_live_capacity": false
       },
@@ -107,9 +107,9 @@
         "id": "aachenparkhaushauptbahnhof",
         "name": "Hauptbahnhof",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-hauptbahnhof",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Hauptbahnhof\nLagerhausstraße 20\n52064\nAachen",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-hauptbahnhof",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-hauptbahnhof",
+        "address": "Lagerhausstraße 20, 52064 Aachen",
         "capacity": 710,
         "has_live_capacity": false
       },
@@ -127,10 +127,10 @@
         "id": "aachenparkhausluisenhospital",
         "name": "Luisenhospital",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-luisenhospital",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Luisenhospital\nWeberstraße 2\n52064\nAachen",
-        "capacity": 355,
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-luisenhospital",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-luisenhospital",
+        "address": "Weberstraße 2, 52064 Aachen",
+        "capacity": 346,
         "has_live_capacity": false
       },
       "geometry": {
@@ -147,9 +147,9 @@
         "id": "aachenparkhausrathaus",
         "name": "Rathaus",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-rathaus",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Rathaus\nMostardstraße 5\n52062\nAachen",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-rathaus",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-rathaus",
+        "address": "Mostardstraße 5, 52062 Aachen",
         "capacity": 316,
         "has_live_capacity": false
       },
@@ -167,9 +167,9 @@
         "id": "aachenparkhaustivoli",
         "name": "Tivoli",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-tivoli",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkhaus Tivoli\nKrefelderstraße 205\n52070\nAachen",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-tivoli",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-tivoli",
+        "address": "Krefelderstraße 205, 52070 Aachen",
         "capacity": 1240,
         "has_live_capacity": false
       },
@@ -184,12 +184,25 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "aachenparkhausuniklinikrwth",
+        "name": "Uniklinik RWTH",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-uniklinik-rwth",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-uniklinik-rwth",
+        "address": "Kullenhofstraße 80, 52074 Aachen",
+        "capacity": 1325,
+        "has_live_capacity": false
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "aachenparkplatzludwigforum",
         "name": "Ludwig Forum",
         "type": "lot",
-        "public_url": "https://www.apag.de/parkobjekte/parkplatz-ludwig-forum",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Lombardenstraße 4\n52070\nAachen",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkplatz-ludwig-forum",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkplatz-ludwig-forum",
+        "address": "Lombardenstraße 4, 52070 Aachen",
         "capacity": 75,
         "has_live_capacity": false
       },
@@ -207,10 +220,10 @@
         "id": "aachenparkplatzluisenhospital",
         "name": "Luisenhospital",
         "type": "lot",
-        "public_url": "https://www.apag.de/parkobjekte/parkplatz-luisenhospital",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkplatz Luisenhospital\nBoxgraben 99\n52064\nAachen",
-        "capacity": 70,
+        "public_url": "https://www.apag.de/de/parkobjekte/parkplatz-luisenhospital",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkplatz-luisenhospital",
+        "address": "Boxgraben 99, 52064 Aachen",
+        "capacity": 33,
         "has_live_capacity": false
       },
       "geometry": {
@@ -227,9 +240,9 @@
         "id": "aachenparkplatzpontstrasse",
         "name": "Pontstraße",
         "type": "lot",
-        "public_url": "https://www.apag.de/parkobjekte/parkplatz-pontstra%C3%9Fe",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Parkplatz Pontstraße\nWittekindstraße\n52062\nAachen",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkplatz-pontstrasse",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkplatz-pontstrasse",
+        "address": "Wittekindstraße, 52062 Aachen",
         "capacity": 54,
         "has_live_capacity": false
       },
@@ -244,20 +257,66 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "aachenparkplatzuniklinik",
-        "name": "Uniklinik",
+        "id": "aachenparkplatzuniklinikfranziskus",
+        "name": "Uniklinik Franziskus",
         "type": "lot",
-        "public_url": "https://www.apag.de/parkobjekte/parkplatz-uniklinik",
-        "source_url": "https://www.apag.de/parken-in-aachen",
-        "address": "Pauwelsstraße / Kullenhofstraße\n52074\nAachen",
-        "capacity": 3041,
+        "public_url": "https://www.apag.de/de/parkobjekte/parkplatz-uniklinik-franziskus",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkplatz-uniklinik-franziskus",
+        "address": "Lütticher Str., 52074 Aachen",
+        "capacity": 70,
         "has_live_capacity": false
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.045195,
-          50.774804
+          6.07049,
+          50.76486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkplatzuniklinikrwthp1",
+        "name": "Uniklinik RWTH P1",
+        "type": "lot",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkplatz-uniklinik-rwth-p1",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkplatz-uniklinik-rwth-p1",
+        "address": "Kullenhofstraße, 52074 Aachen",
+        "capacity": 599,
+        "has_live_capacity": false
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkplatzuniklinikrwthp2",
+        "name": "Uniklinik RWTH P2",
+        "type": "lot",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkplatz-uniklinik-rwth-p2",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkplatz-uniklinik-rwth-p2",
+        "address": "Kullenhofstraße, 52074 Aachen",
+        "capacity": 1442,
+        "has_live_capacity": false
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "berlinparkhauseastsidemall",
+        "name": "East Side Mall",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-east-side-mall",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-east-side-mall",
+        "address": "Helen-Ernst-Straße, 10243 Berlin",
+        "capacity": 734,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.448115,
+          52.506379
         ]
       }
     },
@@ -267,9 +326,9 @@
         "id": "dattelnparkdeckstadtgalerie",
         "name": "StadtGalerie",
         "type": "level",
-        "public_url": "https://www.apag.de/parkobjekte/parkdeck-stadtgalerie",
-        "source_url": "https://www.apag.de/parken-in-datteln",
-        "address": "Kolpingstraße\n45711\nDatteln",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkdeck-stadtgalerie",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkdeck-stadtgalerie",
+        "address": "Kolpingstraße, 45711 Datteln",
         "capacity": 207,
         "has_live_capacity": false
       },
@@ -287,9 +346,9 @@
         "id": "dattelnparkhausstadtgalerie",
         "name": "StadtGalerie",
         "type": "garage",
-        "public_url": "https://www.apag.de/parkobjekte/parkhaus-stadtgalerie",
-        "source_url": "https://www.apag.de/parken-in-datteln",
-        "address": "Martin-Luther-Straße\n45711\nDatteln",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-stadtgalerie",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-stadtgalerie",
+        "address": "Martin-Luther-Straße, 45711 Datteln",
         "capacity": 76,
         "has_live_capacity": false
       },
@@ -298,6 +357,66 @@
         "coordinates": [
           7.341156,
           51.651775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "dulmenparkhausoverbergplatz",
+        "name": "Overbergplatz",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-overbergplatz",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-overbergplatz",
+        "address": "Lohwall 7-9, 48249 Dülmen",
+        "capacity": 160,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.275126,
+          51.8308145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "wurselenparkhausrheinmaasklinikum",
+        "name": "Rhein-Maas Klinikum",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-rhein-maas-klinikum",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkhaus-rhein-maas-klinikum",
+        "address": "Mauerfeldchen 25, 52146 Würselen",
+        "capacity": 650,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1423,
+          50.815822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "wurselenparkplatzrheinmaasklinikump5",
+        "name": "Rhein-Maas Klinikum P5",
+        "type": "lot",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkplatz-rhein-maas-klinikum-p5",
+        "source_url": "https://www.apag.de/de/parkobjekte/parkplatz-rhein-maas-klinikum-p5",
+        "address": "Mauerfeldchen 25, 52146 Würselen",
+        "capacity": 130,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1422,
+          50.813477
         ]
       }
     }

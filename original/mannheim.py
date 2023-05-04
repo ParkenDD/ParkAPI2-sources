@@ -107,7 +107,6 @@ class Mannheim(ScraperBase):
             kwargs.update(dict(
                 id=lot_id,
                 name=parking_name,
-                has_live_capacity=True,
                 public_url=urllib.parse.urljoin(self.POOL.public_url, link["href"])
             ))
 

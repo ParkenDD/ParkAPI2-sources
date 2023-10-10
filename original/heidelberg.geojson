@@ -147,7 +147,7 @@
         "id": "heidelbergp16nordbrueckenkopf",
         "name": "P16 Nordbrückenkopf",
         "type": "garage",
-        "public_url": "https://www.swhd.de/de/Hauptnavigation/Parkhaeuser/Nordbrueckenkopf-P16/",
+        "public_url": "https://www.swhd.de/p16",
         "source_url": null,
         "address": "Uferstraße\n69120 Heidelberg",
         "capacity": 113,
@@ -204,6 +204,26 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "heidelbergp19campbellbarracks",
+        "name": "P19 Campbell Barracks",
+        "type": "garage",
+        "public_url": "https://www.swhd.de/de/Kopfnavigation/Presse/Meldungslisten-SWH/Meldungsliste-SWH-3/Solar-Parkhaus-in-den-Campbell-Barracks.html",
+        "source_url": null,
+        "address": "Nina-Simone-Straße 6\n69126 Heidelberg",
+        "capacity": 1,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.68104,
+          49.38794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "heidelbergp1poststrasse",
         "name": "P1 Poststraße",
         "type": "underground",
@@ -239,19 +259,6 @@
           8.675042,
           49.418319
         ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "heidelbergp26kirchheim",
-        "name": "P26 Kirchheim",
-        "type": "garage",
-        "public_url": null,
-        "source_url": null,
-        "address": null,
-        "capacity": 55,
-        "has_live_capacity": true
       }
     },
     {

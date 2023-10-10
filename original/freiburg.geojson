@@ -10,14 +10,14 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231383.html",
         "source_url": null,
         "address": "P4",
-        "capacity": 158,
+        "capacity": 178,
         "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.842908834987216,
-          47.998985389852045
+          7.842917330917256,
+          47.99897053531443
         ]
       }
     },
@@ -30,14 +30,14 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231359.html",
         "source_url": null,
         "address": "P1",
-        "capacity": 229,
+        "capacity": 169,
         "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.840827649980254,
-          47.99530427666567
+          7.841420148742461,
+          47.99693172027953
         ]
       }
     },
@@ -50,8 +50,15 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/1475630.html",
         "source_url": null,
         "address": null,
-        "capacity": 116,
+        "capacity": 46,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.846799984117295,
+          47.999299963795565
+        ]
       }
     },
     {
@@ -63,14 +70,14 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231431.html",
         "source_url": null,
         "address": "P13",
-        "capacity": 977,
+        "capacity": 656,
         "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.853839757759242,
-          47.99746077629321
+          7.853848201662523,
+          47.99744599346446
         ]
       }
     },
@@ -83,8 +90,15 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231471.html",
         "source_url": null,
         "address": null,
-        "capacity": 206,
+        "capacity": 194,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.847403108579805,
+          47.99343129043488
+        ]
       }
     },
     {
@@ -102,8 +116,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.84141154283007,
-          47.99694656853075
+          7.840836202948397,
+          47.99528951463522
         ]
       }
     },
@@ -122,8 +136,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.857073440394663,
-          48.00007397051193
+          7.857081450924558,
+          48.00005941308848
         ]
       }
     },
@@ -136,14 +150,14 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231463.html",
         "source_url": null,
         "address": "P18",
-        "capacity": 139,
+        "capacity": 73,
         "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.847355875603023,
-          47.99252122643358
+          7.847364863391427,
+          47.992506257544264
         ]
       }
     },
@@ -158,6 +172,13 @@
         "address": null,
         "capacity": 500,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.838684926910434,
+          48.015585414044295
+        ]
       }
     },
     {
@@ -169,8 +190,15 @@
         "public_url": "https://www.freiburg.de/pb/1695539.html",
         "source_url": null,
         "address": null,
-        "capacity": 155,
+        "capacity": 182,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.890891473099281,
+          47.982361250861665
+        ]
       }
     },
     {
@@ -188,8 +216,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.846289674197204,
-          47.99581563822502
+          7.846298433712333,
+          47.9958006591874
         ]
       }
     },
@@ -208,8 +236,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.855133809588589,
-          47.99403157051466
+          7.855142398704675,
+          47.99401670190926
         ]
       }
     },
@@ -228,8 +256,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.856301436251751,
-          47.99127875875355
+          7.856310115899288,
+          47.99126377314504
         ]
       }
     },
@@ -248,8 +276,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.851110338871799,
-          47.99722128099989
+          7.851119164475236,
+          47.99720638858522
         ]
       }
     },
@@ -262,14 +290,14 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231399.html",
         "source_url": null,
         "address": "P8",
-        "capacity": 203,
+        "capacity": 235,
         "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.848858803255791,
-          47.997882818254276
+          7.848867643231746,
+          47.99786777806076
         ]
       }
     },
@@ -288,8 +316,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.843404280234661,
-          47.99803589052632
+          7.843412798817964,
+          47.998021012493226
         ]
       }
     },
@@ -302,8 +330,15 @@
         "public_url": "https://www.freiburg.de/pb/1708134.html",
         "source_url": null,
         "address": null,
-        "capacity": 700,
+        "capacity": 750,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.827393911607149,
+          48.00641963587128
+        ]
       }
     },
     {
@@ -315,14 +350,14 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231423.html",
         "source_url": null,
         "address": "P12",
-        "capacity": 100,
+        "capacity": 0,
         "has_live_capacity": true
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.85401373813563,
-          47.99897306942212
+          7.854021934699224,
+          47.99895839810944
         ]
       }
     },
@@ -337,6 +372,13 @@
         "address": null,
         "capacity": 269,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.870106333740715,
+          47.98797172309495
+        ]
       }
     },
     {
@@ -348,8 +390,15 @@
         "public_url": "https://www.freiburg.de/pb/,Lde/231391.html",
         "source_url": null,
         "address": null,
-        "capacity": 100,
+        "capacity": 115,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.844731526908328,
+          48.00128618654465
+        ]
       }
     }
   ]

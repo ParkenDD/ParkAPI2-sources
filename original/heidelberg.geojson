@@ -10,7 +10,7 @@
         "public_url": null,
         "source_url": null,
         "address": "Schneidmühlstraße 5\n69115 Heidelberg",
-        "capacity": 38,
+        "capacity": 39,
         "has_live_capacity": true
       },
       "geometry": {
@@ -30,7 +30,7 @@
         "public_url": "http://www.heidelberger-stadtwerke.de/cms/Garagen/Parkhaus_Friedrich-Ebert-Platz/Parkhaus_Friedrich-Ebert-Platz.html",
         "source_url": null,
         "address": "Friedrich-Ebert-Platz\n69117 Heidelberg",
-        "capacity": 122,
+        "capacity": 121,
         "has_live_capacity": true
       },
       "geometry": {
@@ -70,7 +70,7 @@
         "public_url": "http://www.swhd.de/cms/Garagen/Parkhaus_Kornmarkt_Schloss/Parkhaus_Kornmarkt_Schloss.html",
         "source_url": null,
         "address": "Neue Schlossstraße\n69117 Heidelberg",
-        "capacity": 150,
+        "capacity": 158,
         "has_live_capacity": true
       },
       "geometry": {
@@ -130,7 +130,7 @@
         "public_url": "http://www.pbw.de/",
         "source_url": null,
         "address": "Thibautstr. 1A\n69115 Heidelberg",
-        "capacity": 175,
+        "capacity": 150,
         "has_live_capacity": true
       },
       "geometry": {
@@ -150,7 +150,7 @@
         "public_url": "https://www.swhd.de/de/Hauptnavigation/Parkhaeuser/Nordbrueckenkopf-P16/",
         "source_url": null,
         "address": "Uferstraße\n69120 Heidelberg",
-        "capacity": 120,
+        "capacity": 113,
         "has_live_capacity": true
       },
       "geometry": {
@@ -230,7 +230,7 @@
         "public_url": null,
         "source_url": null,
         "address": "Berliner Straße 41-49\n69120 Heidelberg",
-        "capacity": 177,
+        "capacity": 160,
         "has_live_capacity": true
       },
       "geometry": {
@@ -323,7 +323,7 @@
         "public_url": "http://www.swhd.de/cms/Garagen/Parkhaus_Kraus/Parkhaus_Kraus.html",
         "source_url": null,
         "address": "Untere Neckarstraße 2\n69117 Heidelberg",
-        "capacity": 141,
+        "capacity": 155,
         "has_live_capacity": true
       },
       "geometry": {
@@ -383,7 +383,7 @@
         "public_url": "http://www.apcoa.de/",
         "source_url": null,
         "address": "Friedrich-Ebert-Anlage 51c\n69117 Heidelberg",
-        "capacity": 160,
+        "capacity": 310,
         "has_live_capacity": true
       },
       "geometry": {

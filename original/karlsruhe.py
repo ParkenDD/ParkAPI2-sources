@@ -84,7 +84,7 @@ class Karlsruhe(ScraperBase):
             
             match_num_total = self.RE_CAPACITY.search(parking_lot.text)
             if match_num_total:
-                num_total = int_or_none(match_num_total.groups(1))
+                num_total = int_or_none(match_num_total.groups()[0])
                 if num_total == 0:
                     status = LotData.Status.nodata
             else:

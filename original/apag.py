@@ -22,7 +22,7 @@ class Apag(ScraperBase):
         lots = []
         
         for id_prefix, one_lot in self._lots_iterator(self.POOL.public_url):
-            parking_name = one_lot.find('a').text
+            parking_name = one_lot.find('a').find('div', class_='facility-title').text
 
             parking_state = LotData.Status.open
             parking_free = None
@@ -47,13 +47,13 @@ class Apag(ScraperBase):
         lots = []
 
         for id_prefix, one_lot in self._lots_iterator(self.POOL.public_url):
-            parking_name = one_lot.find('a').text
-            
+            parking_name = one_lot.find('a').find('div', class_='facility-title').text
+
             lot_url = one_lot.find("a").attrs["href"]
             lot_soup = self.request_soup(lot_url)
 
             elem_total = lot_soup.find_all("span", {"class": "capacity-parking"})
-            elem_address = lot_soup.find("span", {"class": "pf-address"})
+            elem_address = lot_soup.find("span", {"class": "facility-address"})
             elem_maps_link = lot_soup.find("a", {"class": "btn-route"})
             coord_match = re.search(r"@(\d+\.\d+),(\d+(\.\d+)?)", elem_maps_link["href"])
             
@@ -93,4 +93,7 @@ class Apag(ScraperBase):
             id_prefix = city_items["class"][1].replace('city-', '')
             parking_lots = city_items.find_all('li')
             for one_lot in parking_lots:
-                yield id_prefix, one_lot
+                # For now, ParkAPI does not support bicycle parking.
+                # TODO add support for bicycle parking
+                if not 'Bike-Station' in one_lot.find('a').text:
+                    yield id_prefix, one_lot

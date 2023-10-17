@@ -192,6 +192,13 @@
         "address": "Kullenhofstraße 80, 52074 Aachen",
         "capacity": 1325,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.04567,
+          50.77347
+        ]
       }
     },
     {
@@ -285,6 +292,13 @@
         "address": "Kullenhofstraße, 52074 Aachen",
         "capacity": 599,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.04410,
+          50.77511
+        ]
       }
     },
     {
@@ -298,6 +312,13 @@
         "address": "Kullenhofstraße, 52074 Aachen",
         "capacity": 1442,
         "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.04060,
+          50.77534
+        ]
       }
     },
     {

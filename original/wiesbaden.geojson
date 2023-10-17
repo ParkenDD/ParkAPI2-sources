@@ -44,26 +44,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "wiesbadenphgaleriakaufhof",
-        "name": "PH Galeria Kaufhof",
-        "type": "garage",
-        "public_url": null,
-        "source_url": "https://geoportal.wiesbaden.de/parkleitsystem/parkhaeuser.php",
-        "address": "Luisenstraße 47",
-        "capacity": 168,
-        "has_live_capacity": true
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.23752,
-          50.07899
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "wiesbadenphkarstadt",
         "name": "PH Karstadt",
         "type": "garage",
@@ -98,6 +78,26 @@
         "coordinates": [
           8.24156,
           50.07005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "wiesbadenphluisenforum",
+        "name": "PH Luisenforum",
+        "type": "garage",
+        "public_url": null,
+        "source_url": "https://geoportal.wiesbaden.de/parkleitsystem/parkhaeuser.php",
+        "address": "Karlstraße",
+        "capacity": 800,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.23508,
+          50.07839
         ]
       }
     },

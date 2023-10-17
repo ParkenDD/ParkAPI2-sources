@@ -42,13 +42,13 @@ class Rosenheim(ScraperBase):
         for lot in lot_infos :
             internal_lot_id = lot["external_id"]
             realtime_info = dataJSON.get(str(internal_lot_id))
-            
+            num_free = int_or_none(realtime_info['currentParkingSpacesCount'])
             lots.append(
                 LotData(
                     timestamp=timestamp,
                     id=lot["id"],
-                    status=LotData.Status.open,
-                    num_free=int_or_none(realtime_info['currentParkingSpacesCount']),
+                    status=LotData.Status.open if num_free else LotData.Status.nodata,
+                    num_free=num_free,
                     capacity=int_or_none(lot["capacity"]),
                 )
             )

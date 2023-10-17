@@ -71,17 +71,24 @@ class Dortmund(ScraperBase):
             lot_name = feature['properties']['park_name']
             lot_total = int(feature['properties']['obs_max'])
             public_url = feature["properties"]["park_url"].replace("http://", "https://")
-
-            kwargs = {
-                "id": name_to_legacy_id("freiburg", lot_name),
-                "name": lot_name,
-                "type": LotInfo.Types.unknown,
-            }
+            lon = feature["geometry"]["coordinates"][0]
+            lat = feature["geometry"]["coordinates"][1]
+            
             if lot_map.get(lot_name):
+                # if available, use information from ParkAPIv1 as default
                 kwargs = vars(lot_map[lot_name])
+            else:
+                kwargs = {
+                    "id": name_to_legacy_id("freiburg", lot_name),
+                    "name": lot_name,
+                    "type": LotInfo.Types.unknown,
+                }
+
             kwargs.update({
                 "capacity": lot_total,
                 "public_url": public_url,
+                "latitude": lat,
+                "longitude": lon,            
             })
             lots.append(LotInfo(**kwargs))
 

@@ -25,7 +25,7 @@
       "type": "Feature",
       "properties": {
         "id": "karlsruheamstaatstheater",
-        "name": "Staatstheater",
+        "name": "Am Staatstheater",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=K04",
         "source_url": null,
@@ -85,7 +85,7 @@
       "type": "Feature",
       "properties": {
         "id": "karlsruheherrenstrassezirkel",
-        "name": "Herrenstraße / Zirkel",
+        "name": "Herrenstraße/Zirkel",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N03",
         "source_url": null,
@@ -105,7 +105,7 @@
       "type": "Feature",
       "properties": {
         "id": "karlsruheindustrieundhandelskammer",
-        "name": "IHK",
+        "name": "Industrie und Handelskammer",
         "type": "underground",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S04",
         "source_url": null,
@@ -185,7 +185,7 @@
       "type": "Feature",
       "properties": {
         "id": "karlsruhekreuzstrasseca",
-        "name": "Kreuzstraße",
+        "name": "Kreuzstraße (C&A)",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N06",
         "source_url": null,
@@ -305,7 +305,7 @@
       "type": "Feature",
       "properties": {
         "id": "karlsruhemendelssohnplatzscheckin",
-        "name": "Mendelssohnplatz",
+        "name": "Mendelssohnplatz (Scheck-In)",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S06",
         "source_url": null,
@@ -345,7 +345,7 @@
       "type": "Feature",
       "properties": {
         "id": "karlsruhepostgalerie",
-        "name": "Postgalerie",
+        "name": "Post Galerie",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=W03",
         "source_url": null,

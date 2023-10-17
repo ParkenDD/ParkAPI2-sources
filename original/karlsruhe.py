@@ -23,17 +23,6 @@ class Karlsruhe(ScraperBase):
         attribution_url=None,
     )
 
-    """
-    Maps current parking lot names to their former name to provide
-    backward compatibility.
-    """
-    LOT_LEGACY_NAME_MAPPINGS = {
-        "Mendelssohnplatz": "Mendelssohnplatz Scheckin",
-        "Kreuzstraße": "Kreuzstraße (C&A)",
-        "IHK": "Industrie und Handelskammer",
-        "Staatstheater": "Am Staatstheater",
-    }
-
     RE_CAPACITY = re.compile(r"Insgesamt (\d+) Parkplätze")
 
     def get_lot_data(self) -> List[LotData]:
@@ -139,10 +128,6 @@ class Karlsruhe(ScraperBase):
 
         return lots
 
-    def name_to_legacy_id(self, lot_name) -> str:
-        legacy_name = self.LOT_LEGACY_NAME_MAPPINGS.get(lot_name, lot_name)
-        return super().name_to_legacy_id(legacy_name)
-   
     def _get_lot_details(self, url) -> dict:
         """
         Retrieves information from lot details page, i.e. capacity and address

@@ -8,7 +8,7 @@ No "Endstelle Diesdorf", "Milchhof" and "Lange Lake" anymore.
 """
 from typing import List
 
-from util import *
+from ..util import *
 
 
 class Magdeburg(ScraperBase):

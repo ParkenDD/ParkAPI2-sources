@@ -4,7 +4,7 @@ Original code and data by Költzsch, Thalheim
 import urllib.parse
 from typing import List
 
-from util import *
+from ..util import *
 
 
 class Muenster(ScraperBase):

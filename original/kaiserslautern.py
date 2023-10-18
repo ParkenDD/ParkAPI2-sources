@@ -4,7 +4,7 @@ Original code and data by nicomue7
 import urllib.parse
 from typing import List
 
-from util import *
+from ..util import *
 
 
 class Kaiserslautern(ScraperBase):

@@ -9,7 +9,7 @@ from typing import List, Tuple, Generator
 
 import bs4
 
-from util import *
+from ..util import *
 
 
 class Bonn(ScraperBase):

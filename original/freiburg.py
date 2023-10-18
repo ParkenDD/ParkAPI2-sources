@@ -3,7 +3,7 @@ Original code and data by Wieland
 """
 from typing import List
 
-from util import *
+from ..util import *
 
 
 class Dortmund(ScraperBase):

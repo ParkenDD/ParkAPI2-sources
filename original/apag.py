@@ -3,7 +3,7 @@ Original code by Quint, Berke
 """
 from typing import List, Tuple, Generator
 
-from util import *
+from ..util import *
 
 import bs4
 import re

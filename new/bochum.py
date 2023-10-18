@@ -1,7 +1,7 @@
 import urllib.parse
 from typing import List
 
-from util import *
+from ..util import *
 
 
 class Bochum(ScraperBase):

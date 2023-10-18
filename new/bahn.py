@@ -11,7 +11,7 @@ from typing import List
 
 from decouple import config
 
-from util import *
+from ..util import *
 
 BAHN_API_TOKEN = config("BAHN_API_TOKEN", None)
 

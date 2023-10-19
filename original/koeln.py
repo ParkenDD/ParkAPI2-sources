@@ -51,11 +51,13 @@ class Koeln(ScraperBase):
             else:
                 status = LotData.Status.open
 
+            attributes = feature["attributes"]
+
             lots.append(
                 LotData(
                     timestamp=timestamp,
-                    lot_timestamp=self.to_utc_datetime(feature["attributes"]["timestamp"]),
-                    id=name_to_id("koeln", feature["attributes"]["identifier"]),
+                    lot_timestamp=self.to_utc_datetime(attributes["timestamp"]) if attributes.get("timestamp") else None,
+                    id=name_to_id("koeln", attributes["identifier"]),
                     status=status,
                     num_free=num_free,
                 )

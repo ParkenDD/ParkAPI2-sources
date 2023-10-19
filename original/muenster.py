@@ -15,8 +15,9 @@ class Muenster(ScraperBase):
         public_url="https://www.stadt-muenster.de/tiefbauamt/parkleitsystem",
         source_url="https://api.dashboard.smartcity.ms/parking",
         timezone="Europe/Berlin",
-        attribution_contributor="Amt für Mobilität und Tiefbau Münster",
-        attribution_license=None,
+        attribution_contributor="dl-by-de/2.0",
+        attribution_license="Stadt Münster",
+        # see also https://opendata.stadt-muenster.de/dataset/parkleitsystem-parkhausbelegung-aktuell
         attribution_url="https://www.stadt-muenster.de/tiefbauamt/impressum.html",
     )
 

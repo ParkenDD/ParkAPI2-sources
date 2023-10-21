@@ -7,7 +7,7 @@ from typing import List, Tuple, Generator, Optional
 
 import bs4
 
-from ..util import *
+from util import *
 
 
 class Karlsruhe(ScraperBase):

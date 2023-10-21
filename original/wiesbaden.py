@@ -4,7 +4,7 @@ Original code and data by Quint
 import datetime
 from typing import List, Tuple, Generator
 
-from ..util import *
+from util import *
 
 
 class Wiesbaden(ScraperBase):

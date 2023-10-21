@@ -6,7 +6,7 @@ from typing import List, Tuple, Optional
 
 import feedparser
 
-from ..util import *
+from util import *
 
 
 class Zuerich(ScraperBase):

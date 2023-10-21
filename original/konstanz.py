@@ -4,7 +4,7 @@ Original code and data by Woltmann, Quint, Koeltzsch,
 import urllib.parse
 from typing import List, Tuple, Generator
 
-from ..util import *
+from util import *
 
 
 class Konstanz(ScraperBase):

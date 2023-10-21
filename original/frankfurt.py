@@ -3,7 +3,7 @@ Original code by Romankov
 """
 from typing import List
 
-from ..util import *
+from util import *
 
 
 class Frankfurt(ScraperBase):

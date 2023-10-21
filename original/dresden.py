@@ -4,7 +4,7 @@ Original code by Kliemann
 import urllib.parse
 from typing import List
 
-from ..util import *
+from util import *
 
 
 class Dresden(ScraperBase):

@@ -17,7 +17,7 @@ The legacy IDs are kept as far as the lot name did not change.
 import urllib.parse
 from typing import List
 
-from ..util import *
+from util import *
 
 
 class Luebeck(ScraperBase):

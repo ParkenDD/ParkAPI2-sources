@@ -3,7 +3,7 @@ from typing import List
 
 import bs4
 
-from ..util import *
+from util import *
 
 
 class Braunschweig(ScraperBase):

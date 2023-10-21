@@ -4,7 +4,7 @@ Original code and data by Quint
 import warnings
 from typing import List
 
-from ..util import *
+from util import *
 
 
 class Hanau(ScraperBase):

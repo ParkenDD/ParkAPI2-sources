@@ -3,7 +3,7 @@ Original code and data by Thalheim, Tranquillo, Quint
 """
 from typing import List
 
-from ..util import *
+from util import *
 
 
 class Oldenburg(ScraperBase):

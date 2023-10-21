@@ -7,7 +7,7 @@ import datetime
 import utm
 
 
-from ..util import *
+from util import *
 
 
 class Hamburg(ScraperBase):

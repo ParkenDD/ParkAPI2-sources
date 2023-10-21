@@ -3,7 +3,7 @@ Original code and data by Költzsch, Thalheim
 """
 from typing import List
 
-from ..util import *
+from util import *
 
 
 class Ingolstadt(ScraperBase):

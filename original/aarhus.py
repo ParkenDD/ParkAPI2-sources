@@ -3,7 +3,7 @@ Original code and data by Ciosici
 """
 from typing import List
 
-from ..util import *
+from util import *
 
 
 class Aarhus(ScraperBase):

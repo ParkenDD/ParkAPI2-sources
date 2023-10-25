@@ -7,6 +7,7 @@ from util import *
 
 import warnings
 
+
 class Heidelberg(ScraperBase):
 
     POOL = PoolInfo(
@@ -33,11 +34,11 @@ class Heidelberg(ScraperBase):
         
         return False
 
-    def get_lot_data(self) -> List[LotData]:
+    def get_lot_data(self) -> LotDataList[LotData]:
         timestamp = self.now()
         dataJSON = self.request_json(self.POOL.source_url)
 
-        lots = []
+        lots = LotDataList([], lot_error_count=0)
 
         last_updated = self.to_utc_datetime(dataJSON['data']['updated'])
 
@@ -46,8 +47,9 @@ class Heidelberg(ScraperBase):
             parking_name = ('P'+str(parking_lot['uid'])+' '+parking_lot['name']).strip()
             parking_id = name_to_legacy_id(self.POOL.id, parking_name)
 
-            # Note: 
+            # Note:
             if self._should_ignore(parking_lot):
+                lots.lot_error_count += 1
                 continue
             
             try:
@@ -62,6 +64,7 @@ class Heidelberg(ScraperBase):
                 #   but the `parken.heidelberg.de` website actually
                 #   considers both status to display a lot as closed
             except:
+                lots.lot_error_count += 1
                 parking_state = LotData.Status.nodata
                 parking_occupied = None
                 parking_capacity = None
@@ -79,7 +82,7 @@ class Heidelberg(ScraperBase):
 
         return lots
 
-    def get_lot_infos(self) -> List[LotInfo]:
+    def get_lot_infos(self) -> LotInfoList[LotInfo]:
         lot_map = {
             lot.id: lot
             for lot in self.get_v1_lot_infos_from_geojson("Heidelberg")
@@ -87,7 +90,7 @@ class Heidelberg(ScraperBase):
 
         dataJSON = self.request_json(self.POOL.source_url)
 
-        lots = []
+        lots = LotInfoList([], lot_error_count=0)
 
         for parking_lot in dataJSON['data']['parkinglocations'] :
             # please keep the name in the geojson-file in the same form as delivered here (including spaces)
@@ -111,6 +114,7 @@ class Heidelberg(ScraperBase):
                     lat = 49.38794
                     lon = 8.68104
                 else:
+                    lots.lot_error_count += 1
                     warnings.warn(f"Lot '{parking_id}' has no coords. Skipping")
                     continue
 

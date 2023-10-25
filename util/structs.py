@@ -1,5 +1,5 @@
 import datetime
-from typing import Union, Optional
+from typing import Union, Optional, List, Iterable
 
 from .strings import guess_lot_type
 
@@ -181,6 +181,22 @@ class LotData(Struct):
                             f", expected {self.capacity - self.num_occupied}"
                             f" (occupied={self.num_occupied}, capacity={self.capacity})"
                         )
+
+
+class LotInfoList(List[LotInfo]):
+    lot_error_count: Optional[int] = None
+
+    def __init__(self, items: Iterable[LotInfo], *, lot_error_count: Optional[int] = None):
+        list.__init__(self, items)
+        self.lot_error_count = lot_error_count
+
+
+class LotDataList(List[LotData]):
+    lot_error_count: Optional[int] = None
+
+    def __init__(self, items: Iterable[LotData], *, lot_error_count: Optional[int] = None):
+        list.__init__(self, items)
+        self.lot_error_count = lot_error_count
 
 
 def validate_timestamp(timestamp: datetime.datetime, parent: str):

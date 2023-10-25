@@ -1,7 +1,7 @@
 import datetime
-from typing import Union, Optional, Tuple, List, Type, Dict
+from typing import Union, Optional
 
-from .strings import name_to_id, guess_lot_type
+from .strings import guess_lot_type
 
 
 class Struct:
@@ -12,6 +12,9 @@ class Struct:
                 for key, value in vars(self).items()
             )
         )
+
+    def to_dict(self) -> dict:
+        return vars(self)
 
 
 class PoolInfo(Struct):

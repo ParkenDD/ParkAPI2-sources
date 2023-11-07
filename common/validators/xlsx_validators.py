@@ -2,6 +2,7 @@
 Copyright 2023 binary butterfly GmbH
 Use of this source code is governed by an MIT-style license that can be found in the LICENSE.txt.
 """
+
 from datetime import time
 from typing import Optional
 
@@ -19,7 +20,7 @@ from .fields import (
 
 @validataclass
 class ExcelStaticParkingSiteInput(StaticParkingSiteInput):
-    uid: str = NumberCastingStringValidator()
+    uid: str = NumberCastingStringValidator(min_length=1, max_length=256)
     has_lighting: Optional[bool] = ExcelNoneable(ExtendedBooleanValidator())
     has_fee: Optional[bool] = ExcelNoneable(ExtendedBooleanValidator())
     is_supervised: Optional[bool] = ExcelNoneable(ExtendedBooleanValidator())

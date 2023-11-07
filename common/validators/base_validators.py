@@ -101,9 +101,7 @@ class StaticParkingSiteInput(ValidataclassMixin):
 
     def __post_init__(self):
         if self.lat == 0 and self.lon == 0:
-            raise DataclassPostValidationError(
-                error=ValidationError(code='lat_lon_zero', reason='Latitude and longitude are both zero.')
-            )
+            raise DataclassPostValidationError(error=ValidationError(code='lat_lon_zero', reason='Latitude and longitude are both zero.'))
 
     def to_lot_info(self) -> LotInfo:
         return LotInfo(

@@ -9,6 +9,7 @@ from enum import Enum
 from typing import Optional
 
 from validataclass.dataclasses import Default, ValidataclassMixin, validataclass
+from validataclass.exceptions import DataclassPostValidationError, ValidationError
 from validataclass.validators import (
     BooleanValidator,
     DateTimeValidator,
@@ -62,15 +63,15 @@ class OpeningStatusInput(Enum):
 
 @validataclass
 class StaticParkingSiteInput(ValidataclassMixin):
-    uid: str = StringValidator()
-    name: str = StringValidator()
+    uid: str = StringValidator(min_length=1, max_length=256)
+    name: str = StringValidator(min_length=1, max_length=256)
     operator_name: Optional[str] = Noneable(StringValidator(max_length=256)), Default(None)
     public_url: Optional[str] = Noneable(StringValidator(max_length=4096)), Default(None)
     address: Optional[str] = Noneable(StringValidator(max_length=512)), Default(None)
     description: Optional[str] = Noneable(StringValidator(max_length=4096)), Default(None)
     type: Optional[ParkingSiteTypeInput] = Noneable(EnumValidator(ParkingSiteTypeInput)), Default(None)
 
-    max_stay: Optional[int] = Noneable(IntegerValidator()), Default(None)
+    max_stay: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
     has_lighting: Optional[bool] = Noneable(BooleanValidator()), Default(None)
     fee_description: Optional[str] = Noneable(StringValidator(max_length=256)), Default(None)
     has_fee: Optional[bool] = Noneable(BooleanValidator()), Default(None)
@@ -84,18 +85,25 @@ class StaticParkingSiteInput(ValidataclassMixin):
         discard_milliseconds=True,
     )
 
-    lat: Decimal = NumericValidator()
-    lon: Decimal = NumericValidator()
+    lat: Decimal = NumericValidator(min_value=90, max_value=90)
+    lon: Decimal = NumericValidator(min_value=180, max_value=180)
 
-    capacity: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    capacity_disabled: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    capacity_woman: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    capacity_family: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    capacity_charging: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    capacity_carsharing: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    capacity_truck: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    capacity_bus: Optional[int] = Noneable(IntegerValidator()), Default(None)
+    capacity: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    capacity_disabled: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    capacity_woman: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    capacity_family: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    capacity_charging: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    capacity_carsharing: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    capacity_truck: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    capacity_bus: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+
     opening_hours: Optional[str] = Noneable(StringValidator(max_length=512)), Default(None)
+
+    def __post_init__(self):
+        if self.lat == 0 and self.lon == 0:
+            raise DataclassPostValidationError(
+                error=ValidationError(code='lat_lon_zero', reason='Latitude and longitude are both zero.')
+            )
 
     def to_lot_info(self) -> LotInfo:
         return LotInfo(
@@ -113,7 +121,7 @@ class StaticParkingSiteInput(ValidataclassMixin):
 
 @validataclass
 class RealtimeParkingSiteInput(ValidataclassMixin):
-    uid: str = StringValidator()
+    uid: str = StringValidator(min_length=1, max_length=256)
     realtime_data_updated_at: datetime = DateTimeValidator(
         local_timezone=timezone.utc,
         target_timezone=timezone.utc,
@@ -123,23 +131,23 @@ class RealtimeParkingSiteInput(ValidataclassMixin):
         Noneable(EnumValidator(OpeningStatusInput), default=OpeningStatusInput.UNKNOWN),
         Default(OpeningStatusInput.UNKNOWN),
     )
-    realtime_capacity: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_capacity_disabled: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_capacity_woman: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_capacity_family: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_capacity_charging: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_capacity_carsharing: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_capacity_truck: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_capacity_bus: Optional[int] = Noneable(IntegerValidator()), Default(None)
+    realtime_capacity: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_capacity_disabled: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_capacity_woman: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_capacity_family: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_capacity_charging: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_capacity_carsharing: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_capacity_truck: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_capacity_bus: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
 
-    realtime_free_capacity: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_free_capacity_disabled: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_free_capacity_woman: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_free_capacity_family: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_free_capacity_charging: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_free_capacity_carsharing: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_free_capacity_truck: Optional[int] = Noneable(IntegerValidator()), Default(None)
-    realtime_free_capacity_bus: Optional[int] = Noneable(IntegerValidator()), Default(None)
+    realtime_free_capacity: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_free_capacity_disabled: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_free_capacity_woman: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_free_capacity_family: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_free_capacity_charging: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_free_capacity_carsharing: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_free_capacity_truck: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    realtime_free_capacity_bus: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
 
     def to_lot_data(self) -> LotData:
         return LotData(

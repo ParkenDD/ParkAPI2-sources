@@ -1,7 +1,7 @@
 """
 Scraper for Deutsche Bahn parking lots
 
-This scraper is disabled unless you define your API token, either in
+This scraper raises an exception unless you define your API token, either in
 - environment: e.g. `export BAHN_API_TOKEN=xxx` before running the scraper
 - or in a `.env` file in the root of the scraper package containing: `BAHN_API_TOKEN=xxx`
 """
@@ -16,12 +16,6 @@ from util import *
 
 class BahnParking(ScraperBase):
     BAHN_API_TOKEN = config("BAHN_API_TOKEN", None)
-
-    if not BAHN_API_TOKEN:
-        warnings.warn(
-            "Deutsche Bahn Parking API disabled! "
-            "You need to define BAHN_API_TOKEN in environment or in a .env file"
-        )
 
     POOL = PoolInfo(
         id="bahn",
@@ -47,6 +41,8 @@ class BahnParking(ScraperBase):
     }
 
     def get_lot_data(self) -> List[LotData]:
+        if not self.BAHN_API_TOKEN:
+            raise Exception('Deutsche Bahn Parking API disabled! You need to define BAHN_API_TOKEN in environment or in a .env file.')
         now = self.now()
         data = self.request_json(
             self.POOL.source_url + "/occupancies",
@@ -93,6 +89,9 @@ class BahnParking(ScraperBase):
         return lots
 
     def get_lot_infos(self) -> List[LotInfo]:
+        if not self.BAHN_API_TOKEN:
+            raise Exception('Deutsche Bahn Parking API disabled! You need to define BAHN_API_TOKEN in environment or in a .env file.')
+
         spaces = []
 
         offset = 0

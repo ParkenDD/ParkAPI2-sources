@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ParkenDD/ParkAPI2-sources/main/docs/schema/source.json",
+  "properties": {
+    "attribution_contributor": {
+      "maxLength": 256,
+      "type": "string"
+    },
+    "attribution_license": {
+      "type": "string"
+    },
+    "attribution_url": {
+      "maxLength": 256,
+      "type": "string"
+    },
+    "last_import": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "name": {
+      "maxLength": 256,
+      "type": "string"
+    },
+    "public_url": {
+      "format": "uri",
+      "maxLength": 4096,
+      "type": "string"
+    },
+    "uid": {
+      "maxLength": 256,
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [
+    "uid",
+    "public_url"
+  ],
+  "title": "Source Schema",
+  "type": "object"
+}

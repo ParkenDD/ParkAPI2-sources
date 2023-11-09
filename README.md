@@ -81,7 +81,7 @@ which uses these interfaces the way a third application would do.
 ParkAPIv3 converters come with a quite strict validation in order to prevent invalid input data. It also comes with some
 base classes to help you with specific data formats.
 
-At the moment, ParkAPIv3 converter support a lot more fields than ParkAPI2-converters. Most of the fields will be
+At the moment, ParkAPIv3 converters support a lot more fields than ParkAPI2-converters. Most of the fields will be
 backported to the ParkAPIv2 converters, though.
 
 Usage of `test-push-converter.py` is quite simple: it requires the data source uid and the path to the file you want to 

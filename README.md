@@ -193,7 +193,7 @@ extended information about errors in a `ImportSourceResult`.
 
 Any `BaseConverter` needs (just like the `ScraperBase`) a property called `source_info` in order to provide basic
 information as `SourceInfo` instance (which a `PoolInfo` for now, but may be extended). The unique identifier there
-the one you use in `test-push-converter.py`.
+are the one you use in `test-push-converter.py`.
 
 A new converter will look like this:
 

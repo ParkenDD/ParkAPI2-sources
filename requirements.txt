@@ -6,7 +6,7 @@ requests==2.26.0
 
 # for original/
 
-feedparser==6.0.8
+feedparser==6.0.10
 utm==0.7.0
 
 # for new/

@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ParkenDD/ParkAPI2-sources/main/docs/schema/parking-site.json",
+  "properties": {
+    "address": {
+      "maxLength": 512,
+      "type": "string"
+    },
+    "capacity": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "capacity_bus": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "capacity_carsharing": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "capacity_charging": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "capacity_disabled": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "capacity_family": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "capacity_truck": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "capacity_woman": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "description": {
+      "maxLength": 4096,
+      "type": "string"
+    },
+    "has_lighting": {
+      "type": "boolean"
+    },
+    "has_realtime_data": {
+      "default": false,
+      "type": "boolean"
+    },
+    "is_supervised": {
+      "type": "boolean"
+    },
+    "lat": {
+      "pattern": "^[+-]?[0-9]{0,3}\\.?[0-9]{0,7}$",
+      "type": "string"
+    },
+    "lon": {
+      "pattern": "^[+-]?[0-9]{0,3}\\.?[0-9]{0,7}$",
+      "type": "string"
+    },
+    "max_stay": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "name": {
+      "maxLength": 256,
+      "type": "string"
+    },
+    "opening_hours": {
+      "description": "OSM opening_hours format",
+      "maxLength": 512,
+      "type": "string"
+    },
+    "operator_name": {
+      "maxLength": 256,
+      "type": "string"
+    },
+    "original_uid": {
+      "maxLength": 256,
+      "type": "string"
+    },
+    "park_and_ride_type": {
+      "items": {
+        "enum": [
+          "CARPOOL",
+          "TRAIN",
+          "BUS",
+          "TRAM"
+        ],
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "public_url": {
+      "format": "uri",
+      "maxLength": 4096,
+      "type": "string"
+    },
+    "realtime_capacity": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_capacity_bus": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_capacity_carsharing": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_capacity_charging": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_capacity_disabled": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_capacity_family": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_capacity_truck": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_capacity_woman": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity_bus": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity_carsharing": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity_charging": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity_disabled": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity_family": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity_truck": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_free_capacity_woman": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "realtime_opening_status": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "source_id": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "static_data_updated_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "ON_STREET",
+        "OFF_STREET_PARKING_GROUND",
+        "UNDERGROUND",
+        "CAR_PARK",
+        "OTHER"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "source_id",
+    "original_uid",
+    "name",
+    "type",
+    "has_realtime_data",
+    "static_data_updated_at",
+    "lat",
+    "lon",
+    "capacity"
+  ],
+  "title": "ParkingSite",
+  "type": "object"
+}

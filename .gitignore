@@ -10,3 +10,4 @@ cache/
 
 __pycache__/
 *.pyc
+/.ruff_cache

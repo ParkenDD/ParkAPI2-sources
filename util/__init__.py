@@ -10,4 +10,4 @@ from .strings import (
 from .snapshot import SnapshotMaker
 from .scraper import ScraperBase
 from .soup import get_soup_text
-from .structs import PoolInfo, LotInfo, LotData
+from .structs import PoolInfo, LotInfo, LotData, LotInfoList, LotDataList, PoolInfo as SourceInfo

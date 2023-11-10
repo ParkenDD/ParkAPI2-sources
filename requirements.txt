@@ -12,3 +12,8 @@ utm==0.7.0
 # for new/
 
 python-decouple==3.5
+
+
+# for v3
+validataclass~=0.9.0
+openpyxl~=3.1.2

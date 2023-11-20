@@ -18,7 +18,7 @@ from util import SourceInfo
 class VrsParkAndRideConverter(XlsxConverter):
     source_info = SourceInfo(
         id='vrs-p-r',
-        name='Verband Region Stuttgart: Parl and Ride',
+        name='Verband Region Stuttgart: Park and Ride',
         public_url='https://www.region-stuttgart.org/de/bereiche-aufgaben/mobilitaet/park-ride/',
     )
 

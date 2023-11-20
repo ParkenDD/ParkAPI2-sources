@@ -85,8 +85,8 @@ class StaticParkingSiteInput(ValidataclassMixin):
         discard_milliseconds=True,
     )
 
-    lat: Decimal = NumericValidator(min_value=90, max_value=90)
-    lon: Decimal = NumericValidator(min_value=180, max_value=180)
+    lat: Decimal = NumericValidator(min_value=-90, max_value=90)
+    lon: Decimal = NumericValidator(min_value=-180, max_value=180)
 
     capacity: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
     capacity_disabled: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)

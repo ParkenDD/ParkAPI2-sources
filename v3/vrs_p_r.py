@@ -18,7 +18,7 @@ from util import SourceInfo
 class VrsParkAndRideConverter(XlsxConverter):
     source_info = SourceInfo(
         id='vrs-p-r',
-        name='Verband Region Stuttgart: Parl and Ride',
+        name='Verband Region Stuttgart: Park and Ride',
         public_url='https://www.region-stuttgart.org/de/bereiche-aufgaben/mobilitaet/park-ride/',
     )
 
@@ -83,6 +83,7 @@ class VrsParkAndRideConverter(XlsxConverter):
             try:
                 static_parking_site_inputs.append(self.static_parking_site_validator.validate(parking_site_dict))
             except ValidationError as e:
+                print(e.to_dict())
                 validation_exceptions.append(
                     ImportParkingSiteException(
                         uid=parking_site_dict.get('uid'),

@@ -83,7 +83,6 @@ class VrsParkAndRideConverter(XlsxConverter):
             try:
                 static_parking_site_inputs.append(self.static_parking_site_validator.validate(parking_site_dict))
             except ValidationError as e:
-                print(e.to_dict())
                 validation_exceptions.append(
                     ImportParkingSiteException(
                         uid=parking_site_dict.get('uid'),

@@ -88,6 +88,8 @@ def print_result(result: ImportSourceResult):
     print('### failures ###')  # noqa: T201
     print(f'static_parking_site_error_count: {result.static_parking_site_error_count}')  # noqa: T201
     print(f'realtime_parking_site_error_count: {result.realtime_parking_site_error_count}')  # noqa: T201
+    print(f'static_parking_site_errors: {result.static_parking_site_errors}')  # noqa: T201
+    print(f'realtime_parking_site_errors: {result.realtime_parking_site_errors}')  # noqa: T201
 
 
 def filter_none(data: dict) -> dict:

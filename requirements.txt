@@ -11,7 +11,7 @@ utm==0.7.0
 
 # for new/
 
-python-decouple==3.5
+python-decouple==3.8
 
 
 # for v3

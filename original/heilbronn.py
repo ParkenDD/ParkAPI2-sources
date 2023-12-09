@@ -67,13 +67,14 @@ class Heilbronn(ScraperBase):
 
         return lots
 
-    def get_lot_infos(self) -> List[LotInfo]:
+    def get_lot_infos(self) -> LotInfoList[LotInfo]:
         lot_map = {
             lot.name: lot
             for lot in self.get_v1_lot_infos_from_geojson("Heilbronn")
         }
 
         lots = []
+        error_count = 0
 
         soup = self.request_soup(self.POOL.source_url)
         parking_lots = soup.find_all( 'div', class_='row carparkContent')
@@ -84,10 +85,13 @@ class Heilbronn(ScraperBase):
                 parking_name = park_temp2.text.strip()
             else:
                 parking_name = park_temp1.text.strip()
-            
+
+            if parking_name not in lot_map:
+                error_count += 1
+                continue
             kwargs = vars(lot_map[parking_name])
             kwargs["public_url"] = park_temp2["href"] if park_temp2 else None
 
             lots.append(LotInfo(**kwargs))
 
-        return lots
+        return LotInfoList(lots, lot_error_count=error_count)

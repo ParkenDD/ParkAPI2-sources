@@ -184,19 +184,27 @@ class LotData(Struct):
 
 
 class LotInfoList(List[LotInfo]):
-    lot_error_count: Optional[int] = None
+    errors: Optional[list[str]] = None
 
-    def __init__(self, items: Iterable[LotInfo], *, lot_error_count: Optional[int] = None):
+    def __init__(self, items: Iterable[LotInfo], *, errors: Optional[list[str]] = None):
         list.__init__(self, items)
-        self.lot_error_count = lot_error_count
+        self.errors = errors
+
+    @property
+    def error_count(self) -> int:
+        return None if self.errors is None else len(self.errors)
 
 
 class LotDataList(List[LotData]):
-    lot_error_count: Optional[int] = None
+    errors: Optional[list[str]] = None
 
-    def __init__(self, items: Iterable[LotData], *, lot_error_count: Optional[int] = None):
+    def __init__(self, items: Iterable[LotData], *, errors: Optional[list[str]] = None):
         list.__init__(self, items)
-        self.lot_error_count = lot_error_count
+        self.errors = errors
+
+    @property
+    def error_count(self) -> int:
+        return None if self.errors is None else len(self.errors)
 
 
 def validate_timestamp(timestamp: datetime.datetime, parent: str):

@@ -68,7 +68,7 @@ class VrsParkAndRideConverter(XlsxConverter):
         static_parking_site_inputs: list[StaticParkingSiteInput] = []
 
         for row in worksheet.iter_rows(min_row=2):
-            # ignore empty lines
+            # ignore empty lines as LibreOffice sometimes adds empty rows at the end of a file
             if row[0].value is None:
                 continue
 

@@ -73,8 +73,8 @@ class Heilbronn(ScraperBase):
             for lot in self.get_v1_lot_infos_from_geojson("Heilbronn")
         }
 
-        lots = []
-        error_count = 0
+        lots: list[LotInfo] = []
+        errors: list[str] = []
 
         soup = self.request_soup(self.POOL.source_url)
         parking_lots = soup.find_all( 'div', class_='row carparkContent')
@@ -87,11 +87,11 @@ class Heilbronn(ScraperBase):
                 parking_name = park_temp1.text.strip()
 
             if parking_name not in lot_map:
-                error_count += 1
+                errors.append(f'parking site "{parking_name}" is not in provided GeoJSON')
                 continue
             kwargs = vars(lot_map[parking_name])
             kwargs["public_url"] = park_temp2["href"] if park_temp2 else None
 
             lots.append(LotInfo(**kwargs))
 
-        return LotInfoList(lots, lot_error_count=error_count)
+        return LotInfoList(lots, errors=errors)

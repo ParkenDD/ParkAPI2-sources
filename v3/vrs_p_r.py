@@ -64,10 +64,14 @@ class VrsParkAndRideConverter(XlsxConverter):
         worksheet = workbook.active
         mapping = self.get_mapping_by_header(next(worksheet.rows))
 
-        validation_exceptions: list[ImportParkingSiteException] = []
+        static_parking_site_errors: list[ImportParkingSiteException] = []
         static_parking_site_inputs: list[StaticParkingSiteInput] = []
 
         for row in worksheet.iter_rows(min_row=2):
+            # ignore empty lines as LibreOffice sometimes adds empty rows at the end of a file
+            if row[0].value is None:
+                continue
+
             parking_site_raw_dict: dict[str, str] = {}
             for position, field in enumerate(mapping):
                 parking_site_raw_dict[field] = row[position].value
@@ -83,7 +87,7 @@ class VrsParkAndRideConverter(XlsxConverter):
             try:
                 static_parking_site_inputs.append(self.static_parking_site_validator.validate(parking_site_dict))
             except ValidationError as e:
-                validation_exceptions.append(
+                static_parking_site_errors.append(
                     ImportParkingSiteException(
                         uid=parking_site_dict.get('uid'),
                         message=f'invalid static parking site data: {e.to_dict()}',
@@ -93,5 +97,5 @@ class VrsParkAndRideConverter(XlsxConverter):
 
         return self.generate_import_source_result(
             static_parking_site_inputs=static_parking_site_inputs,
-            static_parking_site_error_count=len(validation_exceptions),
+            static_parking_site_errors=static_parking_site_errors,
         )

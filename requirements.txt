@@ -19,3 +19,5 @@ validataclass~=0.9.0
 openpyxl~=3.1.2
 lxml~=4.9.3
 
+# Stuttgart returns UTM32 coords, so we reproject using pyproj
+pyproj~=3.6.1

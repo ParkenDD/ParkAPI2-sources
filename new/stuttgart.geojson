@@ -1,0 +1,985 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717223",
+        "name": "Haus der Geschichte",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 51,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.185283,
+          48.778584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717226",
+        "name": "Bohnenviertel",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 160,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.183145,
+          48.774647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717229",
+        "name": "Breuninger",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 580,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181387,
+          48.774011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717244",
+        "name": "Galeria Kaufhof (Rathausviertel)",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 111,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.176942,
+          48.774085
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717250",
+        "name": "Parkhaus Hofdiener",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 396,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.172819,
+          48.779916
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717253",
+        "name": "Galeria Kaufhof (Unt. Königstr.)",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 427,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.180177,
+          48.782109
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717256",
+        "name": "Schloßstraße",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 290,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.16931,
+          48.778428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717262",
+        "name": "City-Garage",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 140,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.176438,
+          48.78265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717289",
+        "name": "Österreichischer Platz",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 564,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17371,
+          48.770046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717312",
+        "name": "Im Zeppelin Carré",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 265,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17841,
+          48.782886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717315",
+        "name": "Züblin",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 520,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.18126,
+          48.772869
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717345",
+        "name": "Friedrichsbau",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 141,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175678,
+          48.780101
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717363",
+        "name": "Liederhalle / Bosch-Areal",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 110,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.167902,
+          48.77915
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717366",
+        "name": "Holzgartenstraße",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 194,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.169934,
+          48.780186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717372",
+        "name": "Königsbau Passagen",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 312,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.177845,
+          48.779949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717375",
+        "name": "Kronprinzstraße",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 564,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.174055,
+          48.775336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717384",
+        "name": "Landtag",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 140,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.18462,
+          48.778693
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717408",
+        "name": "Rotebühlplatz/Kulturzentrum",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 270,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.169756,
+          48.775774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717411",
+        "name": "Schillerplatz",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 158,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178785,
+          48.776763
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717414",
+        "name": "Schloßgarten (verbunden mit Marstallstraße)",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 385,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.182805,
+          48.782177
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717417",
+        "name": "Schwabenzentrum",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 385,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178976,
+          48.77352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717426",
+        "name": "Sophiengarage",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 181,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.172171,
+          48.773665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717429",
+        "name": "Staatsgalerie",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 291,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.186664,
+          48.780417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717432",
+        "name": "Stadtgarten (Katharinenhospital)",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 135,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.173002,
+          48.782484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717435",
+        "name": "Stephangarage",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 265,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17985,
+          48.781993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717441",
+        "name": "LBBW (Hbf.)",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 870,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181171,
+          48.786421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717447",
+        "name": "Tivoli",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 213,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.166417,
+          48.779737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12717450",
+        "name": "Tübinger Carre",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175405,
+          48.772131
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12718752",
+        "name": "Das Gerber",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 573,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.172763,
+          48.771298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12718764",
+        "name": "Milaneo",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 1104,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.183978,
+          48.791373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart12718779",
+        "name": "Rotebühlhof/Finanzamt",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 213,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.169377,
+          48.773881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78241073",
+        "name": "Rathaus",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.177875,
+          48.774178
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78241093",
+        "name": "Neue Brücke",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 150,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.511338,
+          0.00044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78257172",
+        "name": "Keplerstraße",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 163,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175941,
+          48.781351
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78278431",
+        "name": "Landesbibliothek",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 216,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.185307,
+          48.777837
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78278545",
+        "name": "Kriegsberg",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 247,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17651,
+          48.78449
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78278577",
+        "name": "P+R Österfeld",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 284,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.112993,
+          48.737102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78278879",
+        "name": "Bülow Carre",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 108,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178908,
+          48.781202
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78279135",
+        "name": "Dorotheen-Quartier",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 270,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181663,
+          48.77527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78280073",
+        "name": "P+R Albstraße",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 100,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.161997,
+          48.745698
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78318611",
+        "name": "Haus der Wirtschaft",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 74,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.174066,
+          48.778421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78319371",
+        "name": "Marquardtbau",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178482,
+          48.780142
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78319401",
+        "name": "Stadtmitte",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175917,
+          48.778301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78319431",
+        "name": "Am Bollwerk",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.167501,
+          48.777108
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78319463",
+        "name": "Am Schloßplatz",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181136,
+          48.780039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78319492",
+        "name": "Wilhelma",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.20658,
+          48.803817
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78357190",
+        "name": "BW-Bank/Kunstmuseum",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.176231,
+          48.77876
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78357200",
+        "name": "Olgahospital",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17433,
+          48.784052
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "stuttgart78357206",
+        "name": "Le Méridian",
+        "type": "unknown",
+        "public_url": null,
+        "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
+        "address": null,
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.189266,
+          48.784514
+        ]
+      }
+    }
+  ]
+}

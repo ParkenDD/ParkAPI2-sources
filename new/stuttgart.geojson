@@ -10,8 +10,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 46,
+        "capacity": 51,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.185283,
+          48.778584
+        ]
       }
     },
     {
@@ -25,6 +32,13 @@
         "address": null,
         "capacity": 160,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.183145,
+          48.774647
+        ]
       }
     },
     {
@@ -38,6 +52,13 @@
         "address": null,
         "capacity": 580,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181387,
+          48.774011
+        ]
       }
     },
     {
@@ -51,6 +72,13 @@
         "address": null,
         "capacity": 111,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.176942,
+          48.774085
+        ]
       }
     },
     {
@@ -62,8 +90,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 143,
+        "capacity": 396,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.172819,
+          48.779916
+        ]
       }
     },
     {
@@ -77,6 +112,13 @@
         "address": null,
         "capacity": 427,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.180177,
+          48.782109
+        ]
       }
     },
     {
@@ -88,8 +130,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 175,
+        "capacity": 290,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.16931,
+          48.778428
+        ]
       }
     },
     {
@@ -103,6 +152,13 @@
         "address": null,
         "capacity": 140,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.176438,
+          48.78265
+        ]
       }
     },
     {
@@ -116,6 +172,13 @@
         "address": null,
         "capacity": 564,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17371,
+          48.770046
+        ]
       }
     },
     {
@@ -129,6 +192,13 @@
         "address": null,
         "capacity": 265,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17841,
+          48.782886
+        ]
       }
     },
     {
@@ -140,8 +210,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 530,
+        "capacity": 520,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.18126,
+          48.772869
+        ]
       }
     },
     {
@@ -153,8 +230,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 71,
+        "capacity": 141,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175678,
+          48.780101
+        ]
       }
     },
     {
@@ -168,6 +252,13 @@
         "address": null,
         "capacity": 110,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.167902,
+          48.77915
+        ]
       }
     },
     {
@@ -181,6 +272,13 @@
         "address": null,
         "capacity": 194,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.169934,
+          48.780186
+        ]
       }
     },
     {
@@ -194,6 +292,13 @@
         "address": null,
         "capacity": 312,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.177845,
+          48.779949
+        ]
       }
     },
     {
@@ -207,6 +312,13 @@
         "address": null,
         "capacity": 564,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.174055,
+          48.775336
+        ]
       }
     },
     {
@@ -218,8 +330,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 5,
+        "capacity": 140,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.18462,
+          48.778693
+        ]
       }
     },
     {
@@ -233,6 +352,13 @@
         "address": null,
         "capacity": 270,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.169756,
+          48.775774
+        ]
       }
     },
     {
@@ -244,8 +370,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 138,
+        "capacity": 158,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178785,
+          48.776763
+        ]
       }
     },
     {
@@ -259,6 +392,13 @@
         "address": null,
         "capacity": 385,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.182805,
+          48.782177
+        ]
       }
     },
     {
@@ -270,8 +410,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 350,
+        "capacity": 385,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178976,
+          48.77352
+        ]
       }
     },
     {
@@ -285,6 +432,13 @@
         "address": null,
         "capacity": 181,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.172171,
+          48.773665
+        ]
       }
     },
     {
@@ -296,8 +450,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 251,
+        "capacity": 291,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.186664,
+          48.780417
+        ]
       }
     },
     {
@@ -311,6 +472,13 @@
         "address": null,
         "capacity": 135,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.173002,
+          48.782484
+        ]
       }
     },
     {
@@ -324,6 +492,13 @@
         "address": null,
         "capacity": 265,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17985,
+          48.781993
+        ]
       }
     },
     {
@@ -337,6 +512,13 @@
         "address": null,
         "capacity": 870,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181171,
+          48.786421
+        ]
       }
     },
     {
@@ -348,8 +530,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 125,
+        "capacity": 213,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.166417,
+          48.779737
+        ]
       }
     },
     {
@@ -363,6 +552,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175405,
+          48.772131
+        ]
       }
     },
     {
@@ -376,6 +572,13 @@
         "address": null,
         "capacity": 573,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.172763,
+          48.771298
+        ]
       }
     },
     {
@@ -387,8 +590,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 1174,
+        "capacity": 1104,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.183978,
+          48.791373
+        ]
       }
     },
     {
@@ -400,8 +610,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 133,
+        "capacity": 213,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.169377,
+          48.773881
+        ]
       }
     },
     {
@@ -415,6 +632,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.177875,
+          48.774178
+        ]
       }
     },
     {
@@ -428,6 +652,13 @@
         "address": null,
         "capacity": 150,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.511338,
+          0.00044
+        ]
       }
     },
     {
@@ -439,8 +670,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 93,
+        "capacity": 163,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175941,
+          48.781351
+        ]
       }
     },
     {
@@ -452,8 +690,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 121,
+        "capacity": 216,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.185307,
+          48.777837
+        ]
       }
     },
     {
@@ -465,8 +710,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 235,
+        "capacity": 247,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17651,
+          48.78449
+        ]
       }
     },
     {
@@ -480,6 +732,13 @@
         "address": null,
         "capacity": 284,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.112993,
+          48.737102
+        ]
       }
     },
     {
@@ -493,6 +752,13 @@
         "address": null,
         "capacity": 108,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178908,
+          48.781202
+        ]
       }
     },
     {
@@ -506,6 +772,13 @@
         "address": null,
         "capacity": 270,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181663,
+          48.77527
+        ]
       }
     },
     {
@@ -519,6 +792,13 @@
         "address": null,
         "capacity": 100,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.161997,
+          48.745698
+        ]
       }
     },
     {
@@ -530,8 +810,15 @@
         "public_url": null,
         "source_url": "https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
         "address": null,
-        "capacity": 52,
+        "capacity": 74,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.174066,
+          48.778421
+        ]
       }
     },
     {
@@ -545,6 +832,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.178482,
+          48.780142
+        ]
       }
     },
     {
@@ -558,6 +852,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.175917,
+          48.778301
+        ]
       }
     },
     {
@@ -571,6 +872,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.167501,
+          48.777108
+        ]
       }
     },
     {
@@ -584,6 +892,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.181136,
+          48.780039
+        ]
       }
     },
     {
@@ -597,6 +912,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.20658,
+          48.803817
+        ]
       }
     },
     {
@@ -610,6 +932,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.176231,
+          48.77876
+        ]
       }
     },
     {
@@ -623,6 +952,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.17433,
+          48.784052
+        ]
       }
     },
     {
@@ -636,6 +972,13 @@
         "address": null,
         "capacity": 0,
         "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.189266,
+          48.784514
+        ]
       }
     }
   ]

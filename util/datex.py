@@ -111,8 +111,10 @@ class DatexScraperMixin:
 
         point = facility.find("pointCoordinates")
         if not point:
-            # e.g. Stuttgart currently has no coord /o\
+            point = facility.find("locationForDisplay")
+        if not point:
             return None
+    
         else:
             return { 
                 "latitude": float(point.find("latitude").text),

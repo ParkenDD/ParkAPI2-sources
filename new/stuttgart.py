@@ -16,16 +16,17 @@ class Stuttgart(DatexScraperMixin, ScraperBase):
 
     In case this information will not be provided soon, the geojson will need to be enhanced manually :-/
     """
+
     POOL = PoolInfo(
-        id="stuttgart",
-        name="Stuttgart",
-        public_url="https://service.mdm-portal.de/mdm-portal-application/publDetail.do?publicationId=3059002",
-        source_url="https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml",
-        attribution_contributor="Landeshauptstadt Stuttgart, Tiefbauamt, mirrored by MFDZ",
-        attribution_license="dl-de/by-2-0",
+        id='stuttgart',
+        name='Stuttgart',
+        public_url='https://service.mdm-portal.de/mdm-portal-application/publDetail.do?publicationId=3059002',
+        source_url='https://data.mfdz.de/DATEXII_Parkdaten_dynamisch_Stuttgart/body.xml',
+        attribution_contributor='Landeshauptstadt Stuttgart, Tiefbauamt, mirrored by MFDZ',
+        attribution_license='dl-de/by-2-0',
     )
 
-    STATIC_LOTS_URL = "https://data.mfdz.de/DATEXII_Parkdaten_statisch_Stuttgart/body.xml"
+    STATIC_LOTS_URL = 'https://data.mfdz.de/DATEXII_Parkdaten_statisch_Stuttgart/body.xml'
 
     UTM32_PROJ = pyproj.Proj(proj='utm', zone=32, ellps='WGS84', preserve_units=True)
 

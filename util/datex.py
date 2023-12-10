@@ -18,18 +18,19 @@ class DatexScraperMixin:
     """
     def get_lot_data(self) -> List[LotData]:
         now = self.now()
-        soup = self.request_soup(self.POOL.source_url, encoding='UTF-8')
+        soup = self.request_soup(self.POOL.source_url, encoding='UTF-8', parser='xml')
 
-        last_updated = self.to_utc_datetime(soup.find("publicationtime").text)
+
+        last_updated = self.to_utc_datetime(soup.find("publicationTime").text)
 
         lots = []
 
-        for facility in soup.select("parkingfacilitytablestatuspublication > parkingfacilitystatus"):
-            lot_id = facility.find("parkingfacilityreference")["id"]
+        for facility in soup.select("parkingFacilityTableStatusPublication > parkingFacilityStatus"):
+            lot_id = facility.find("parkingFacilityReference")["id"]
 
-            capacity_shorttermoverride = facility.find("totalparkingcapacityshorttermoverride")
+            capacity_shorttermoverride = facility.find("totalParkingCapacityShorttermOverride")
 
-            parkingFacilityStatusTime = facility.find("parkingfacilitystatustime")
+            parkingFacilityStatusTime = facility.find("parkingFacilityStatusTime")
             try:
                 lot_timestamp = self.to_utc_datetime(parkingFacilityStatusTime.text) if parkingFacilityStatusTime else last_updated  
             except:
@@ -38,16 +39,16 @@ class DatexScraperMixin:
             #   totalNumberOfOccupiedParkingSpaces and totalNumberOfVacantParkingSpaces
             #   e.g. first goes to zero or might disappear when closed while second remains
             try:
-                lot_occupied = int(facility.find("totalnumberofoccupiedparkingspaces").text)
+                lot_occupied = int(facility.find("totalNumberOfOccupiedParkingSpaces").text)
             except:
                 lot_occupied = None
 
             try:
-                lot_free = int(facility.find("totalnumberofvacantparkingspaces").text)
+                lot_free = int(facility.find("totalNumberOfVacantParkingSpaces").text)
             except:
                 lot_free = None
 
-            state = facility.find("parkingfacilitystatus")
+            state = facility.find("parkingFacilityStatus")
             
             if state and state.text in [LotData.Status.open, LotData.Status.closed]:
                 state = state.text
@@ -72,10 +73,10 @@ class DatexScraperMixin:
 
     def get_lot_infos(self) -> List[LotInfo]:
         url = self.STATIC_LOTS_URL
-        soup = self.request_soup(url, encoding='UTF-8')
-
+        soup = self.request_soup(url, encoding='UTF-8', parser='xml')
+        
         lots = []
-        for facility in soup.find_all("parkingfacility"):
+        for facility in soup.find_all("parkingFacility"):
             coord = self._get_facility_coords(facility)
             lots.append(
                 LotInfo(
@@ -84,8 +85,8 @@ class DatexScraperMixin:
                     type=LotInfo.Types.unknown,  # there's no data
                     source_url=self.POOL.source_url,
                     latitude=coord["latitude"] if coord else None,
-                    longitude=foord["longitude"] if coord else None,
-                    capacity=int(facility.find("totalparkingcapacity").text),
+                    longitude=coord["longitude"] if coord else None,
+                    capacity=int(facility.find("totalParkingCapacity").text),
                     has_live_capacity=True,
                 )
             )
@@ -107,8 +108,8 @@ class DatexScraperMixin:
 
     def _get_facility_coords(self, facility):
         
-        point = facility.find("pointcoordinates")
 
+        point = facility.find("pointCoordinates")
         if not point:
             # e.g. Stuttgart currently has no coord /o\
             return None

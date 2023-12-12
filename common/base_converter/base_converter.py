@@ -26,7 +26,7 @@ class BaseConverter(ABC):
     def generate_import_source_result(
         self,
         static_parking_site_inputs: Optional[list[StaticParkingSiteInput]] = None,
-        realtime_parking_site_inputs: Optional[list[StaticParkingSiteInput]] = None,
+        realtime_parking_site_inputs: Optional[list[RealtimeParkingSiteInput]] = None,
         static_parking_site_errors: Optional[list[ImportParkingSiteException]] = None,
         realtime_parking_site_errors: Optional[list[ImportParkingSiteException]] = None,
     ) -> ImportSourceResult:

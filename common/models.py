@@ -8,7 +8,7 @@ from enum import Enum
 from typing import Optional
 
 from common.exceptions import ImportParkingSiteException
-from common.validators import StaticParkingSiteInput
+from common.validators import StaticParkingSiteInput, RealtimeParkingSiteInput
 
 
 class SourceStatus(Enum):
@@ -31,7 +31,7 @@ class ImportSourceResult:
     attribution_url: Optional[str] = None
 
     static_parking_site_inputs: Optional[list[StaticParkingSiteInput]] = None
-    realtime_parking_site_inputs: Optional[list[StaticParkingSiteInput]] = None
+    realtime_parking_site_inputs: Optional[list[RealtimeParkingSiteInput]] = None
 
     static_parking_site_errors: Optional[list[ImportParkingSiteException]] = None
     realtime_parking_site_errors: Optional[list[ImportParkingSiteException]] = None

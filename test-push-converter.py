@@ -63,7 +63,7 @@ def main():
 
     elif file_ending == 'xml':
         converter: XmlConverter = get_converter(source_uid, XmlConverter)  # type: ignore
-        with file_path.open() as xml_file:
+        with file_path.open('br') as xml_file:
             root_element = etree.fromstring(xml_file.read(), parser=etree.XMLParser(resolve_entities=False))  # noqa: S320
         result: ImportSourceResult = converter.handle_xml(root_element)
 

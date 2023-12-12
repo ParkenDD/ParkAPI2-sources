@@ -10,7 +10,7 @@ from validataclass.exceptions import ValidationError
 from common.base_converter import XmlConverter
 from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
-from common.validators import StaticParkingSiteInput, RealtimeParkingSiteInput
+from common.validators import RealtimeParkingSiteInput, StaticParkingSiteInput
 from util import SourceInfo
 
 
@@ -78,6 +78,8 @@ class StuttgartConverter(XmlConverter):
                 realtime_parking_site_inputs=realtime_parking_sites,
                 realtime_parking_site_errors=errors,
             )
+
+        return self.generate_import_source_result()
 
     def _handle_static_item(self, item: dict) -> StaticParkingSiteInput:
         input_data = {

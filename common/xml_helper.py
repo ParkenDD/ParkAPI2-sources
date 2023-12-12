@@ -4,7 +4,7 @@ Use of this source code is governed by an MIT-style license that can be found in
 """
 
 from collections import defaultdict
-from typing import Optional, List, Tuple
+from typing import List, Optional, Tuple
 
 from lxml import etree
 
@@ -19,7 +19,7 @@ class XMLHelper:
         """
         Take a string object and (try to) convert it to an XML etree Element
         """
-        content_tag: etree.Element = etree.fromstring(content_string)
+        content_tag: etree.Element = etree.fromstring(content_string, parser=etree.XMLParser(resolve_entities=False))  # noqa: S320
 
         return content_tag
 
@@ -200,8 +200,8 @@ class XMLHelper:
         ignore_all_attribs: bool = False
         if tag.attrib:
             ignore_all_attribs = True
-            for k, v in tag.attrib.items():
-                if k not in ignore_attributes:
+            for key in tag.attrib.keys():
+                if key not in ignore_attributes:
                     ignore_all_attribs = False
 
         tag_dict = {tag_name: {} if (tag.attrib and not ignore_all_attribs) else None}
@@ -241,7 +241,7 @@ class XMLHelper:
 
         # filter out remote type tags at the child level:
         if isinstance(tag_dict[tag_name], dict):
-            tag_items: list = [(key, value) for key, value in tag_dict[tag_name].items()]
+            tag_items: list[tuple[str, str]] = [(key, value) for key, value in tag_dict[tag_name].items()]  # noqa: C416
             # it only works if there is exactly one key-value-pair at the child level!
             if len(tag_items) == 1:
                 child_key = tag_items[0][0]
@@ -251,7 +251,7 @@ class XMLHelper:
                     tag_dict[tag_name] = child_value
 
         # finally, filter out remote type tags at the top level:
-        if type(tag_dict[tag_name]) is dict and tag_name in remote_type_tags:
+        if isinstance(tag_dict[tag_name], dict) and tag_name in remote_type_tags:
             # the return value still has to be a dict!
             tag_dict = tag_dict[tag_name]
 

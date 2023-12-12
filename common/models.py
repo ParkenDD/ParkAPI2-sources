@@ -8,7 +8,7 @@ from enum import Enum
 from typing import Optional
 
 from common.exceptions import ImportParkingSiteException
-from common.validators import StaticParkingSiteInput, RealtimeParkingSiteInput
+from common.validators import RealtimeParkingSiteInput, StaticParkingSiteInput
 
 
 class SourceStatus(Enum):

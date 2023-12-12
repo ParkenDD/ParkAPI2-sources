@@ -72,6 +72,7 @@ class StaticParkingSiteInput(ValidataclassMixin):
     type: Optional[ParkingSiteTypeInput] = Noneable(EnumValidator(ParkingSiteTypeInput)), Default(None)
 
     max_stay: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    max_height: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
     has_lighting: Optional[bool] = Noneable(BooleanValidator()), Default(None)
     fee_description: Optional[str] = Noneable(StringValidator(max_length=256)), Default(None)
     has_fee: Optional[bool] = Noneable(BooleanValidator()), Default(None)

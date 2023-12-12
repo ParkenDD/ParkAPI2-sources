@@ -64,7 +64,7 @@ def main():
     elif file_ending == 'xml':
         converter: XmlConverter = get_converter(source_uid, XmlConverter)  # type: ignore
         with file_path.open() as xml_file:
-            root_element = etree.parse(xml_file, parser=etree.XMLParser(resolve_entities=False))  # noqa: S320
+            root_element = etree.fromstring(xml_file.read(), parser=etree.XMLParser(resolve_entities=False))  # noqa: S320
         result: ImportSourceResult = converter.handle_xml(root_element)
 
     else:
@@ -77,13 +77,15 @@ def main():
 
 
 def print_result(result: ImportSourceResult):
-    print('### static data ###')  # noqa: T201
-    for static_parking_site_input in result.static_parking_site_inputs:
-        print(json.dumps(filter_none(static_parking_site_input.to_dict()), indent=2, cls=DefaultJSONEncoder))  # noqa: T201
+    if result.static_parking_site_inputs:
+        print('### static data ###')  # noqa: T201
+        for static_parking_site_input in result.static_parking_site_inputs:
+            print(json.dumps(filter_none(static_parking_site_input.to_dict()), indent=2, cls=DefaultJSONEncoder))  # noqa: T201
 
-    print('### realtime data ###')  # noqa: T201
-    for realtime_parking_site_input in result.realtime_parking_site_inputs:
-        print(json.dumps(filter_none(realtime_parking_site_input.to_dict()), indent=2, cls=DefaultJSONEncoder))  # noqa: T201
+    if result.realtime_parking_site_inputs:
+        print('### realtime data ###')  # noqa: T201
+        for realtime_parking_site_input in result.realtime_parking_site_inputs:
+            print(json.dumps(filter_none(realtime_parking_site_input.to_dict()), indent=2, cls=DefaultJSONEncoder))  # noqa: T201
 
     print('### failures ###')  # noqa: T201
     print(f'static_parking_site_error_count: {result.static_parking_site_error_count}')  # noqa: T201

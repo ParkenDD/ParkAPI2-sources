@@ -25,7 +25,7 @@
       "type": "Feature",
       "properties": {
         "id": "heilbronnbildungscampusmitte",
-        "name": "heilbronnbildungscampusmitte",
+        "name": "Bildungscampus Mitte",
         "type": "garage",
         "public_url": "https://bildungscampus.hn/anfahrt/parkhaus-mitte",
         "source_url": null,
@@ -45,7 +45,7 @@
       "type": "Feature",
       "properties": {
         "id": "heilbronnbildungscampusost",
-        "name": "heilbronnbildungscampusost",
+        "name": "Bildungscampus Ost",
         "type": "garage",
         "public_url": "https://bildungscampus.hn/anfahrt/parkflaeche-ost",
         "source_url": null,
@@ -124,6 +124,26 @@
     {
       "type": "Feature",
       "properties": {
+        "id": "heilbronnp+rkarlsruherstrasse",
+        "name": "P+R Karlsruher Straße",
+        "type": "level",
+        "public_url": null,
+        "source_url": null,
+        "address": "Karlsruher Straße",
+        "capacity": 100,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.202878,
+          49.137712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "id": "heilbronnkiliansplatz",
         "name": "Kiliansplatz",
         "type": "garage",
@@ -145,12 +165,12 @@
       "type": "Feature",
       "properties": {
         "id": "heilbronnparkplatzbahnhof",
-        "name": "heilbronnparkplatzbahnhof",
+        "name": "Parkplatz Hauptbahnhof P1",
         "type": "level",
-        "public_url": null,
+        "public_url": "https://www.mein-contipark.de/parkplatz-finden/parken-in-heilbronn/parkplatz-hauptbahnhof-p1-heilbronn--ci3cp1124315",
         "source_url": null,
-        "address": null,
-        "capacity": null,
+        "address": "Bahnhofstraße 6",
+        "capacity": 456,
         "has_live_capacity": true
       },
       "geometry": {

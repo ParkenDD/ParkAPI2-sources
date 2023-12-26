@@ -21,23 +21,21 @@ class Ulm(ScraperBase):
 
     def get_lot_data(self) -> List[LotData]:
         timestamp = self.now()
-        soup = self.request_soup(self.POOL.public_url)
+        root = self.request_soup(self.POOL.public_url)
 
         lots = []
 
-        table = soup.find('table', id='haupttabelle')
-        table2 = table.find('table', width='790')
-        rows = table2.find_all('tr')
-        for row in rows[3:12]:
-            parking_data = row.find_all('td')
-            parking_name = parking_data[0].text
-
-            try:
+        section = root.find('section', class_='s_live_counter')
+        cards = section.find_all('div', class_='card-container')
+        for card in cards:
+            parking_name = card.find('a', class_='stretched-link').text
+            parking_data = card.find('div', class_='counter-text').get_text().strip().split(' / ')
+            if parking_data[1] == '?':
                 parking_state = LotData.Status.open
-                parking_free = int(parking_data[2].text)
-            except:
-                parking_free = None
+                parking_free = int_or_none(parking_data[0])
+            else:
                 parking_state = LotData.Status.nodata
+                parking_free = None
 
             lots.append(
                 LotData(
@@ -45,7 +43,7 @@ class Ulm(ScraperBase):
                     id=name_to_legacy_id("ulm", parking_name),
                     status=parking_state,
                     num_free=parking_free,
-                    capacity=int_or_none(parking_data[1].text),
+                    capacity=int_or_none(parking_data[1]),
                 )
             )
 

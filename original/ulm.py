@@ -1,7 +1,7 @@
 """
 Original code and data by Quint
 """
-from typing import List
+from typing import List, Dict
 
 from util import *
 
@@ -18,6 +18,11 @@ class Ulm(ScraperBase):
         attribution_license=None,
         attribution_url="https://www.parken-in-ulm.de/impressum.php",
     )
+
+    id_mapping: Dict[str, str] = {
+        'ulmccunord': 'ulmcongresscentrumnordbasteicenter',
+        'ulmccusued': 'ulmcongresscentrumsuedmaritimhotel',
+    }
 
     def get_lot_data(self) -> List[LotData]:
         timestamp = self.now()
@@ -37,10 +42,11 @@ class Ulm(ScraperBase):
                 parking_state = LotData.Status.nodata
                 parking_free = None
 
+            legacy_id = name_to_legacy_id("ulm", parking_name)
             lots.append(
                 LotData(
                     timestamp=timestamp,
-                    id=name_to_legacy_id("ulm", parking_name),
+                    id=self.id_mapping.get(legacy_id, legacy_id),
                     status=parking_state,
                     num_free=parking_free,
                     capacity=int_or_none(parking_data[1]),

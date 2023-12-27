@@ -44,7 +44,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ulmccunord",
+        "id": "ulmcongresscentrumnordbasteicenter",
         "name": "Congress Centrum Nord / Basteicenter",
         "type": "underground",
         "public_url": "https://www.parken-in-ulm.de/parkhaeuser/congress_nord.php",
@@ -64,7 +64,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "ulmccusued",
+        "id": "ulmcongresscentrumsuedmaritimhotel",
         "name": "Congress Centrum Süd / Maritim Hotel",
         "type": "underground",
         "public_url": "https://www.parken-in-ulm.de/parkhaeuser/congress_sued.php",

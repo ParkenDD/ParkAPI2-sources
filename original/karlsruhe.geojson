@@ -10,7 +10,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=W02",
         "source_url": null,
         "address": "Akademiestraße 51-55\n76133 Karlsruhe",
-        "capacity": 80,
+        "capacity": 101,
         "has_live_capacity": true
       },
       "geometry": {
@@ -24,13 +24,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruhestaatstheater",
+        "id": "karlsruheamstaatstheater",
         "name": "Am Staatstheater",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=K04",
         "source_url": null,
         "address": "Baumeisterstraße 11\n76137 Karlsruhe",
-        "capacity": 196,
+        "capacity": 230,
         "has_live_capacity": true
       },
       "geometry": {
@@ -50,7 +50,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S07",
         "source_url": null,
         "address": "Karl-Friedrich-Straße 26\n76133 Karlsruhe",
-        "capacity": 900,
+        "capacity": 843,
         "has_live_capacity": true
       },
       "geometry": {
@@ -90,7 +90,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N03",
         "source_url": null,
         "address": "Herrenstraße 9\n76133 Karlsruhe",
-        "capacity": 273,
+        "capacity": 269,
         "has_live_capacity": true
       },
       "geometry": {
@@ -124,7 +124,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruhegaleriakarlsruhe",
+        "id": "karlsruhekarstadt",
         "name": "Galeria Karlsruhe",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S03",
@@ -150,7 +150,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=K01",
         "source_url": null,
         "address": "Hermann-Billing-Str. 1\n76133 Karlsruhe",
-        "capacity": 340,
+        "capacity": 495,
         "has_live_capacity": true
       },
       "geometry": {
@@ -170,7 +170,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=K02",
         "source_url": null,
         "address": "Beiertheimer Allee 9\n76133 Karlsruhe",
-        "capacity": 235,
+        "capacity": 495,
         "has_live_capacity": true
       },
       "geometry": {
@@ -184,13 +184,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruhekreuzstrasse",
+        "id": "karlsruhekreuzstrasseca",
         "name": "Kreuzstraße (C&A)",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N06",
         "source_url": null,
         "address": "Kreuzstraße 5\n76133 Karlsruhe",
-        "capacity": 50,
+        "capacity": 52,
         "has_live_capacity": true
       },
       "geometry": {
@@ -210,7 +210,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N07",
         "source_url": null,
         "address": "Fritz-Erler-Straße\n76133 Karlsruhe",
-        "capacity": 448,
+        "capacity": 449,
         "has_live_capacity": true
       },
       "geometry": {
@@ -230,7 +230,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S01",
         "source_url": null,
         "address": "Ritterstr. 20\n76133 Karlsruhe",
-        "capacity": 60,
+        "capacity": 68,
         "has_live_capacity": true
       },
       "geometry": {
@@ -250,7 +250,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=W04",
         "source_url": null,
         "address": "Amalienstraße 10\n76133 Karlsruhe",
-        "capacity": 230,
+        "capacity": 250,
         "has_live_capacity": true
       },
       "geometry": {
@@ -304,13 +304,13 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruhemendelssohnplatz",
+        "id": "karlsruhemendelssohnplatzscheckin",
         "name": "Mendelssohnplatz",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S06",
         "source_url": null,
         "address": "Rüppurrer Straße 1\n76137 Karlsruhe",
-        "capacity": 410,
+        "capacity": 417,
         "has_live_capacity": true
       },
       "geometry": {
@@ -330,7 +330,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N02",
         "source_url": null,
         "address": "Waldstraße 14 - 18\n76133 Karlsruhe",
-        "capacity": 356,
+        "capacity": 392,
         "has_live_capacity": true
       },
       "geometry": {
@@ -350,7 +350,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=W03",
         "source_url": null,
         "address": "Kaiserstraße 217\n76133 Karlsruhe",
-        "capacity": 230,
+        "capacity": 273,
         "has_live_capacity": true
       },
       "geometry": {
@@ -370,7 +370,7 @@
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N05",
         "source_url": null,
         "address": "Am Schlossplatz\n76131 Karlsruhe",
-        "capacity": 492,
+        "capacity": 456,
         "has_live_capacity": true
       },
       "geometry": {

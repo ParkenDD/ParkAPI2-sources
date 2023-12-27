@@ -3,7 +3,7 @@ Original code and data by Quint
 """
 import re
 from urllib.parse import urljoin
-from typing import List, Tuple, Generator, Optional
+from typing import List, Tuple, Generator, Optional, Dict
 
 import bs4
 
@@ -24,6 +24,13 @@ class Karlsruhe(ScraperBase):
     )
 
     RE_CAPACITY = re.compile(r"Insgesamt (\d+) Parkplätze")
+
+    id_mapping: Dict[str, str] = {
+        'karlsruhestaatstheater': 'karlsruheamstaatstheater',
+        'karlsruhegaleriakarlsruhe': 'karlsruhekarstadt',
+        'karlsruhekreuzstrasse': 'karlsruhekreuzstrasseca',
+        'karlsruhemendelssohnplatz': 'karlsruhemendelssohnplatzscheckin',
+    }
 
     def get_lot_data(self) -> List[LotData]:
         """
@@ -78,12 +85,13 @@ class Karlsruhe(ScraperBase):
                     status = LotData.Status.nodata
             else:
                 num_free, num_total = None, None
-        
+
+            legacy_id = self.name_to_legacy_id(lot_name)
             lots.append(
                 LotData(
                     timestamp=timestamp,
                     #lot_timestamp=lot_timestamp,
-                    id=self.name_to_legacy_id(lot_name),
+                    id=self.id_mapping.get(legacy_id, legacy_id),
                     status=status,
                     num_free=num_free,
                     capacity=num_total,
@@ -118,7 +126,7 @@ class Karlsruhe(ScraperBase):
             # kwargs is the merge of multiple data sources, defaults are 
             # overridden by v1 info, which are overridden by parsed data
             kwargs = {"type": "garage"} | v1_lot_props | dict(
-                    id=lot_id,
+                    id=self.id_mapping.get(lot_id, lot_id),
                     name=lot_name,
                     has_live_capacity=True,
                     capacity=v1_lot_props.get("total"),

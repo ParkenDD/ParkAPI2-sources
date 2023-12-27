@@ -24,7 +24,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruheamstaatstheater",
+        "id": "karlsruhestaatstheater",
         "name": "Am Staatstheater",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=K04",
@@ -124,8 +124,8 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruhekarstadt",
-        "name": "Karstadt",
+        "id": "karlsruhegaleriakarlsruhe",
+        "name": "Galeria Karlsruhe",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S03",
         "source_url": null,
@@ -184,7 +184,7 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruhekreuzstrasseca",
+        "id": "karlsruhekreuzstrasse",
         "name": "Kreuzstraße (C&A)",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=N06",
@@ -304,8 +304,8 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "karlsruhemendelssohnplatzscheckin",
-        "name": "Mendelssohnplatz (Scheck-In)",
+        "id": "karlsruhemendelssohnplatz",
+        "name": "Mendelssohnplatz",
         "type": "garage",
         "public_url": "https://web1.karlsruhe.de/service/Parken/detail.php?id=S06",
         "source_url": null,

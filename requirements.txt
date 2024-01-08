@@ -17,5 +17,5 @@ python-decouple~=3.8.0
 # for v3
 validataclass~=0.9.0
 openpyxl~=3.1.2
-lxml~=4.9.3
+lxml~=5.1.0
 pyproj~=3.6.1

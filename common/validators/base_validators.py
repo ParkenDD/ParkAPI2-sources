@@ -108,7 +108,7 @@ class StaticParkingSiteInput(ValidataclassMixin):
         return LotInfo(
             id=self.uid,
             name=self.name,
-            type=self.type.to_lot_info_type(),
+            type=self.type.to_lot_info_type() if self.type else 'unknown',
             public_url=self.public_url,
             address=self.address,
             capacity=self.capacity,

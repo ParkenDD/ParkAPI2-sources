@@ -5,8 +5,6 @@ Use of this source code is governed by an MIT-style license that can be found in
 
 from abc import ABC, abstractmethod
 
-from lxml.etree import Element
-
 from common.models import ImportSourceResult
 
 from .base_converter import BaseConverter
@@ -14,5 +12,5 @@ from .base_converter import BaseConverter
 
 class JsonConverter(BaseConverter, ABC):
     @abstractmethod
-    def handle_json(self, root: Element) -> ImportSourceResult:
+    def handle_json(self, data: dict | list) -> ImportSourceResult:
         pass

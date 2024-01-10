@@ -253,23 +253,25 @@ class PbwParkingSiteCountInput:
 
 @validataclass
 class PbwParkingSiteDetailInput:
+    # atm several validators are disabled as they are not used in further processing, and it would be bad if the validation fails
+    # because of unused fields. But maybe we need it some day?
     id: int = IntegerValidator(allow_strings=True)
     objekt: PbwParkingSiteObjectInput = DataclassValidator(PbwParkingSiteObjectInput)
-    dynamisch: PbwRealtimeParkingSiteInput = DataclassValidator(PbwRealtimeParkingSiteInput)
+    # dynamisch: PbwRealtimeParkingSiteInput = DataclassValidator(PbwRealtimeParkingSiteInput)
     position: PbwParkingSitePositionInput = DataclassValidator(PbwParkingSitePositionInput)
     stellplaetze: PbwParkingSitePlacesInput = DataclassValidator(PbwParkingSitePlacesInput)
     typ: PbwParkingSiteTypeInput = DataclassValidator(PbwParkingSiteTypeInput)
     ausstattung: PbwParkingSiteSetupInput = DataclassValidator(PbwParkingSiteSetupInput)
-    elektroladestation: PbwParkingSiteChargeStationParameterInput = DataclassValidator(PbwParkingSiteChargeStationParameterInput)
-    mobilitaetskarte: PbwParkingSiteMobilityCardInput = DataclassValidator(PbwParkingSiteMobilityCardInput)
-    umgebung: list[str] = ListValidator(StringValidator())
-    ansprechpartner: PbwParkingSiteContactInput = DataclassValidator(PbwParkingSiteContactInput)
-    oeffnungszeiten: Optional[PbwParkingSiteOpeningTimesInput] = DataclassValidator(PbwParkingSiteOpeningTimesInput), Default(None)
-    bezahlstellen: list[PbwParkingSitePaymentPlaceInput] = ListValidator(DataclassValidator(PbwParkingSitePaymentPlaceInput)), Default([])
-    tarif: list[PbwParkingSiteTariffInput] = ListValidator(DataclassValidator(PbwParkingSiteTariffInput)), Default([])
-    ladestation: list[PbwParkingSiteChargeStationInput] = ListValidator(DataclassValidator(PbwParkingSiteChargeStationInput)), Default([])
-    ladetarif: list[PbwParkingSiteTariffInput] = ListValidator(DataclassValidator(PbwParkingSiteTariffInput)), Default([])
-    anzahl: PbwParkingSiteCountInput = DataclassValidator(PbwParkingSiteCountInput)
+    # elektroladestation: PbwParkingSiteChargeStationParameterInput = DataclassValidator(PbwParkingSiteChargeStationParameterInput)
+    # mobilitaetskarte: PbwParkingSiteMobilityCardInput = DataclassValidator(PbwParkingSiteMobilityCardInput)
+    # umgebung: list[str] = ListValidator(StringValidator())
+    # ansprechpartner: PbwParkingSiteContactInput = DataclassValidator(PbwParkingSiteContactInput)
+    # oeffnungszeiten: Optional[PbwParkingSiteOpeningTimesInput] = DataclassValidator(PbwParkingSiteOpeningTimesInput), Default(None)
+    # bezahlstellen: list[PbwParkingSitePaymentPlaceInput] = ListValidator(DataclassValidator(PbwParkingSitePaymentPlaceInput)), Default([])
+    # tarif: list[PbwParkingSiteTariffInput] = ListValidator(DataclassValidator(PbwParkingSiteTariffInput)), Default([])
+    # ladestation: list[PbwParkingSiteChargeStationInput] = ListValidator(DataclassValidator(PbwParkingSiteChargeStationInput)), Default([])
+    # ladetarif: list[PbwParkingSiteTariffInput] = ListValidator(DataclassValidator(PbwParkingSiteTariffInput)), Default([])
+    # anzahl: PbwParkingSiteCountInput = DataclassValidator(PbwParkingSiteCountInput)
 
 
 @validataclass

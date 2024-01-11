@@ -1,6 +1,8 @@
 import datetime
 from typing import Union, Optional, List, Iterable
 
+from decouple import config
+
 from .strings import guess_lot_type
 
 
@@ -20,15 +22,15 @@ class Struct:
 class PoolInfo(Struct):
 
     def __init__(
-            self,
-            id: str,
-            name: str,
-            public_url: str,
-            timezone: str = "Europe/Berlin",
-            source_url: Optional[str] = None,
-            attribution_license: Optional[str] = None,
-            attribution_url: Optional[str] = None,
-            attribution_contributor: Optional[str] = None,
+        self,
+        id: str,
+        name: str,
+        public_url: str,
+        timezone: str = "Europe/Berlin",
+        source_url: Optional[str] = None,
+        attribution_license: Optional[str] = None,
+        attribution_url: Optional[str] = None,
+        attribution_contributor: Optional[str] = None,
     ):
         self.id = id
         self.name = name
@@ -208,13 +210,14 @@ class LotDataList(List[LotData]):
 
 
 def validate_timestamp(timestamp: datetime.datetime, parent: str):
+    park_api_v3_mode: bool = config('PARK_API_V3_MODE', default=False, cast=bool)
 
     if not isinstance(timestamp, datetime.datetime):
         raise ValueError(
             f"'{parent}'.timestamp must datetime, got '{type(timestamp).__name__}'"
         )
 
-    if timestamp.tzinfo:
+    if timestamp.tzinfo and not park_api_v3_mode:
         raise ValueError(
             f"'{parent}'.timestamp must be UTC and not contain a tzinfo"
             f", got '{timestamp}'"

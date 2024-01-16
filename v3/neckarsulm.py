@@ -30,7 +30,7 @@ class VrsParkAndRideConverter(XlsxConverter):
         'Betreiber Name': 'operator_name',
         'Längengrad': 'lat',
         'Breitengrad': 'lon',
-        'Adresse mit PLZ und Stadt:': 'address',
+        'Adresse mit PLZ und Stadt': 'address',
         'Maximale Parkdauer': 'max_stay',
         'Anzahl Stellplätze': 'capacity',
         'Anzahl Carsharing-Parkplätze': 'capacity_carsharing',

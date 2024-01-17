@@ -47,7 +47,7 @@ class BahnV2PullConverter(PullConverter):
         )
         parking_site_dicts = self.get_data()
 
-        for i, parking_site_dict in parking_site_dicts.get('_embedded', []):
+        for parking_site_dict in parking_site_dicts.get('_embedded', []):
             try:
                 parking_site_input: BahnParkingSiteInput = self.bahn_parking_site_validator.validate(parking_site_dict)
             except ValidationError as e:

@@ -12,6 +12,9 @@ class ImportException(Exception):
         self.uid = uid
         self.message = message
 
+    def __repr__(self):
+        return f'{self.__class__.__name__} {self.uid}: {self.message}'
+
 
 class ImportSourceException(ImportException):
     pass

@@ -15,7 +15,7 @@ from common.validators import StaticParkingSiteInput
 from util import SourceInfo
 
 
-class VrsParkAndRideConverter(XlsxConverter):
+class NeckarsulmConverter(XlsxConverter):
     source_info = SourceInfo(
         id='neckarsulm',
         name='Stadt Neckarsulm',

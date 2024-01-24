@@ -19,6 +19,7 @@ from openpyxl.reader.excel import load_workbook
 from common.base_converter import BaseConverter, CsvConverter, JsonConverter, XlsxConverter, XmlConverter
 from common.encoding import DefaultJSONEncoder
 from common.models import ImportSourceResult
+from util import SourceInfo
 
 DATA_TYPES = {
     'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -110,7 +111,10 @@ def get_converter(source_uid: str, class_to_find: Type[BaseConverter]) -> BaseCo
                 continue
             if not issubclass(attribute, class_to_find) or attribute is class_to_find:
                 continue
-            # at this point we can be sure that attribute is a BaseConverter child, so we can initialize and register it
+            # source_info is just set at actual final classes, so we ignore anything else
+            if not hasattr(attribute, 'source_info') or not isinstance(getattr(attribute, 'source_info'), SourceInfo):
+                continue
+            # at this point we can be sure that attribute is a BaseConverter child with an source_info
             if attribute.source_info.id == source_uid:  # type: ignore
                 return attribute()
 

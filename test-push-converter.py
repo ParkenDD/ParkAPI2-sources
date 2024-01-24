@@ -112,7 +112,7 @@ def get_converter(source_uid: str, class_to_find: Type[BaseConverter]) -> BaseCo
             if not issubclass(attribute, class_to_find) or attribute is class_to_find:
                 continue
             # source_info is just set at actual final classes, so we ignore anything else
-            if not hasattr(attribute, 'source_info') or not isinstance(getattr(attribute, 'source_info'), SourceInfo):
+            if not hasattr(attribute, 'source_info') or not isinstance(attribute.source_info, SourceInfo):
                 continue
             # at this point we can be sure that attribute is a BaseConverter child with an source_info
             if attribute.source_info.id == source_uid:  # type: ignore

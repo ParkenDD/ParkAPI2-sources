@@ -3,6 +3,7 @@ Copyright 2024 binary butterfly GmbH
 Use of this source code is governed by an MIT-style license that can be found in the LICENSE.txt.
 """
 
+import re
 from datetime import datetime, timezone
 from decimal import Decimal
 from typing import Any
@@ -16,8 +17,6 @@ from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
 from common.validators import StaticParkingSiteInput
 from util import SourceInfo
-
-import re
 
 
 @validataclass
@@ -162,7 +161,7 @@ class NeckarsulmConverter(CsvConverter):
                 type=self.type_mapping.get(input_data.type),
                 lat=input_data.lat,
                 lon=input_data.lon,
-                address=f"{input_data.street}, {input_data.postcode} {input_data.city}",
+                address=f'{input_data.street}, {input_data.postcode} {input_data.city}',
                 max_stay=input_data.max_stay,
                 capacity=input_data.capacity,
                 capacity_carsharing=str(input_data.capacity_carsharing),

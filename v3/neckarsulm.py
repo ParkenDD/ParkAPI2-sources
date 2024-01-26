@@ -47,7 +47,6 @@ class NeckarsulmRowInput:
     opening_hours_sunday: str = StringValidator(max_length=255)
     opening_hours_public_holiday: str = StringValidator(max_length=255)
     opening_days: str = StringValidator(max_length=255)
-    
 
 
 class NeckarsulmConverter(CsvConverter):
@@ -137,7 +136,7 @@ class NeckarsulmConverter(CsvConverter):
             # First approach: defined list
             input_dict: dict[str, Any] = dict(zip(self.header_row, row))
 
-            #Convert from German decimal (,) to standard (.)
+            # Convert from German decimal (,) to standard (.)
             input_dict['lat'] = input_dict['lat'].replace(',', '.') if bool(re.search(r'\d', input_dict['lat'])) else input_dict['lat']
             input_dict['lon'] = input_dict['lon'].replace(',', '.') if bool(re.search(r'\d', input_dict['lon'])) else input_dict['lon']
 

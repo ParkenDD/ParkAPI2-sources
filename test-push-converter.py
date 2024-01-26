@@ -4,11 +4,11 @@ Use of this source code is governed by an MIT-style license that can be found in
 """
 
 import argparse
-import csv
 import json
 import sys
 from importlib import import_module
 from inspect import isclass
+from io import StringIO
 from pathlib import Path
 from pkgutil import iter_modules
 from typing import Type
@@ -19,6 +19,7 @@ from openpyxl.reader.excel import load_workbook
 from common.base_converter import BaseConverter, CsvConverter, JsonConverter, XlsxConverter, XmlConverter
 from common.encoding import DefaultJSONEncoder
 from common.models import ImportSourceResult
+from util import SourceInfo
 
 DATA_TYPES = {
     'xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -58,8 +59,8 @@ def main():
     elif file_ending == 'csv':
         converter: CsvConverter = get_converter(source_uid, CsvConverter)  # type: ignore
         with file_path.open() as csv_file:
-            rows = list(csv.reader(csv_file))
-        result: ImportSourceResult = converter.handle_csv(rows)
+            csv_data = StringIO(csv_file.read())
+        result: ImportSourceResult = converter.handle_csv_string(csv_data)
 
     elif file_ending == 'xml':
         converter: XmlConverter = get_converter(source_uid, XmlConverter)  # type: ignore
@@ -110,7 +111,10 @@ def get_converter(source_uid: str, class_to_find: Type[BaseConverter]) -> BaseCo
                 continue
             if not issubclass(attribute, class_to_find) or attribute is class_to_find:
                 continue
-            # at this point we can be sure that attribute is a BaseConverter child, so we can initialize and register it
+            # source_info is just set at actual final classes, so we ignore anything else
+            if not hasattr(attribute, 'source_info') or not isinstance(attribute.source_info, SourceInfo):
+                continue
+            # at this point we can be sure that attribute is a BaseConverter child with an source_info
             if attribute.source_info.id == source_uid:  # type: ignore
                 return attribute()
 

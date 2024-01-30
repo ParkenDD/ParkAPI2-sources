@@ -2,6 +2,8 @@
 Copyright 2024 binary butterfly GmbH
 Use of this source code is governed by an MIT-style license that can be found in the LICENSE.txt.
 """
+import csv
+from io import StringIO
 
 import re
 from datetime import datetime, timezone
@@ -120,6 +122,9 @@ class NeckarsulmConverter(CsvConverter):
         'Tiefgarage': 'UNDERGROUND',
         'p+r': 'PARK_AND_RIDE',
     }
+
+    def handle_csv_string(self, data: StringIO) -> ImportSourceResult:
+        return self.handle_csv(list(csv.reader(data, delimiter=';')))
 
     def handle_csv(self, data: list[list]) -> ImportSourceResult:
         import_source_result = self.generate_import_source_result(

@@ -3,11 +3,10 @@ Copyright 2024 binary butterfly GmbH
 Use of this source code is governed by an MIT-style license that can be found in the LICENSE.txt.
 """
 import csv
-from io import StringIO
-
 import re
 from datetime import datetime, timezone
 from decimal import Decimal
+from io import StringIO
 from typing import Any
 
 from validataclass.dataclasses import validataclass

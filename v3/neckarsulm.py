@@ -10,7 +10,7 @@ from typing import Any
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, BooleanValidator
+from validataclass.validators import BooleanValidator, DataclassValidator, DecimalValidator, IntegerValidator, StringValidator
 
 from common.base_converter import CsvConverter
 from common.exceptions import ImportParkingSiteException
@@ -138,7 +138,7 @@ class NeckarsulmConverter(CsvConverter):
             # Convert from German decimal (,) to standard (.)
             input_dict['lat'] = input_dict['lat'].replace(',', '.') if bool(re.search(r'\d', input_dict['lat'])) else input_dict['lat']
             input_dict['lon'] = input_dict['lon'].replace(',', '.') if bool(re.search(r'\d', input_dict['lon'])) else input_dict['lon']
-            input_dict['has_fee'] = True if input_dict['has_fee'].replace(' ', '')=='ja' else False
+            input_dict['has_fee'] = True if input_dict['has_fee'].replace(' ', '') == 'ja' else False
 
             # Second approach: by mapping table and the header
             input_data: dict[str, str] = {}

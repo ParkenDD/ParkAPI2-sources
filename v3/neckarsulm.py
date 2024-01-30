@@ -10,7 +10,7 @@ from typing import Any
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator
+from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, BooleanValidator
 
 from common.base_converter import CsvConverter
 from common.exceptions import ImportParkingSiteException
@@ -35,7 +35,7 @@ class NeckarsulmRowInput:
     capacity_charging: int = IntegerValidator(allow_strings=True)
     capacity_woman: int = IntegerValidator(allow_strings=True)
     capacity_disabled: int = IntegerValidator(allow_strings=True)
-    has_fee: str = StringValidator(max_length=255)
+    has_fee: bool = BooleanValidator()
     opening_hours: str = StringValidator(max_length=255)
     opening_hours_monday: str = StringValidator(max_length=255)
     opening_hours_tuesday: str = StringValidator(max_length=255)
@@ -138,6 +138,7 @@ class NeckarsulmConverter(CsvConverter):
             # Convert from German decimal (,) to standard (.)
             input_dict['lat'] = input_dict['lat'].replace(',', '.') if bool(re.search(r'\d', input_dict['lat'])) else input_dict['lat']
             input_dict['lon'] = input_dict['lon'].replace(',', '.') if bool(re.search(r'\d', input_dict['lon'])) else input_dict['lon']
+            input_dict['has_fee'] = True if input_dict['has_fee'].replace(' ', '')=='ja' else False
 
             # Second approach: by mapping table and the header
             input_data: dict[str, str] = {}
@@ -164,11 +165,11 @@ class NeckarsulmConverter(CsvConverter):
                 address=f'{input_data.street}, {input_data.postcode} {input_data.city}',
                 max_stay=input_data.max_stay,
                 capacity=input_data.capacity,
-                capacity_carsharing=str(input_data.capacity_carsharing),
+                capacity_carsharing=input_data.capacity_carsharing,
                 capacity_charging=input_data.capacity_charging,
                 capacity_woman=input_data.capacity_woman,
                 capacity_disabled=input_data.capacity_disabled,
-                has_fee=str(input_data.has_fee),
+                has_fee=input_data.has_fee,
                 opening_hours=input_data.opening_hours,
                 static_data_updated_at=datetime.now(tz=timezone.utc),
             )

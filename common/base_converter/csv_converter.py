@@ -3,6 +3,7 @@ Copyright 2023 binary butterfly GmbH
 Use of this source code is governed by an MIT-style license that can be found in the LICENSE.txt.
 """
 
+import csv
 from abc import ABC, abstractmethod
 from io import StringIO
 from typing import Any
@@ -14,9 +15,8 @@ from .base_converter import BaseConverter
 
 
 class CsvConverter(BaseConverter, ABC):
-    @abstractmethod
     def handle_csv_string(self, data: StringIO) -> ImportSourceResult:
-        pass
+        return self.handle_csv(list(csv.reader(data, delimiter=';')))
 
     def get_mapping_by_header(self, header_row: dict[str, str], row: list[Any]) -> list[str]:
         header_keys = header_row.keys()

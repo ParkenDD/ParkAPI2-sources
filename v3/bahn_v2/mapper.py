@@ -23,7 +23,10 @@ class BahnMapper:
             type=bahn_input.type.name.to_parking_site_type_input(),
             has_realtime_data=False,  # TODO: change this as soon as Bahn offers proper rate limits
             static_data_updated_at=datetime.now(tz=timezone.utc),
+            public_url=bahn_input.url,
         )
+        if bahn_input.access.openingHours.is24h:
+            static_parking_site_input.opening_hours = '24/7'
 
         for capacity_data in bahn_input.capacity:
             if capacity_data.type == BahnParkingSiteCapacityType.PARKING:

@@ -5,7 +5,6 @@ Use of this source code is governed by an MIT-style license that can be found in
 
 from datetime import datetime, timezone
 from decimal import Decimal
-from typing import Any
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
@@ -30,14 +29,15 @@ class NeckarsulmRowInput:
     street: str = StringValidator(max_length=255)
     postcode: str = StringValidator(max_length=255)
     city: str = StringValidator(max_length=255)
-    max_stay: str = StringValidator(max_length=255)
+    # max_stay exists in the table as maxparken_1, but has no parsable data format
     capacity: int = IntegerValidator(allow_strings=True)
     capacity_carsharing: int = IntegerValidator(allow_strings=True)
     capacity_charging: int = IntegerValidator(allow_strings=True)
     capacity_woman: int = IntegerValidator(allow_strings=True)
     capacity_disabled: int = IntegerValidator(allow_strings=True)
-    has_fee: str = StringValidator(max_length=255)
+    has_fee: bool = ExtendedBooleanValidator()
     opening_hours: str = StringValidator(max_length=255)
+    max_height: Decimal = DecimalValidator()
 
 
 class NeckarsulmConverter(CsvConverter):
@@ -58,7 +58,6 @@ class NeckarsulmConverter(CsvConverter):
         'strasse': 'street',
         'plz': 'postcode',
         'stadt': 'city',
-        'maxparken_1': 'max_stay',
         'anz_plaetze': 'capacity',
         'anzcarsharing': 'capacity_carsharing',
         'anzeladestation': 'capacity_charging',
@@ -66,15 +65,16 @@ class NeckarsulmConverter(CsvConverter):
         'anzbehinderte': 'capacity_disabled',
         'gebuehren': 'has_fee',
         'open_time': 'opening_hours',
+        'maxhoehe': 'max_height',
     }
 
-    # If there are more tables with our defined format, it would make sense to move type_mapping to XlsxConverter
     type_mapping: dict[str, ParkingSiteTypeInput] = {
-        'Parkplatz': 'OFF_STREET_PARKING_GROUND',
-        'Wanderparkplatz': 'OFF_STREET_PARKING_GROUND',
-        'Parkhaus': 'CAR_PARK',
-        'Tiefgarage': 'UNDERGROUND',
-        'p+r': 'PARK_AND_RIDE',
+        'Parkplatz': ParkingSiteTypeInput.OFF_STREET_PARKING_GROUND,
+        'Wanderparkplatz': ParkingSiteTypeInput.OFF_STREET_PARKING_GROUND,
+        'Parkhaus': ParkingSiteTypeInput.CAR_PARK,
+        'Tiefgarage': ParkingSiteTypeInput.UNDERGROUND,
+        # there is the value 'p+r', but as this is not a parking type, but an usecase, we just map this to off street parking ground
+        'p+r': ParkingSiteTypeInput.OFF_STREET_PARKING_GROUND,
     }
 
     def handle_csv(self, data: list[list]) -> ImportSourceResult:
@@ -83,44 +83,42 @@ class NeckarsulmConverter(CsvConverter):
             static_parking_site_errors=[],
         )
 
-        # Second approach: create header position mapping
-        mapping = self.get_mapping_by_header(self.header_mapping, data[0])
+        mapping: dict[str, int] = self.get_mapping_by_header(self.header_mapping, data[0])
 
         # We start at row 2, as the first one is our header
         for row in data[1:]:
-            # Mapping table and the header
-            input_data: dict[str, str] = {}
-            for position, field in enumerate(mapping):
-                input_data[field] = row[position]
+            input_dict: dict[str, str] = {}
+            for field in self.header_mapping.values():
+                input_dict[field] = row[mapping[field]]
 
             try:
-                input_data: NeckarsulmRowInput = self.neckarsulm_row_validator.validate(input_data)
+                input_data: NeckarsulmRowInput = self.neckarsulm_row_validator.validate(input_dict)
             except ValidationError as e:
                 import_source_result.static_parking_site_errors.append(
                     ImportParkingSiteException(
-                        uid=input_data.get('id'),
-                        message=f'validation error: {e.to_dict()}',
+                        uid=input_dict.get('id'),
+                        message=f'validation error for {input_dict}: {e.to_dict()}',
                     ),
                 )
                 continue
 
-            extended_boolean_validator = ExtendedBooleanValidator()
             parking_site_input = StaticParkingSiteInput(
-                uid=input_data.uid,
+                uid=str(input_data.uid),
                 name=input_data.name,
                 type=self.type_mapping.get(input_data.type),
                 lat=input_data.lat,
                 lon=input_data.lon,
                 address=f'{input_data.street}, {input_data.postcode} {input_data.city}',
-                max_stay=input_data.max_stay,
                 capacity=input_data.capacity,
                 capacity_carsharing=input_data.capacity_carsharing,
                 capacity_charging=input_data.capacity_charging,
                 capacity_woman=input_data.capacity_woman,
                 capacity_disabled=input_data.capacity_disabled,
-                has_fee=extended_boolean_validator.validate(input_data.has_fee),
-                opening_hours=input_data.opening_hours,
+                has_fee=input_data.has_fee,
+                opening_hours='24/7' if input_data.opening_hours == '00:00-24:00' else None,
                 static_data_updated_at=datetime.now(tz=timezone.utc),
+                max_height=int(input_data.max_height * 100) if input_data.max_height else None,
+                # TODO: we could use the P+R type as park_and_ride_type, but for now p+r in data source is rather broken
             )
             import_source_result.static_parking_site_inputs.append(parking_site_input)
 

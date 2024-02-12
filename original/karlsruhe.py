@@ -152,7 +152,7 @@ class Karlsruhe(ScraperBase):
             if key == "capacity":
                 details[key] = int_or_none(tr.td.find_next_sibling("td").text)
             elif key == "address":
-                details[key] = "\n".join(tr.td.find_next_sibling("td").strings)
+                details[key] = "\n".join(tr.td.find_next_sibling("td").strings).replace('\xa0', ' ')
 
         return details
 

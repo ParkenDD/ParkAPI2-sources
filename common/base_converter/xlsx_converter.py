@@ -28,14 +28,14 @@ class XlsxConverter(BaseConverter, ABC):
     def handle_xlsx(self, workbook: Workbook) -> ImportSourceResult:
         pass
 
-    def get_mapping_by_header(self, row: tuple[Cell]) -> list[str]:
-        header_keys = self.header_row.keys()
-        mapping: list[str] = []
-        for col in row:
-            if col.value not in header_keys:
+    def get_mapping_by_header(self, row: tuple[Cell]) -> dict[str, int]:
+        row_values = [cell.value for cell in row]
+        mapping: dict[str, int] = {}
+        for header_col, target_field in self.header_row.items():
+            if header_col not in row_values:
                 raise ImportSourceException(
                     uid=self.source_info.id,
-                    message=f'invalid header column {col.value}',
+                    message=f'cannot find header key {header_col}',
                 )
-            mapping.append(self.header_row[col.value])
+            mapping[target_field] = row_values.index(header_col)
         return mapping

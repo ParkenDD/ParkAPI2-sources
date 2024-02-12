@@ -68,7 +68,7 @@ class NormalizedXlsxConverter(XlsxConverter, ABC):
 
     def handle_xlsx(self, workbook: Workbook) -> ImportSourceResult:
         worksheet = workbook.active
-        mapping = self.get_mapping_by_header(next(worksheet.rows))
+        mapping: dict[str, int] = self.get_mapping_by_header(next(worksheet.rows))
 
         static_parking_site_errors: list[ImportParkingSiteException] = []
         static_parking_site_inputs: list[StaticParkingSiteInput] = []
@@ -77,7 +77,6 @@ class NormalizedXlsxConverter(XlsxConverter, ABC):
             # ignore empty lines as LibreOffice sometimes adds empty rows at the end of a file
             if row[0].value is None:
                 continue
-
             parking_site_dict = self.map_row_to_parking_site_dict(mapping, row)
 
             try:
@@ -96,10 +95,10 @@ class NormalizedXlsxConverter(XlsxConverter, ABC):
             static_parking_site_errors=static_parking_site_errors,
         )
 
-    def map_row_to_parking_site_dict(self, mapping: list[str], row: list[Cell]) -> dict[str, Any]:
+    def map_row_to_parking_site_dict(self, mapping: dict[str, int], row: list[Cell]) -> dict[str, Any]:
         parking_site_raw_dict: dict[str, str] = {}
-        for position, field in enumerate(mapping):
-            parking_site_raw_dict[field] = row[position].value
+        for field in mapping.keys():
+            parking_site_raw_dict[field] = row[mapping[field]].value
 
         parking_site_dict = {key: value for key, value in parking_site_raw_dict.items() if not key.startswith('opening_hours_')}
         opening_hours_input = self.excel_opening_time_validator.validate(

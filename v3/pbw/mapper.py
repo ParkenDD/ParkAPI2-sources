@@ -12,18 +12,26 @@ from .validation import PbwParkingSiteDetailInput, PbwRealtimeInput
 
 class PbwMapper:
     def map_static_parking_site(self, parking_site_detail_input: PbwParkingSiteDetailInput) -> StaticParkingSiteInput:
+        max_height = None
+        if parking_site_detail_input.ausstattung.einfahrtshoehe:
+            max_height = int(parking_site_detail_input.ausstattung.einfahrtshoehe * 100)
+
+        parking_site_type = None
+        if parking_site_detail_input.objekt.art_lang:
+            parking_site_type = parking_site_detail_input.objekt.art_lang.to_parking_site_type_input()
+
         # We use StaticParkingSiteInput without validation because we validated the data before
         return StaticParkingSiteInput(
             uid=str(parking_site_detail_input.id),
             name=parking_site_detail_input.objekt.name,
+            operator_name='Parkraumgesellschaft Baden-Württemberg mbH',
             static_data_updated_at=datetime.now(tz=timezone.utc),
-            address=f'{parking_site_detail_input.objekt.strasse}, {parking_site_detail_input.objekt.plz} {parking_site_detail_input.objekt.ort}',
-            type=parking_site_detail_input.objekt.art_lang.to_parking_site_type_input()
-            if parking_site_detail_input.objekt.art_lang
-            else None,
-            max_height=int(parking_site_detail_input.ausstattung.einfahrtshoehe * 100)
-            if parking_site_detail_input.ausstattung.einfahrtshoehe
-            else None,
+            address=(
+                f'{parking_site_detail_input.objekt.strasse}, '
+                f'{parking_site_detail_input.objekt.plz} {parking_site_detail_input.objekt.ort}'
+            ),
+            type=parking_site_type,
+            max_height=max_height,
             # TODO: any way to create a fee_description or has_fee?
             # TODO: which field is maps to is_supervised?
             has_realtime_data=True,

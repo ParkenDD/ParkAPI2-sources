@@ -3,12 +3,16 @@ Copyright 2024 binary butterfly GmbH
 Use of this source code is governed by an MIT-style license that can be found in the LICENSE.txt.
 """
 
+import csv
+import json
 from datetime import datetime, timezone
 from decimal import Decimal
+from io import StringIO
+from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, DictValidator, ListValidator
+from validataclass.validators import DataclassValidator, DecimalValidator, DictValidator, IntegerValidator, ListValidator, StringValidator
 
 from common.base_converter import CsvConverter
 from common.exceptions import ImportParkingSiteException
@@ -19,10 +23,6 @@ from common.validators.fields.boolean_validators import ExtendedBooleanValidator
 from common.validators.fields.noneable import ExcelNoneable
 from util import SourceInfo, name_to_id
 
-import csv
-import json
-from io import StringIO
-from typing import Optional
 
 @validataclass
 class PforzheimRowInput:
@@ -32,12 +32,12 @@ class PforzheimRowInput:
     address: str = StringValidator(max_length=255, multiline=True)
     description: str = StringValidator(max_length=512, multiline=True)
     type: str = StringValidator(max_length=255)
-    locations: str = DictValidator(field_validators={
-                'type': StringValidator(),
-                'coordinates': ListValidator(DecimalValidator(
-                    min_value=7, max_value=60), min_length=2, max_length=2
-                )
-            })  
+    locations: str = DictValidator(
+        field_validators={
+            'type': StringValidator(),
+            'coordinates': ListValidator(DecimalValidator(min_value=7, max_value=60), min_length=2, max_length=2),
+        }
+    )
     capacity: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=1)
     capacity_woman: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
     capacity_disabled: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
@@ -45,7 +45,7 @@ class PforzheimRowInput:
     fee_description: str = StringValidator(multiline=True)
     opening_hours_is_24_7: str = StringValidator(max_length=255)
     opening_hours: str = StringValidator(max_length=255, multiline=True)
-    
+
 
 class PforzheimConverter(CsvConverter):
     pforzheim_row_validator = DataclassValidator(PforzheimRowInput)
@@ -70,7 +70,7 @@ class PforzheimConverter(CsvConverter):
         'feeInformation': 'fee_description',
         'capacity': 'capacity',
         'hasOpeningHours24h': 'opening_hours_is_24_7',
-        'openingHours': 'opening_hours'
+        'openingHours': 'opening_hours',
     }
 
     type_mapping: dict[str, ParkingSiteTypeInput] = {
@@ -89,9 +89,9 @@ class PforzheimConverter(CsvConverter):
             static_parking_site_errors=[],
         )
 
-        print(data[0])
+        #print(data[0])
         mapping: dict[str, int] = self.get_mapping_by_header(self.header_mapping, data[0])
-        print(mapping)
+        #print(mapping)
 
         # We start at row 2, as the first one is our header
         for row in data[1:]:
@@ -100,7 +100,7 @@ class PforzheimConverter(CsvConverter):
                 input_dict[field] = row[mapping[field]]
 
             input_dict['locations'] = json.loads(input_dict['locations'])
-            input_dict['locations']['coordinates'] = [str(coordinate) for coordinate in input_dict['locations']['coordinates']] 
+            input_dict['locations']['coordinates'] = [str(coordinate) for coordinate in input_dict['locations']['coordinates']]
 
             try:
                 input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
@@ -113,12 +113,11 @@ class PforzheimConverter(CsvConverter):
                     ),
                 )
                 continue
-            
-            
+
             parking_site_input = StaticParkingSiteInput(
-                uid=name_to_id(self.source_info.id, input_data.name) if input_data.uid == "" else input_data.uid,
+                uid=name_to_id(self.source_info.id, input_data.name) if input_data.uid == '' else input_data.uid,
                 name=input_data.name,
-                type= self.type_mapping.get("onStreet") if "onStreet" in input_data.type else self.type_mapping.get(input_data.type),
+                type=self.type_mapping.get('onStreet') if 'onStreet' in input_data.type else self.type_mapping.get(input_data.type),
                 lat=input_data.locations.get('coordinates')[1],
                 lon=input_data.locations.get('coordinates')[0],
                 address=input_data.address.replace('\n', ' '),

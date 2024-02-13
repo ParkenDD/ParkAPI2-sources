@@ -8,7 +8,7 @@ from decimal import Decimal
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator
+from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, DictValidator, ListValidator
 
 from common.base_converter import CsvConverter
 from common.exceptions import ImportParkingSiteException
@@ -17,7 +17,7 @@ from common.validators import StaticParkingSiteInput
 from common.validators.base_validators import ParkingSiteTypeInput
 from common.validators.fields.boolean_validators import ExtendedBooleanValidator
 from common.validators.fields.noneable import ExcelNoneable
-from util import SourceInfo
+from util import SourceInfo, name_to_id
 
 import csv
 import json
@@ -28,15 +28,19 @@ from typing import Optional
 class PforzheimRowInput:
     uid: str = StringValidator(max_length=255)
     name: str = StringValidator(max_length=255)
-    lat: Decimal = DecimalValidator(min_value=40, max_value=60)
-    lon: Decimal = DecimalValidator(min_value=7, max_value=10)
     operator_name: str = StringValidator(max_length=255)
     address: str = StringValidator(max_length=255, multiline=True)
     description: str = StringValidator(max_length=512, multiline=True)
     type: str = StringValidator(max_length=255)
-    #capacity: Optional[any] = ExcelNoneable(default=1) #int = IntegerValidator(allow_strings=True)
-    #capacity_woman: Optional[any] = ExcelNoneable(default=0) #int = IntegerValidator(allow_strings=True) #
-    #capacity_disabled: Optional[any] = ExcelNoneable(default=0) #int = IntegerValidator(allow_strings=True) #
+    locations: str = DictValidator(field_validators={
+                'type': StringValidator(),
+                'coordinates': ListValidator(DecimalValidator(
+                    min_value=7, max_value=60), min_length=2, max_length=2
+                )
+            })  
+    capacity: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=1)
+    capacity_woman: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
+    capacity_disabled: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
     is_supervised: str = StringValidator(max_length=255)
     fee_description: str = StringValidator(multiline=True)
     opening_hours_is_24_7: str = StringValidator(max_length=255)
@@ -55,7 +59,7 @@ class PforzheimConverter(CsvConverter):
     header_mapping: dict[str, str] = {
         'Id': 'uid',
         'name': 'name',
-        'locations': 'location',
+        'locations': 'locations',
         'operatorID': 'operator_name',
         'address': 'address',
         'description': 'description',
@@ -95,11 +99,12 @@ class PforzheimConverter(CsvConverter):
             for field in self.header_mapping.values():
                 input_dict[field] = row[mapping[field]]
 
-            input_dict['lat'] = str(json.loads(input_dict['location']).get('coordinates')[1])
-            input_dict['lon'] = str(json.loads(input_dict['location']).get('coordinates')[0])
+            input_dict['locations'] = json.loads(input_dict['locations'])
+            input_dict['locations']['coordinates'] = [str(coordinate) for coordinate in input_dict['locations']['coordinates']] 
 
             try:
                 input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
+                print(input_data.locations)
             except ValidationError as e:
                 import_source_result.static_parking_site_errors.append(
                     ImportParkingSiteException(
@@ -108,18 +113,19 @@ class PforzheimConverter(CsvConverter):
                     ),
                 )
                 continue
-
+            
+            
             parking_site_input = StaticParkingSiteInput(
-                uid=input_data.uid,
+                uid=name_to_id(self.source_info.id, input_data.name) if input_data.uid == "" else input_data.uid,
                 name=input_data.name,
                 type= self.type_mapping.get("onStreet") if "onStreet" in input_data.type else self.type_mapping.get(input_data.type),
-                lat=input_data.lat,
-                lon=input_data.lon,
+                lat=input_data.locations.get('coordinates')[1],
+                lon=input_data.locations.get('coordinates')[0],
                 address=input_data.address.replace('\n', ' '),
                 description=input_data.description,
-                #capacity=input_data.capacity, #int(input_data.capacity) if input_data.capacity is not None and input_data.capacity != '' else 1,
-                #capacity_woman=int(input_data.capacity_woman) if input_data.capacity_woman is not None and input_data.capacity_woman != '' else 0,
-                #capacity_disabled=int(input_data.capacity_disabled) if input_data.capacity_disabled is not None and input_data.capacity_disabled != '' else 0,
+                capacity=input_data.capacity,
+                capacity_woman=input_data.capacity_woman,
+                capacity_disabled=input_data.capacity_disabled,
                 has_fee=True if input_data.fee_description is not None and input_data.fee_description != '' else False,
                 fee_description=input_data.fee_description,
                 opening_hours='24/7' if input_data.opening_hours == 'durchgehend geöffnet' else None,

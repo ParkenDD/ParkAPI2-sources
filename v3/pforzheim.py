@@ -89,9 +89,9 @@ class PforzheimConverter(CsvConverter):
             static_parking_site_errors=[],
         )
 
-        #print(data[0])
+        # print(data[0])
         mapping: dict[str, int] = self.get_mapping_by_header(self.header_mapping, data[0])
-        #print(mapping)
+        # print(mapping)
 
         # We start at row 2, as the first one is our header
         for row in data[1:]:
@@ -104,7 +104,6 @@ class PforzheimConverter(CsvConverter):
 
             try:
                 input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
-                print(input_data.locations)
             except ValidationError as e:
                 import_source_result.static_parking_site_errors.append(
                     ImportParkingSiteException(

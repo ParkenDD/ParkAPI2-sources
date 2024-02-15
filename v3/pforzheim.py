@@ -12,14 +12,13 @@ from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, DictValidator, IntegerValidator, ListValidator, StringValidator
+from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator
 
 from common.base_converter import JsonConverter
 from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
 from common.validators import StaticParkingSiteInput
 from common.validators.base_validators import ParkingSiteTypeInput
-from common.validators.fields.boolean_validators import ExtendedBooleanValidator
 from common.validators.fields.noneable import ExcelNoneable
 from util import SourceInfo, name_to_id
 
@@ -59,7 +58,7 @@ class PforzheimConverter(JsonConverter):
     }
 
     def handle_json(self, data: dict | list) -> ImportSourceResult:
-        #data = json.loads(data)
+        # data = json.loads(data)
         import_source_result = self.generate_import_source_result(
             static_parking_site_inputs=[],
             static_parking_site_errors=[],
@@ -83,7 +82,7 @@ class PforzheimConverter(JsonConverter):
                 'capacity': item.get('capacity'),
                 'opening_hours': item.get('openingHours'),
             }
-            print(input_dict['type'])
+
             try:
                 input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
             except ValidationError as e:

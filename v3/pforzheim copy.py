@@ -14,7 +14,7 @@ from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
 from validataclass.validators import DataclassValidator, DecimalValidator, DictValidator, IntegerValidator, ListValidator, StringValidator
 
-from common.base_converter import JsonConverter
+from common.base_converter import CsvConverter
 from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
 from common.validators import StaticParkingSiteInput
@@ -42,7 +42,7 @@ class PforzheimRowInput:
     opening_hours: str = StringValidator(max_length=255, multiline=True)
 
 
-class PforzheimConverter(JsonConverter):
+class PforzheimConverter(CsvConverter):
     pforzheim_row_validator = DataclassValidator(PforzheimRowInput)
 
     source_info = SourceInfo(
@@ -51,6 +51,24 @@ class PforzheimConverter(JsonConverter):
         public_url='',
     )
 
+    header_mapping: dict[str, str] = {
+        'Id': 'uid',
+        'name': 'name',
+        'locations': 'locations',
+        'operatorID': 'operator_name',
+        'lat': 'lat',
+        'lon': 'lon',
+        'address': 'address',
+        'description': 'description',
+        'type': 'type',
+        'quantitySpacesReservedForWomen': 'capacity_woman',
+        'quantitySpacesReservedForMobilityImpededPerson': 'capacity_disabled',
+        'securityInformation': 'is_supervised',
+        'feeInformation': 'fee_description',
+        'capacity': 'capacity',
+        'openingHours': 'opening_hours',
+    }
+
     type_mapping: dict[str, ParkingSiteTypeInput] = {
         'Parkplatz': ParkingSiteTypeInput.OFF_STREET_PARKING_GROUND,
         'onStreet': ParkingSiteTypeInput.ON_STREET,
@@ -58,32 +76,25 @@ class PforzheimConverter(JsonConverter):
         'undergroundCarPark': ParkingSiteTypeInput.UNDERGROUND,
     }
 
-    def handle_json(self, data: dict | list) -> ImportSourceResult:
-        #data = json.loads(data)
+    def handle_csv_string(self, data: StringIO) -> ImportSourceResult:
+        return self.handle_csv(list(csv.reader(data, delimiter=',')))
+
+    def handle_csv(self, data: list[list]) -> ImportSourceResult:
         import_source_result = self.generate_import_source_result(
             static_parking_site_inputs=[],
             static_parking_site_errors=[],
         )
 
+        print(data[0])
+        mapping: dict[str, int] = self.get_mapping_by_header(self.header_mapping, data[0])
+        print(mapping)
+
         # We start at row 2, as the first one is our header
-        for item in data:
-            input_dict = {
-                'uid': item.get('Id'),
-                'name': item.get('name'),
-                'lat': str(item.get('lat')),
-                'lon': str(item.get('lon')),
-                'operator_name': item.get('operatorID'),
-                'address': item.get('address'),
-                'description': item.get('description'),
-                'type': item.get('type'),
-                'capacity_woman': item.get('quantitySpacesReservedForWomen'),
-                'capacity_disabled': item.get('quantitySpacesReservedForMobilityImpededPerson'),
-                'is_supervised': item.get('securityInformation'),
-                'fee_description': item.get('feeInformation'),
-                'capacity': item.get('capacity'),
-                'opening_hours': item.get('openingHours'),
-            }
-            print(input_dict['type'])
+        for row in data[1:]:
+            input_dict: dict[str, str] = {}
+            for field in self.header_mapping.values():
+                input_dict[field] = row[mapping[field]]
+
             try:
                 input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
             except ValidationError as e:

@@ -12,7 +12,7 @@ from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator
+from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, UrlValidator
 
 from common.base_converter import JsonConverter
 from common.exceptions import ImportParkingSiteException
@@ -38,6 +38,7 @@ class PforzheimRowInput:
     capacity_disabled: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
     is_supervised: str = StringValidator(max_length=255)
     fee_description: str = StringValidator(multiline=True)
+    public_url: str = UrlValidator()
     opening_hours: str = StringValidator(max_length=255, multiline=True)
 
 
@@ -47,7 +48,7 @@ class PforzheimConverter(JsonConverter):
     source_info = SourceInfo(
         id='pforzheim',
         name='Stadt Pforzheim',
-        public_url='',
+        public_url='https://www.pforzheim.de',
     )
 
     type_mapping: dict[str, ParkingSiteTypeInput] = {
@@ -58,7 +59,6 @@ class PforzheimConverter(JsonConverter):
     }
 
     def handle_json(self, data: dict | list) -> ImportSourceResult:
-        # data = json.loads(data)
         import_source_result = self.generate_import_source_result(
             static_parking_site_inputs=[],
             static_parking_site_errors=[],
@@ -74,6 +74,7 @@ class PforzheimConverter(JsonConverter):
                 'operator_name': item.get('operatorID'),
                 'address': item.get('address'),
                 'description': item.get('description'),
+                'public_url': f"https://{item.get('description')}" if item.get('description').startswith('www.') else self.source_info.public_url,
                 'type': item.get('type'),
                 'capacity_woman': item.get('quantitySpacesReservedForWomen'),
                 'capacity_disabled': item.get('quantitySpacesReservedForMobilityImpededPerson'),
@@ -102,6 +103,7 @@ class PforzheimConverter(JsonConverter):
                 lon=input_data.lon,
                 address=input_data.address.replace('\n', ' '),
                 description=input_data.description,
+                public_url=input_data.public_url,
                 capacity=input_data.capacity,
                 capacity_woman=input_data.capacity_woman,
                 capacity_disabled=input_data.capacity_disabled,

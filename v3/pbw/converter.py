@@ -86,15 +86,11 @@ class PbwPullConverter(PullConverter):
             realtime_parking_site_errors=[],
         )
 
-        parking_site_dicts = self._get_remote_data('catalog-object')
-        for parking_site_dict in parking_site_dicts:
-            parking_site_input: PbwParkingSiteInput = self.parking_site_validator.validate(parking_site_dict)
+        realtime_dicts = self._get_remote_data('object-dynamic-all')
 
-            realtime_dicts = self._get_remote_data('object-dynamic-by-id', parking_site_input.id)
-
-            for realtime_dict in realtime_dicts:
-                realtime_input: PbwRealtimeInput = self.realtime_validator.validate(realtime_dict)
-                import_source_result.realtime_parking_site_inputs.append(self.mapper.map_realtime_parking_site(realtime_input))
+        for realtime_dict in realtime_dicts:
+            realtime_input: PbwRealtimeInput = self.realtime_validator.validate(realtime_dict)
+            import_source_result.realtime_parking_site_inputs.append(self.mapper.map_realtime_parking_site(realtime_input))
 
         return import_source_result
 

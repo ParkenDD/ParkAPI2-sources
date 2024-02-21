@@ -52,9 +52,8 @@ class PforzheimConverter(JsonConverter):
     )
 
     type_mapping: dict[str, ParkingSiteTypeInput] = {
-        'Parkplatz': ParkingSiteTypeInput.OFF_STREET_PARKING_GROUND,
         'onStreet': ParkingSiteTypeInput.ON_STREET,
-        'Parkhaus': ParkingSiteTypeInput.CAR_PARK,
+        'carPark': ParkingSiteTypeInput.CAR_PARK,
         'undergroundCarPark': ParkingSiteTypeInput.UNDERGROUND,
     }
 
@@ -74,7 +73,9 @@ class PforzheimConverter(JsonConverter):
                 'operator_name': item.get('operatorID'),
                 'address': item.get('address'),
                 'description': item.get('description'),
-                'public_url': f"https://{item.get('description')}" if item.get('description').startswith('www.') else self.source_info.public_url,
+                'public_url': f"https://{item.get('description')}"
+                if item.get('description').startswith('www.')
+                else self.source_info.public_url,
                 'type': item.get('type'),
                 'capacity_woman': item.get('quantitySpacesReservedForWomen'),
                 'capacity_disabled': item.get('quantitySpacesReservedForMobilityImpededPerson'),

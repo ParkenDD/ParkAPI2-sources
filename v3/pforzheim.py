@@ -12,7 +12,7 @@ from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, BooleanValidator
+from validataclass.validators import BooleanValidator, DataclassValidator, DecimalValidator, IntegerValidator, StringValidator
 
 from common.base_converter import JsonConverter
 from common.exceptions import ImportParkingSiteException
@@ -81,7 +81,7 @@ class PforzheimConverter(JsonConverter):
                 'capacity': item.get('capacity'),
                 'opening_hours': item.get('openingHours'),
             }
-            print(input_dict['is_supervised'])
+
             try:
                 input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
             except ValidationError as e:

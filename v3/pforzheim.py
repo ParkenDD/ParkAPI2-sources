@@ -96,7 +96,7 @@ class PforzheimConverter(JsonConverter):
             parking_site_input = StaticParkingSiteInput(
                 uid=name_to_id(self.source_info.id, input_data.name) if input_data.uid == '' else input_data.uid,
                 name=input_data.name,
-                #To Do Checked for OnStreet type in the Handicapped data (e.g. "type": "handicapped, onStreet")
+                # To Do Checked for OnStreet type in the Handicapped data (e.g. "type": "handicapped, onStreet")
                 type=self.type_mapping.get('onStreet') if 'onStreet' in input_data.type else self.type_mapping.get(input_data.type),
                 lat=input_data.lat,
                 lon=input_data.lon,

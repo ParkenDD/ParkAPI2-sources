@@ -12,7 +12,7 @@ from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, UrlValidator
+from validataclass.validators import DataclassValidator, DecimalValidator, IntegerValidator, StringValidator, BooleanValidator
 
 from common.base_converter import JsonConverter
 from common.exceptions import ImportParkingSiteException
@@ -33,10 +33,11 @@ class PforzheimRowInput:
     type: str = StringValidator(max_length=255)
     lat: Decimal = DecimalValidator(min_value=40, max_value=60)
     lon: Decimal = DecimalValidator(min_value=7, max_value=10)
+    # To Do, the capacity attributes are initialized in the case of empty strings e.g ''
     capacity: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=1)
     capacity_woman: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
     capacity_disabled: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
-    is_supervised: str = StringValidator(max_length=255)
+    is_supervised: bool = BooleanValidator()
     fee_description: str = StringValidator(multiline=True)
     opening_hours: str = StringValidator(max_length=255, multiline=True)
 
@@ -75,12 +76,12 @@ class PforzheimConverter(JsonConverter):
                 'type': item.get('type'),
                 'capacity_woman': item.get('quantitySpacesReservedForWomen'),
                 'capacity_disabled': item.get('quantitySpacesReservedForMobilityImpededPerson'),
-                'is_supervised': item.get('securityInformation'),
+                'is_supervised': True if 'ja' in item.get('securityInformation').lower() else False,
                 'fee_description': item.get('feeInformation'),
                 'capacity': item.get('capacity'),
                 'opening_hours': item.get('openingHours'),
             }
-
+            print(input_dict['is_supervised'])
             try:
                 input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
             except ValidationError as e:
@@ -103,7 +104,6 @@ class PforzheimConverter(JsonConverter):
                 capacity=input_data.capacity,
                 capacity_woman=input_data.capacity_woman,
                 capacity_disabled=input_data.capacity_disabled,
-                has_fee=True if input_data.fee_description is not None and input_data.fee_description != '' else False,
                 fee_description=input_data.fee_description,
                 opening_hours='24/7' if input_data.opening_hours == 'durchgehend geöffnet' else None,
                 static_data_updated_at=datetime.now(tz=timezone.utc),

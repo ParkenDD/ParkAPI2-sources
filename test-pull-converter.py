@@ -33,7 +33,7 @@ def main():
     converter: PullConverter = get_converter(source_uid)
 
     result: ImportSourceResult = converter.get_static_parking_sites()
-    # print_result(result)
+    print_result(result)
 
     result: ImportSourceResult = converter.get_realtime_parking_sites()
     print_result(result)

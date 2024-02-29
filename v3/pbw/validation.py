@@ -80,8 +80,8 @@ class PbwParkingSiteObjectInput:
 
 @validataclass
 class PbwRealtimeParkingSiteInput:
-    kurzparker_frei: int = IntegerValidator(min_value=0)
-    ladeplaetze_frei: int = IntegerValidator(min_value=0)
+    kurzparker_frei: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
+    ladeplaetze_frei: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
 
 
 @validataclass

@@ -31,8 +31,11 @@ def main():
     source_uid: str = args.source_uid
 
     converter: PullConverter = get_converter(source_uid)
-    result: ImportSourceResult = converter.get_static_parking_sites()
 
+    result: ImportSourceResult = converter.get_static_parking_sites()
+    print_result(result)
+
+    result: ImportSourceResult = converter.get_realtime_parking_sites()
     print_result(result)
 
 

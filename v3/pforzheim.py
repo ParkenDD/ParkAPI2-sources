@@ -12,38 +12,39 @@ from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import BooleanValidator, DataclassValidator, DecimalValidator, IntegerValidator, StringValidator
+from validataclass.validators import DataclassValidator, IntegerValidator, StringValidator, NumericValidator
 
 from common.base_converter import JsonConverter
 from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
 from common.validators import StaticParkingSiteInput
 from common.validators.base_validators import ParkingSiteTypeInput
-from common.validators.fields.noneable import ExcelNoneable
-from util import SourceInfo, name_to_id
+from common.validators.fields.noneable import Noneable
+from util import SourceInfo
 
 
 @validataclass
-class PforzheimRowInput:
-    uid: str = StringValidator(max_length=255)
+class PforzheimInput:
+    Id: str = StringValidator(max_length=255)
     name: str = StringValidator(max_length=255)
-    operator_name: str = StringValidator(max_length=255)
+    operatorID: str = StringValidator(max_length=255)
     address: str = StringValidator(max_length=255, multiline=True)
     description: str = StringValidator(max_length=512, multiline=True)
     type: str = StringValidator(max_length=255)
-    lat: Decimal = DecimalValidator(min_value=40, max_value=60)
-    lon: Decimal = DecimalValidator(min_value=7, max_value=10)
-    # To Do, the capacity attributes are initialized in the case of empty strings e.g ''
-    capacity: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=1)
-    capacity_woman: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
-    capacity_disabled: Optional[int] = ExcelNoneable(IntegerValidator(allow_strings=True), default=0)
-    is_supervised: bool = BooleanValidator()
-    fee_description: str = StringValidator(multiline=True)
-    opening_hours: str = StringValidator(max_length=255, multiline=True)
+    lat: Decimal = NumericValidator(min_value=40, max_value=60)
+    lon: Decimal = NumericValidator(min_value=7, max_value=10)
+    capacity: int = IntegerValidator()
+    quantitySpacesReservedForWomen: Optional[int] = Noneable(IntegerValidator())
+    quantitySpacesReservedForMobilityImpededPerson: Optional[int] = Noneable(IntegerValidator())
+    securityInformation: str = StringValidator(multiline=True)
+    feeInformation: str = StringValidator(multiline=True)
+    openingHours: str = StringValidator(multiline=True)
+
+
 
 
 class PforzheimConverter(JsonConverter):
-    pforzheim_row_validator = DataclassValidator(PforzheimRowInput)
+    pforzheim_validator = DataclassValidator(PforzheimInput)
 
     source_info = SourceInfo(
         id='pforzheim',
@@ -63,49 +64,33 @@ class PforzheimConverter(JsonConverter):
             static_parking_site_errors=[],
         )
 
-        # We start at row 2, as the first one is our header
-        for item in data:
-            input_dict = {
-                'uid': item.get('Id'),
-                'name': item.get('name'),
-                'lat': str(item.get('lat')),
-                'lon': str(item.get('lon')),
-                'operator_name': item.get('operatorID'),
-                'address': item.get('address'),
-                'description': item.get('description'),
-                'type': item.get('type'),
-                'capacity_woman': item.get('quantitySpacesReservedForWomen'),
-                'capacity_disabled': item.get('quantitySpacesReservedForMobilityImpededPerson'),
-                'is_supervised': True if 'ja' in item.get('securityInformation').lower() else False,
-                'fee_description': item.get('feeInformation'),
-                'capacity': item.get('capacity'),
-                'opening_hours': item.get('openingHours'),
-            }
-
+        for input_dict in data:
+            
             try:
-                input_data: PforzheimRowInput = self.pforzheim_row_validator.validate(input_dict)
+                input_data: PforzheimInput = self.pforzheim_validator.validate(input_dict)
             except ValidationError as e:
                 import_source_result.static_parking_site_errors.append(
                     ImportParkingSiteException(
-                        uid=input_dict.get('id'),
+                        uid=input_dict.get('uid'),
                         message=f'validation error for {input_dict}: {e.to_dict()}',
                     ),
                 )
                 continue
 
             parking_site_input = StaticParkingSiteInput(
-                uid=name_to_id(self.source_info.id, input_data.name) if input_data.uid == '' else input_data.uid,
+                uid=input_data.Id,
                 name=input_data.name,
                 type=self.type_mapping.get(input_data.type),
                 lat=input_data.lat,
                 lon=input_data.lon,
-                address=input_data.address.replace('\n', ' '),
-                description=input_data.description,
+                address=input_data.address.replace('\n', ', '),
+                description=input_data.description.replace('\n', ', '),
                 capacity=input_data.capacity,
-                capacity_woman=input_data.capacity_woman,
-                capacity_disabled=input_data.capacity_disabled,
-                fee_description=input_data.fee_description,
-                opening_hours='24/7' if input_data.opening_hours == 'durchgehend geöffnet' else None,
+                capacity_woman=input_data.quantitySpacesReservedForWomen,
+                capacity_disabled=input_data.quantitySpacesReservedForMobilityImpededPerson,
+                fee_description=input_data.feeInformation.replace('\n', ', '),
+                is_supervised=input_data.securityInformation,
+                hasOpeningHours24h=True if input_data.openingHours == 'durchgehend geöffnet' else False,
                 static_data_updated_at=datetime.now(tz=timezone.utc),
             )
             import_source_result.static_parking_site_inputs.append(parking_site_input)

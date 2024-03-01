@@ -12,7 +12,7 @@ from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, IntegerValidator, StringValidator, NumericValidator
+from validataclass.validators import DataclassValidator, IntegerValidator, NumericValidator, StringValidator
 
 from common.base_converter import JsonConverter
 from common.exceptions import ImportParkingSiteException
@@ -41,8 +41,6 @@ class PforzheimInput:
     openingHours: str = StringValidator(multiline=True)
 
 
-
-
 class PforzheimConverter(JsonConverter):
     pforzheim_validator = DataclassValidator(PforzheimInput)
 
@@ -65,7 +63,6 @@ class PforzheimConverter(JsonConverter):
         )
 
         for input_dict in data:
-            
             try:
                 input_data: PforzheimInput = self.pforzheim_validator.validate(input_dict)
             except ValidationError as e:

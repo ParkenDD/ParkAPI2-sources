@@ -12,7 +12,7 @@ from typing import Optional
 
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
-from validataclass.validators import DataclassValidator, IntegerValidator, NumericValidator, StringValidator
+from validataclass.validators import DataclassValidator, EnumValidator, IntegerValidator, NumericValidator, StringValidator
 
 from common.base_converter import JsonConverter
 from common.exceptions import ImportParkingSiteException
@@ -51,7 +51,6 @@ class PforzheimConverter(JsonConverter):
     )
 
     type_mapping: dict[str, ParkingSiteTypeInput] = {
-        'onStreet': ParkingSiteTypeInput.ON_STREET,
         'carPark': ParkingSiteTypeInput.CAR_PARK,
         'undergroundCarPark': ParkingSiteTypeInput.UNDERGROUND,
     }

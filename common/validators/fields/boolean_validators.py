@@ -9,12 +9,7 @@ from validataclass.validators import BooleanValidator
 
 
 class ExtendedBooleanValidator(BooleanValidator):
-    string_mapping = {
-        'ja': True,
-        'yes': True,
-        'nein': False,
-        'no': False,
-    }
+    string_mapping = {'ja': True, 'yes': True, 'nein': False, 'no': False, 'wahr': True, 'falsch': False}
 
     def validate(self, input_data: Any, **kwargs) -> bool:
         if isinstance(input_data, str):

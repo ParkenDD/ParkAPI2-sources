@@ -99,7 +99,6 @@ class StaticParkingSiteInput(ValidataclassMixin):
     capacity_bus: Optional[int] = Noneable(IntegerValidator(min_value=0)), Default(None)
 
     opening_hours: Optional[str] = Noneable(StringValidator(max_length=512)), Default(None)
-    hasOpeningHours24h: Optional[bool] = Noneable(BooleanValidator()), Default(None)
 
     def __post_init__(self):
         if self.lat == 0 and self.lon == 0:

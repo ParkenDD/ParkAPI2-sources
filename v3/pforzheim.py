@@ -7,6 +7,7 @@ import csv
 import json
 from datetime import datetime, timezone
 from decimal import Decimal
+from enum import Enum
 from io import StringIO
 from typing import Optional
 
@@ -19,8 +20,21 @@ from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
 from common.validators import StaticParkingSiteInput
 from common.validators.base_validators import ParkingSiteTypeInput
+from common.validators.fields.boolean_validators import ExtendedBooleanValidator
 from common.validators.fields.noneable import Noneable
 from util import SourceInfo
+
+
+class PforzheimParkingSiteType(Enum):
+    PARKHAUS = 'carPark'
+    PARKGARAGE = 'undergroundCarPark'
+
+    def to_parking_site_type_input(self) -> ParkingSiteTypeInput:
+        # TODO: find out more details about this enumeration for a proper mapping
+        return {
+            self.PARKHAUS: ParkingSiteTypeInput.CAR_PARK,
+            self.PARKGARAGE: ParkingSiteTypeInput.UNDERGROUND,
+        }.get(self, ParkingSiteTypeInput.OTHER)
 
 
 @validataclass
@@ -30,7 +44,7 @@ class PforzheimInput:
     operatorID: str = StringValidator(max_length=255)
     address: str = StringValidator(max_length=255, multiline=True)
     description: str = StringValidator(max_length=512, multiline=True)
-    type: str = StringValidator(max_length=255)
+    type: PforzheimParkingSiteType = EnumValidator(PforzheimParkingSiteType)
     lat: Decimal = NumericValidator(min_value=40, max_value=60)
     lon: Decimal = NumericValidator(min_value=7, max_value=10)
     capacity: int = IntegerValidator()
@@ -38,7 +52,7 @@ class PforzheimInput:
     quantitySpacesReservedForMobilityImpededPerson: Optional[int] = Noneable(IntegerValidator())
     securityInformation: str = StringValidator(multiline=True)
     feeInformation: str = StringValidator(multiline=True)
-    openingHours: str = StringValidator(multiline=True)
+    hasOpeningHours24h: bool = ExtendedBooleanValidator()
 
 
 class PforzheimConverter(JsonConverter):
@@ -49,11 +63,6 @@ class PforzheimConverter(JsonConverter):
         name='Stadt Pforzheim',
         public_url='https://www.pforzheim.de',
     )
-
-    type_mapping: dict[str, ParkingSiteTypeInput] = {
-        'carPark': ParkingSiteTypeInput.CAR_PARK,
-        'undergroundCarPark': ParkingSiteTypeInput.UNDERGROUND,
-    }
 
     def handle_json(self, data: dict | list) -> ImportSourceResult:
         import_source_result = self.generate_import_source_result(
@@ -67,7 +76,7 @@ class PforzheimConverter(JsonConverter):
             except ValidationError as e:
                 import_source_result.static_parking_site_errors.append(
                     ImportParkingSiteException(
-                        uid=input_dict.get('uid'),
+                        uid=input_dict.get('Id'),
                         message=f'validation error for {input_dict}: {e.to_dict()}',
                     ),
                 )
@@ -76,7 +85,7 @@ class PforzheimConverter(JsonConverter):
             parking_site_input = StaticParkingSiteInput(
                 uid=input_data.Id,
                 name=input_data.name,
-                type=self.type_mapping.get(input_data.type),
+                type=input_data.type.to_parking_site_type_input(),
                 lat=input_data.lat,
                 lon=input_data.lon,
                 address=input_data.address.replace('\n', ', '),
@@ -86,7 +95,7 @@ class PforzheimConverter(JsonConverter):
                 capacity_disabled=input_data.quantitySpacesReservedForMobilityImpededPerson,
                 fee_description=input_data.feeInformation.replace('\n', ', '),
                 is_supervised=True if 'ja' in input_data.securityInformation.lower() else False,
-                hasOpeningHours24h=True if input_data.openingHours == 'durchgehend geöffnet' else False,
+                opening_hours=input_data.hasOpeningHours24h,
                 static_data_updated_at=datetime.now(tz=timezone.utc),
             )
             import_source_result.static_parking_site_inputs.append(parking_site_input)

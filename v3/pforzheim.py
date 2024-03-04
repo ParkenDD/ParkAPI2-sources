@@ -85,7 +85,7 @@ class PforzheimConverter(JsonConverter):
                 capacity_woman=input_data.quantitySpacesReservedForWomen,
                 capacity_disabled=input_data.quantitySpacesReservedForMobilityImpededPerson,
                 fee_description=input_data.feeInformation.replace('\n', ', '),
-                is_supervised=input_data.securityInformation,
+                is_supervised=True if 'ja' in input_data.securityInformation.lower() else False,
                 hasOpeningHours24h=True if input_data.openingHours == 'durchgehend geöffnet' else False,
                 static_data_updated_at=datetime.now(tz=timezone.utc),
             )

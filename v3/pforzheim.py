@@ -3,12 +3,9 @@ Copyright 2024 binary butterfly GmbH
 Use of this source code is governed by an MIT-style license that can be found in the LICENSE.txt.
 """
 
-import csv
-import json
 from datetime import datetime, timezone
 from decimal import Decimal
 from enum import Enum
-from io import StringIO
 from typing import Optional
 
 from validataclass.dataclasses import validataclass
@@ -26,14 +23,14 @@ from util import SourceInfo
 
 
 class PforzheimParkingSiteType(Enum):
-    PARKHAUS = 'carPark'
-    PARKGARAGE = 'undergroundCarPark'
+    CARPARK = 'carPark'
+    UNDERGROUNDCARPARK = 'undergroundCarPark'
 
     def to_parking_site_type_input(self) -> ParkingSiteTypeInput:
         # TODO: find out more details about this enumeration for a proper mapping
         return {
-            self.PARKHAUS: ParkingSiteTypeInput.CAR_PARK,
-            self.PARKGARAGE: ParkingSiteTypeInput.UNDERGROUND,
+            self.CARPARK: ParkingSiteTypeInput.CAR_PARK,
+            self.UNDERGROUNDCARPARK: ParkingSiteTypeInput.UNDERGROUND,
         }.get(self, ParkingSiteTypeInput.OTHER)
 
 

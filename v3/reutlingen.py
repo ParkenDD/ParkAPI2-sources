@@ -16,10 +16,10 @@ from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
 from validataclass.validators import (
     DataclassValidator,
+    DecimalValidator,
     EnumValidator,
     IntegerValidator,
     ListValidator,
-    NumericValidator,
     StringValidator,
 )
 
@@ -28,7 +28,7 @@ from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
 from common.validators import StaticParkingSiteInput
 from common.validators.base_validators import ParkingSiteTypeInput
-from common.validators.fields.noneable import Noneable
+from common.validators.fields.noneable import ExcelNoneable
 from util import SourceInfo
 
 
@@ -39,7 +39,6 @@ class ReutlingenParkingSiteType(Enum):
     P_R = 'p+r'
 
     def to_parking_site_type_input(self) -> ParkingSiteTypeInput:
-        # TODO: find out more details about this enumeration for a proper mapping
         return {
             self.PARKHAUS: ParkingSiteTypeInput.CAR_PARK,
             self.TIEFGARAGE: ParkingSiteTypeInput.UNDERGROUND,
@@ -51,10 +50,13 @@ class PointCoordinateTupleValidator(ListValidator):
     PATTERN = r'POINT \(([-+]?\d+\.\d+) ([-+]?\d+\.\d+)\)'
 
     def validate(self, input_data: Any, **kwargs) -> list:
+        if not isinstance(input_data, str):
+            input_data = str(input_data)
         input_match = re.match(self.PATTERN, input_data)
+
         if input_match is None:
             raise ValidationError(code='invalid_tuple_input', reason='invalid point coordinate tuple input')
-        input_data = [float(input_match.group(1)), float(input_match.group(2))]
+        input_data = [input_match.group(1), input_match.group(2)]
 
         return super().validate(input_data, **kwargs)
 
@@ -63,8 +65,8 @@ class PointCoordinateTupleValidator(ListValidator):
 class ReutlingenRowInput:
     uid: int = IntegerValidator(allow_strings=True)
     type: ReutlingenParkingSiteType = EnumValidator(ReutlingenParkingSiteType)
-    coordinates: list = PointCoordinateTupleValidator(NumericValidator(), min_length=2, max_length=2)
-    capacity: str = Noneable(StringValidator())
+    coordinates: list = PointCoordinateTupleValidator(DecimalValidator())
+    capacity: str = ExcelNoneable(IntegerValidator(allow_strings=True))
     name: str = StringValidator(max_length=255)
 
 
@@ -111,10 +113,11 @@ class ReutlingenConverter(CsvConverter):
             parking_site_input = StaticParkingSiteInput(
                 uid=input_data.uid,
                 name=input_data.name,
+                address=f'{input_data.name}, Reutlingen',
                 lat=input_data.coordinates[1],
                 lon=input_data.coordinates[0],
                 type=input_data.type.to_parking_site_type_input(),
-                capacity=0 if input_data.capacity == '' else int(input_data.capacity),
+                capacity=input_data.capacity,
                 static_data_updated_at=datetime.now(tz=timezone.utc),
             )
             import_source_result.static_parking_site_inputs.append(parking_site_input)

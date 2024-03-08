@@ -27,7 +27,6 @@ class PforzheimParkingSiteType(Enum):
     UNDERGROUNDCARPARK = 'undergroundCarPark'
 
     def to_parking_site_type_input(self) -> ParkingSiteTypeInput:
-        # TODO: find out more details about this enumeration for a proper mapping
         return {
             self.CARPARK: ParkingSiteTypeInput.CAR_PARK,
             self.UNDERGROUNDCARPARK: ParkingSiteTypeInput.UNDERGROUND,
@@ -92,7 +91,7 @@ class PforzheimConverter(JsonConverter):
                 capacity_disabled=input_data.quantitySpacesReservedForMobilityImpededPerson,
                 fee_description=input_data.feeInformation.replace('\n', ', '),
                 is_supervised=True if 'ja' in input_data.securityInformation.lower() else False,
-                opening_hours=input_data.hasOpeningHours24h,
+                opening_hours='24/7' if input_data.hasOpeningHours24h else None,
                 static_data_updated_at=datetime.now(tz=timezone.utc),
             )
             import_source_result.static_parking_site_inputs.append(parking_site_input)

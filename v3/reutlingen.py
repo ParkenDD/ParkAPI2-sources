@@ -6,7 +6,6 @@ Use of this source code is governed by an MIT-style license that can be found in
 import csv
 import re
 from datetime import datetime, timezone
-from decimal import Decimal
 from enum import Enum
 from io import StringIO
 from typing import Any

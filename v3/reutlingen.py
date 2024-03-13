@@ -10,7 +10,6 @@ from enum import Enum
 from io import StringIO
 from typing import Any
 
-import pyproj
 from validataclass.dataclasses import validataclass
 from validataclass.exceptions import ValidationError
 from validataclass.validators import (
@@ -49,9 +48,7 @@ class PointCoordinateTupleValidator(ListValidator):
     PATTERN = r'POINT \(([-+]?\d+\.\d+) ([-+]?\d+\.\d+)\)'
 
     def validate(self, input_data: Any, **kwargs) -> list:
-        if not isinstance(input_data, str):
-            input_data = str(input_data)
-        input_match = re.match(self.PATTERN, input_data)
+        input_match = re.match(self.PATTERN, self._ensure_type(input_data, str))
 
         if input_match is None:
             raise ValidationError(code='invalid_tuple_input', reason='invalid point coordinate tuple input')
@@ -71,7 +68,6 @@ class ReutlingenRowInput:
 
 class ReutlingenConverter(CsvConverter):
     reutlingen_row_validator = DataclassValidator(ReutlingenRowInput)
-    proj: pyproj.Proj = pyproj.Proj(proj='utm', zone=32, ellps='WGS84', preserve_units=True)
 
     source_info = SourceInfo(
         id='reutlingen',

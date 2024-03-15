@@ -48,8 +48,7 @@ class PointCoordinateTupleValidator(ListValidator):
     PATTERN = r'POINT \(([-+]?\d+\.\d+) ([-+]?\d+\.\d+)\)'
 
     def validate(self, input_data: Any, **kwargs) -> list:
-        if not isinstance(input_data, str):
-            input_data = self._ensure_type(input_data, str)
+        self._ensure_type(input_data, str)
         input_match = re.match(self.PATTERN, input_data)
 
         if input_match is None:

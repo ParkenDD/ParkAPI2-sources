@@ -21,6 +21,12 @@ class Kaiserslautern(ScraperBase):
     )
 
     def get_lot_data(self) -> List[LotData]:
+        # The folowing parkings have been renamed and need to be mapped
+        # to their legacy_id
+        LOT_NAME_TO_LEGACY_ID_MAPPPING = {
+            "PH Sparkasse": "phkreissparkasse"
+        }
+
         timestamp = self.now()
         soup = self.request_soup(self.POOL.source_url)
 
@@ -29,7 +35,8 @@ class Kaiserslautern(ScraperBase):
         last_updated = self.to_utc_datetime(soup.find("zeitstempel").text)
 
         for ph in soup.find_all("parkhaus"):
-            lot_name = ph.find("name").text
+            lot_name_source = ph.find("name").text
+            lot_name = LOT_NAME_TO_LEGACY_ID_MAPPPING.get(lot_name_source, lot_name_source)
             lot_actual = int(ph.find("aktuell").text)
             lot_total = int(ph.find("gesamt").text)
 

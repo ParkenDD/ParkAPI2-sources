@@ -107,7 +107,7 @@ class ReutlingenConverter(CsvConverter):
                 continue
 
             parking_site_input = StaticParkingSiteInput(
-                uid=input_data.uid,
+                uid=str(input_data.uid),
                 name=input_data.name,
                 address=f'{input_data.name}, Reutlingen',
                 lat=input_data.coordinates[1],

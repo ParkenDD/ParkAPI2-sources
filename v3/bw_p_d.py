@@ -10,17 +10,16 @@ from typing import Any
 from openpyxl.cell import Cell
 from openpyxl.workbook.workbook import Workbook
 from validataclass.exceptions import ValidationError
-from util.strings import name_to_id
 
+from common.base_converter.xlsx_converter import XlsxConverter
 from common.exceptions import ImportParkingSiteException
 from common.models import ImportSourceResult
 from common.validators import StaticParkingSiteInput
 from util import SourceInfo
+from util.strings import name_to_id
 
-from common.base_converter.xlsx_converter import XlsxConverter
 
 class BWParkAndDriveConverter(XlsxConverter):
-
     source_info = SourceInfo(
         id='bw-p-d',
         name='Baden-Württemberg: Park und Mitfahren',
@@ -35,7 +34,7 @@ class BWParkAndDriveConverter(XlsxConverter):
         'Längengrad': 'lat',
         'Breitengrad': 'lon',
         'Zufahrt': 'description',
-        'Anzahl Plätze': 'capacity'
+        'Anzahl Plätze': 'capacity',
     }
 
     def handle_xlsx(self, workbook: Workbook) -> ImportSourceResult:
@@ -72,9 +71,8 @@ class BWParkAndDriveConverter(XlsxConverter):
         for field in mapping.keys():
             parking_site_dict[field] = row[mapping[field]].value
 
-        parking_site_dict['name'] = f"{parking_site_dict['street']} {parking_site_dict['name']}" 
+        parking_site_dict['name'] = f"{parking_site_dict['street']} {parking_site_dict['name']}"
         parking_site_dict['uid'] = name_to_id(parking_site_dict['uid'], parking_site_dict['name'])
         parking_site_dict['static_data_updated_at'] = datetime.now(tz=timezone.utc).isoformat()
 
         return parking_site_dict
-

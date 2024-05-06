@@ -341,7 +341,7 @@ class ScraperBase:
             of LotInfo instances and the original data as dict
         :return: list of LotInfo instances
         """
-        url = f"https://github.com/offenesdresden/ParkAPI/raw/master/park_api/cities/{name}.geojson"
+        url = f"https://github.com/ParkenDD/ParkAPI2-sources/raw/master/original/{name.lower()}.geojson"
         response = self.request(url)
         assert \
             response.status_code == 200, \
@@ -374,6 +374,7 @@ class ScraperBase:
                 longitude=coords[0],
                 latitude=coords[1],
                 address=props.get("address"),
+                has_live_capacity=props.get('has_live_capacity'),
             ))
 
             if include_original:

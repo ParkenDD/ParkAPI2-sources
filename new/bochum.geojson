@@ -16,8 +16,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.21582,
-          51.48043
+          7.21589,
+          51.48017
         ]
       }
     },
@@ -98,6 +98,26 @@
         "coordinates": [
           7.1328085,
           51.4804338
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bochum-17",
+        "name": "PH Husemann Karree",
+        "type": "garage",
+        "public_url": "https://www.parken-in-bochum.de/parkhaeuser/parkhaus/ph-husemann-karree/",
+        "source_url": "https://www.parken-in-bochum.de/parkhaeuser/",
+        "address": "Bochumer Innenstadt, zwischen Kortumstraße (Fußgängerzone) und Junggesellenstraße",
+        "capacity": 510,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.2159511,
+          51.4800041
         ]
       }
     },
@@ -198,6 +218,26 @@
         "coordinates": [
           7.2246976,
           51.4779551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "bochum-7",
+        "name": "P7 Kurt-Schumacher-Platz",
+        "type": "garage",
+        "public_url": "https://www.parken-in-bochum.de/parkhaeuser/parkhaus/p7-kurt-schumacher-platz/",
+        "source_url": "https://www.parken-in-bochum.de/parkhaeuser/",
+        "address": "Bochumer Innenstadt, direkt am Hauptbahnhof",
+        "capacity": 432,
+        "has_live_capacity": false
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.221024,
+          51.4781061
         ]
       }
     },

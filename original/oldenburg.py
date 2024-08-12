@@ -38,11 +38,11 @@ class Oldenburg(ScraperBase):
             parking_name = td[0].string
             # work-around for the Umlaute-problem: ugly but working
             if 'Heiligengeist-' in parking_name:
-                parking_name = 'Heiligengeist-Höfe'
+                parking_name = 'Parkhaus Heiligengeist-Höfe'
             elif 'Schlossh' in parking_name:
-                parking_name = 'Schlosshöfe'
-            elif 'Aerztehaus' == parking_name:
-                parking_name = 'Ärztehaus'
+                parking_name = 'Parkhaus Schlosshöfe'
+            elif 'August Carr' == parking_name:
+                parking_name = 'Parkhaus August Carrée'
 
             parking_free = None
             parking_state = LotData.Status.open

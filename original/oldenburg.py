@@ -12,7 +12,7 @@ class Oldenburg(ScraperBase):
         id="oldenburg",
         name="Oldenburg",
         public_url="https://oldenburg-service.de/pls/",
-        source_url="https://oldenburg-service.de/pls2.php",
+        source_url="https://oldenburg-service.de/pls.php",
         timezone="Europe/Berlin",
         attribution_contributor="Stadt Oldenburg",
         attribution_license=None,

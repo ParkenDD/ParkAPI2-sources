@@ -200,6 +200,27 @@
           53.14169
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "oldenburgparkhausaugustcarrée",
+        "name": "August Carrée",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Auguststraße 7",
+        "capacity": 650,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2032572,
+          53.1426765
+        ]
+      }
     }
+
   ]
 }

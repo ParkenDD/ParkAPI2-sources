@@ -1,0 +1,339 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkhauseurogress",
+        "name": "P01-Eurogress",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-eurogress",
+        "address": "Monheimsallee 44, 52062 Aachen",
+        "capacity": 560,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0927987,
+          50.780552
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp10",
+        "name": "P10-Seilgraben",
+        "type": "garage",
+        "public_url": "https://www.mein-contipark.de/parkplatz-finden/parken-in-aachen/parkhaus-grosskoelnstrasse-aachen--ci3cp1124065",
+        "source_url": null,
+        "address": "Seilgraben 45, 52062 Aachen",
+        "capacity": 306,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0851154,
+          50.778053
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp11",
+        "name": "P11-Lothringer Strasse",
+        "type": "garage",
+        "public_url": "https://www.mein-contipark.de/parkplatz-finden/parken-in-aachen/parkhaus-lothringerstrasse-aachen--ci3cp1124507",
+        "source_url": null,
+        "address": "Lothringerstraße 2-14, 52062 Aachen",
+        "capacity": 349,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0935435,
+          50.77121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp12",
+        "name": "P12-Annastrasse",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Annastraße 56, 52062 Aachen",
+        "capacity": 66,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0803576,
+          50.77292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp13",
+        "name": "P13-Stiftstrasse",
+        "type": "garage",
+        "public_url": "https://www.q-park.de/de-de/staedte/aachen/stiftstra%C3%9Fe/",
+        "source_url": null,
+        "address": "Stiftstr. 38, 52062 Aachen",
+        "capacity": 0,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.093653,
+          50.7759
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp14",
+        "name": "P14-City Center",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Alexianergraben 9-23, 52062 Aachen",
+        "capacity": 180,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.083549,
+          50.771896
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp15",
+        "name": "P15-Matthiashofstrasse",
+        "type": "garage",
+        "public_url": "https://www.city-parkhaus.de/parkhaus/aachen.php",
+        "source_url": null,
+        "address": "Matthiashofstraße, 52064 Aachen",
+        "capacity": 160,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.083538,
+          50.77099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp16",
+        "name": "P16-Kapuziner Karree",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Borngasse 30, 52062 Aachen",
+        "capacity": 305,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.088164,
+          50.771523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp17",
+        "name": "P17-EBV Carre",
+        "type": "garage",
+        "public_url": "https://www.q-park.de/de-de/staedte/aachen/ebv-carree/",
+        "source_url": null,
+        "address": "Schumacherstraße 12, 52062 Aachen",
+        "capacity": 315,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.092144,
+          50.77732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp18",
+        "name": "P18-Aquis-Plaza",
+        "type": "garage",
+        "public_url": "https://www.aquis-plaza.de/service/anfahrt-parken/anfahrt/",
+        "source_url": null,
+        "address": "Adalbertstraße 100, Aachen",
+        "capacity": 568,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0942554,
+          50.774815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkhauscouvenstrasse",
+        "name": "P02-Couvenstrasse",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-couvenstrasse",
+        "address": "Couvenstraße 6, 52062 Aachen",
+        "capacity": 497,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0899806,
+          50.77744
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkhausadalbertstrasse",
+        "name": "P03-Adalbertstrasse",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-adalbertstrasse",
+        "address": "Blondelstraße, 52062 Aachen",
+        "capacity": 186,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.090405,
+          50.775692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkhausrathaus",
+        "name": "P05-Rathaus",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-rathaus",
+        "address": "Mostardstraße 5, 52062 Aachen",
+        "capacity": 400,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.083882,
+          50.777412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkhausgaleriakaufhofcity",
+        "name": "P06-Galeria Kaufhof",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-galeria-kaufhofcity",
+        "address": "Wirichsbongardstr. 47, 52062 Aachen",
+        "capacity": 999,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.09006,
+          50.77298
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkhaushauptbahnhof",
+        "name": "P07-Hauptbahnhof",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-hauptbahnhof",
+        "address": "Lagerhausstraße 20, 52064 Aachen",
+        "capacity": 717,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.089069,
+          50.76805
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenparkhausadalbertsteinweg",
+        "name": "P08-Adalbertsteinweg",
+        "type": "garage",
+        "type": "garage",
+        "public_url": "https://www.apag.de/de/parkobjekte/parkhaus-adalbertsteinweg",
+        "address": "Adalbertsteinweg 34, 52070 Aachen",
+        "capacity": 600,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.099605,
+          50.774208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "aachenp9",
+        "name": "P09-Parkhaus am Dom",
+        "type": "garage",
+        "public_url": null,
+        "source_url": null,
+        "address": "Jesuitenstraße 10, 52062 Aachen",
+        "capacity": 500,
+        "has_live_capacity": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.082303,
+          50.77324
+        ]
+      }
+    }
+  ]
+}

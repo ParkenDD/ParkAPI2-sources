@@ -15,6 +15,7 @@ def guess_lot_type(name: str) -> Optional[str]:
         "parkplätze": LotInfo.Types.lot,
         "parkhaus": LotInfo.Types.garage,
         "parkgarage": LotInfo.Types.garage,
+        "multistorey": LotInfo.Types.garage,
         "tiefgarage": LotInfo.Types.underground,
         "parkdeck": LotInfo.Types.level,
         "parklevel": LotInfo.Types.level,

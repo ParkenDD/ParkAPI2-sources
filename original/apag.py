@@ -1,28 +1,43 @@
 """
 Original code by Quint, Berke
 """
-from typing import List, Tuple, Generator
-
-from util import *
+import re
+from typing import Generator, List, Tuple
 
 import bs4
-import re
+
+from util import LotData, LotInfo, PoolInfo, ScraperBase, float_or_none, guess_lot_type, int_or_none, name_to_legacy_id
+
 
 class Apag(ScraperBase):
-
     POOL = PoolInfo(
         id="apag",
         name="Aachener Parkhaus GmbH",
         public_url="https://www.apag.de/de/fahrzeug-parken-laden-fahrrad-abstellen",
     )
 
+    # A couple of parkings are provided by Aachen as well.
+    # As the Aachen datasource is structured, we prefer it and suppress
+    # apag parkings which are also provided by provider aachen.
+    LOT_IDS_TO_EXCLUDE = {
+        "aachenparkhauseurogress",
+        "aachenparkhauscouvenstrasse",
+        "aachenparkhausadalbertstrasse",
+        "aachenparkhausrathaus",
+        "aachenparkhausgaleriakaufhofcity",
+        "aachenparkhaushauptbahnhof",
+        "aachenparkhausadalbertsteinweg",
+    }
+
+    def _get_parking_name(self, lot):
+        return lot.find('a').find('div', class_='facility-title').text
+
     def get_lot_data(self) -> List[LotData]:
         now = self.now()
-        parking_name_set = set()
         lots = []
-        
+
         for id_prefix, one_lot in self._lots_iterator(self.POOL.public_url):
-            parking_name = one_lot.find('a').find('div', class_='facility-title').text
+            parking_name = self._get_parking_name(one_lot)
 
             parking_state = LotData.Status.open
             parking_free = None
@@ -47,7 +62,7 @@ class Apag(ScraperBase):
         lots = []
 
         for id_prefix, one_lot in self._lots_iterator(self.POOL.public_url):
-            parking_name = one_lot.find('a').find('div', class_='facility-title').text
+            parking_name = self._get_parking_name(one_lot)
 
             lot_url = one_lot.find("a").attrs["href"]
             lot_soup = self.request_soup(lot_url)
@@ -56,7 +71,7 @@ class Apag(ScraperBase):
             elem_address = lot_soup.find("span", {"class": "facility-address"})
             elem_maps_link = lot_soup.find("a", {"class": "btn-route"})
             coord_match = re.search(r"@(\d+\.\d+),(\d+(\.\d+)?)", elem_maps_link["href"])
-            
+
             type = guess_lot_type(parking_name)
             name = " ".join(parking_name.split()[1:])
 
@@ -76,10 +91,10 @@ class Apag(ScraperBase):
                     type=type,
                     public_url=lot_url,
                     source_url=lot_url,
-                    address="\n".join(l.strip() for l in elem_address.text.splitlines() if l.strip()),
+                    address="\n".join(line.strip() for line in elem_address.text.splitlines() if line.strip()),
                     capacity=capacity,
                     latitude=float_or_none(coord_match.group(1) if coord_match else None),
-                    longitude=float_or_none(coord_match.group(2) if coord_match else None)
+                    longitude=float_or_none(coord_match.group(2) if coord_match else None),
                 )
             )
 
@@ -95,5 +110,7 @@ class Apag(ScraperBase):
             for one_lot in parking_lots:
                 # For now, ParkAPI does not support bicycle parking.
                 # TODO add support for bicycle parking
-                if not 'Bike-Station' in one_lot.find('a').text:
+                parking_id = name_to_legacy_id(id_prefix, self._get_parking_name(one_lot))
+
+                if parking_id not in self.LOT_IDS_TO_EXCLUDE and 'Bike-Station' not in one_lot.find('a').text:
                     yield id_prefix, one_lot

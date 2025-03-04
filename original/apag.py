@@ -20,6 +20,7 @@ class Apag(ScraperBase):
     # As the Aachen datasource is structured, we prefer it and suppress
     # apag parkings which are also provided by provider aachen.
     LOT_IDS_TO_EXCLUDE = {
+        "aachenparkhausebvcarré",
         "aachenparkhauseurogress",
         "aachenparkhauscouvenstrasse",
         "aachenparkhausadalbertstrasse",
